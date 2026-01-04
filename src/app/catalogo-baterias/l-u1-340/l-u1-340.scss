@@ -1,0 +1,163 @@
+/* L-U1-340 Custom Theme - Garden/Professional */
+.l-u1-340-container {
+    --primary-green: #2e7d32;
+    --accent-lime: #76ff03;
+    --dark-green: #1b5e20;
+    --text-dark: #263238;
+
+    font-family: 'Segoe UI', system-ui, sans-serif;
+    color: var(--text-dark);
+    background: #fafafa;
+
+    .badge-premium {
+        background: linear-gradient(135deg, var(--primary-green), var(--dark-green));
+        color: white;
+        padding: 8px 16px;
+        border-radius: 50px;
+        font-weight: 700;
+        letter-spacing: 1px;
+        font-size: 0.9rem;
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        box-shadow: 0 4px 10px rgba(46, 125, 50, 0.3);
+        margin-bottom: 20px;
+    }
+
+    h1 {
+        color: var(--dark-green);
+        letter-spacing: -1px;
+    }
+
+    .display-6 {
+        color: var(--primary-green);
+        font-weight: 800;
+        letter-spacing: -1px;
+    }
+
+    .btn-danger {
+        background: linear-gradient(135deg, #d32f2f, #b71c1c);
+        border: none;
+        border-radius: 12px;
+        transition: all 0.3s ease;
+
+        &:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(183, 28, 28, 0.4) !important;
+        }
+    }
+
+    .card {
+        border: none;
+        border-radius: 20px;
+        overflow: hidden;
+        transition: transform 0.3s;
+
+        &.shadow {
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08) !important;
+        }
+    }
+
+    /* Carousel */
+    #carouselProducto {
+        .carousel-item {
+            text-align: center;
+            padding: 20px;
+
+            img {
+                transition: transform 0.5s ease;
+                filter: drop-shadow(0 10px 20px rgba(0, 0, 0, 0.1));
+                max-height: 400px;
+                object-fit: contain;
+                margin: 0 auto;
+            }
+        }
+
+        .carousel-control-prev-icon,
+        .carousel-control-next-icon {
+            background-color: var(--primary-green);
+            border-radius: 50%;
+            padding: 20px;
+            background-size: 50%;
+        }
+    }
+
+    /* Features */
+    .feature-icon {
+        width: 60px;
+        height: 60px;
+        background: #e8f5e9;
+        color: var(--primary-green);
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 0 auto 10px;
+        font-size: 1.5rem;
+        transition: all 0.3s;
+
+        &:hover {
+            background: var(--primary-green);
+            color: white;
+            transform: rotate(10deg);
+        }
+    }
+
+    /* Description */
+    .text-primary {
+        color: var(--primary-green) !important;
+    }
+
+    .list-unstyled li {
+        margin-bottom: 12px;
+        display: flex;
+        align-items: center;
+    }
+
+    .iconify,
+    .bi {
+        vertical-align: middle;
+    }
+
+    /* Action Buttons */
+    .btn-outline-primary {
+        color: var(--primary-green);
+        border-color: var(--primary-green);
+        border-radius: 10px;
+
+        &:hover {
+            background: var(--primary-green);
+            color: white;
+        }
+    }
+
+    /* Specifications Table */
+    .especificaciones-card {
+        background: white;
+        border-top: 5px solid var(--accent-lime);
+
+        .especificaciones-header {
+            color: var(--dark-green);
+            margin-bottom: 30px;
+            border-bottom: 2px solid #f0f0f0;
+            padding-bottom: 15px;
+        }
+
+        .table {
+            th {
+                color: var(--text-dark);
+                font-weight: 600;
+                width: 50%;
+            }
+
+            td {
+                color: #555;
+            }
+
+            tr:hover td {
+                color: var(--primary-green);
+                background-color: #f1f8e9;
+            }
+        }
+    }
+}

@@ -1,0 +1,158 @@
+<div class="evolution-auxiliar-content">
+    <!-- Hero Section -->
+    <section class="auxiliar-hero-section">
+        <div class="auxiliar-floating-elements">
+            <i class="bi bi-battery-charging auxiliar-floating-icon"></i>
+            <i class="bi bi-ev-front-fill auxiliar-floating-icon"></i>
+            <i class="bi bi-plug-fill auxiliar-floating-icon"></i>
+            <i class="bi bi-lightning-charge-fill auxiliar-floating-icon"></i>
+        </div>
+
+        <div class="container auxiliar-hero-content">
+            <div class="text-center">
+                <div class="auxiliar-hero-badge">
+                    <i class="bi bi-battery-charging"></i>
+                    Tecnología Auxiliar
+                </div>
+
+                <h1 class="auxiliar-hero-title">LTH® EVOLUTION <span class="highlight">AUXILIAR</span></h1>
+
+                <p class="auxiliar-hero-description">
+                    Energía auxiliar confiable para sistemas secundarios, equipos adicionales y demandas eléctricas
+                    especializadas. Diseñada para vehículos modernos con tecnología de placa plana avanzada.
+                </p>
+
+                <!-- Stats -->
+                <div class="auxiliar-stats-grid">
+                    <div class="auxiliar-stat-item">
+                        <span class="auxiliar-stat-number">AUX</span>
+                        <span class="auxiliar-stat-label">Tecnología</span>
+                    </div>
+                    <div class="auxiliar-stat-item">
+                        <span class="auxiliar-stat-number">100%</span>
+                        <span class="auxiliar-stat-label">Confiabilidad</span>
+                    </div>
+                    <div class="auxiliar-stat-item">
+                        <span class="auxiliar-stat-number">24/7</span>
+                        <span class="auxiliar-stat-label">Energía</span>
+                    </div>
+                    <div class="auxiliar-stat-item">
+                        <span class="auxiliar-stat-number">PRO</span>
+                        <span class="auxiliar-stat-label">Uso</span>
+                    </div>
+                </div>
+
+                <!-- Features -->
+                <div class="auxiliar-features-grid">
+                    <div class="auxiliar-feature-card">
+                        <i class="bi bi-battery-half auxiliar-feature-icon"></i>
+                        <h3 class="auxiliar-feature-title">Energía Auxiliar</h3>
+                        <p class="auxiliar-feature-description">Alimenta sistemas secundarios y equipos adicionales.</p>
+                    </div>
+                    <div class="auxiliar-feature-card">
+                        <i class="bi bi-plug auxiliar-feature-icon"></i>
+                        <h3 class="auxiliar-feature-title">Conexión Confiable</h3>
+                        <p class="auxiliar-feature-description">Terminales optimizados para estabilidad.</p>
+                    </div>
+                    <div class="auxiliar-feature-card">
+                        <i class="bi bi-ev-front auxiliar-feature-icon"></i>
+                        <h3 class="auxiliar-feature-title">Compatibilidad Total</h3>
+                        <p class="auxiliar-feature-description">Para vehículos con sistemas complejos.</p>
+                    </div>
+                    <div class="auxiliar-feature-card">
+                        <i class="bi bi-shield-check auxiliar-feature-icon"></i>
+                        <h3 class="auxiliar-feature-title">Durabilidad Extrema</h3>
+                        <p class="auxiliar-feature-description">Construcción robusta para uso continuo.</p>
+                    </div>
+                </div>
+
+                <!-- Hero Image -->
+                <div class="auxiliar-hero-image-container">
+                    <img src="https://useast2prodbrandsites.blob.core.windows.net/lth-sfassets-prod/images/default-source/products/product-brands/baterias/lth-evolution-auxiliar/lth_evo-baterias_aux.png?sfvrsn=3b3979e9_0"
+                        alt="LTH Evolution Auxiliar" class="auxiliar-bateria-img" />
+                </div>
+
+                <div class="auxiliar-cta-section">
+                    <button class="btn auxiliar-btn-hero-primary" (click)="scrollToProducts()">
+                        <i class="bi bi-battery-charging"></i>
+                        Explorar Auxiliares
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Products Section -->
+    <section class="auxiliar-product-section">
+        <div class="container">
+            <h2 class="auxiliar-section-title">
+                <i class="bi bi-battery-charging"></i>
+                Baterías Auxiliares
+            </h2>
+
+            <div class="auxiliar-product-card" *ngFor="let product of products; let i = index">
+                <div class="row align-items-center">
+                    <div class="col-lg-6">
+                        <div [id]="'carouselAux'+i" class="carousel slide" data-bs-ride="carousel">
+                            <div class="carousel-inner">
+                                <div class="carousel-item" *ngFor="let img of product.images; let first = first"
+                                    [class.active]="first">
+                                    <img [src]="img" class="d-block w-100 product-img" [alt]="product.model">
+                                </div>
+                            </div>
+                            <button class="carousel-control-prev" type="button" [attr.data-bs-target]="'#carouselAux'+i"
+                                data-bs-slide="prev">
+                                <i class="bi bi-chevron-left"></i>
+                            </button>
+                            <button class="carousel-control-next" type="button" [attr.data-bs-target]="'#carouselAux'+i"
+                                data-bs-slide="next">
+                                <i class="bi bi-chevron-right"></i>
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-6 product-info">
+                        <h3 class="product-title">
+                            <i class="bi bi-battery-charging"></i>
+                            {{ product.model }}
+                        </h3>
+                        <div class="badges">
+                            <span class="badge badge-auxiliar">Auxiliar</span>
+                            <span class="badge badge-new">NUEVA</span>
+                            <span class="badge badge-stock">En Stock</span>
+                        </div>
+
+                        <div class="specs-list">
+                            <div class="spec-row">
+                                <i class="bi bi-lightning-fill spec-icon"></i>
+                                <div class="spec-detail">
+                                    <small>Arranque en frío</small>
+                                    <strong>{{ product.cca }}</strong>
+                                </div>
+                            </div>
+                            <div class="spec-row">
+                                <i class="bi bi-plug-fill spec-icon"></i>
+                                <div class="spec-detail">
+                                    <small>Aplicación</small>
+                                    <strong>Sistemas Auxiliares</strong>
+                                </div>
+                            </div>
+                            <div class="spec-row price-row">
+                                <i class="bi bi-currency-dollar spec-icon danger"></i>
+                                <div class="spec-detail">
+                                    <small>Precio</small>
+                                    <strong class="price">{{ product.price }}</strong>
+                                </div>
+                            </div>
+                        </div>
+
+                        <button class="btn btn-buy" [routerLink]="[product.link]">
+                            <i class="bi bi-cart-plus"></i>
+                            Comprar Ahora
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>

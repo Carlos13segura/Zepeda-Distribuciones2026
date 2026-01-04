@@ -1,0 +1,248 @@
+<div class="service-centers-page">
+    <!-- Header de resultados -->
+    <div class="search-results-header">
+        <div class="container">
+            <h1 class="results-title">
+                <span class="title-line-1">RESULTADO DE</span>
+                <span class="title-line-2">BÚSQUEDA</span>
+            </h1>
+        </div>
+    </div>
+
+    <div class="container">
+        <!-- Header principal -->
+        <header class="main-header">
+            <div class="header-content">
+                <h2 class="header-title">
+                    <span class="brand-text">CENTROS DE SERVICIO LTH</span>
+                    <span class="location-text">MX {{ selectedState }} {{ selectedCity }}</span>
+                </h2>
+            </div>
+            <p class="subtitle">
+                <i class="bi bi-geo-alt-fill location-icon" aria-hidden="true"></i>
+                Mostrando <span class="count-highlight">{{ resultsCount }}</span> ubicaciones
+            </p>
+        </header>
+
+        <div class="content-wrapper">
+            <!-- Sidebar con centros de servicio -->
+            <aside class="sidebar">
+                <div class="sidebar-header">
+                    <h2>
+                        <i class="bi bi-shop sidebar-icon" aria-hidden="true"></i>
+                        Centros Disponibles
+                    </h2>
+                </div>
+
+                <div class="service-centers-list" role="list">
+                    <div *ngFor="let center of filteredCenters; let i = index" class="service-center"
+                        [class.active]="activeCenterId === center.id" (click)="setActiveCenter(center.id)"
+                        role="listitem" tabindex="0">
+                        <div class="center-number">{{ i + 1 }}</div>
+                        <div class="center-content">
+                            <h3 class="center-name">{{ center.name }}</h3>
+                            <div class="center-details">
+                                <p class="address">
+                                    <i class="bi bi-geo-alt detail-icon" aria-hidden="true"></i>
+                                    {{ center.address }}
+                                </p>
+                                <p class="city">
+                                    <i class="bi bi-building detail-icon" aria-hidden="true"></i>
+                                    {{ center.city }}, {{ center.state }}
+                                </p>
+                                <div class="contact-info">
+                                    <p>
+                                        <i class="bi bi-telephone detail-icon" aria-hidden="true"></i>
+                                        <a [href]="'tel:' + center.phone" class="phone-link"
+                                            aria-label="Llamar al centro">{{ center.phone }}</a>
+                                    </p>
+                                </div>
+                            </div>
+                            <button class="directions-btn" (click)="getDirections(center)"
+                                aria-label="Obtener indicaciones para llegar">
+                                <i class="bi bi-signpost-2 btn-icon" aria-hidden="true"></i>
+                                Cómo llegar
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="load-more-container" *ngIf="filteredCenters.length > 6">
+                    <button class="load-more-btn" aria-label="Cargar más centros">
+                        <i class="bi bi-arrow-down-circle btn-icon" aria-hidden="true"></i>
+                        Ver más centros
+                    </button>
+                </div>
+            </aside>
+
+            <!-- Contenido principal -->
+            <main class="main-content">
+                <!-- Barra de búsqueda mejorada -->
+                <section class="search-section">
+                    <div class="search-header">
+                        <h2>
+                            <i class="bi bi-search search-icon" aria-hidden="true"></i>
+                            REDEFINE TU BÚSQUEDA
+                        </h2>
+                        <p class="search-subtitle">Encuentra el centro más cercano a ti</p>
+                    </div>
+
+                    <div class="search-form">
+                        <div class="search-inputs">
+                            <div class="input-group">
+                                <label for="state-select">Estado</label>
+                                <div class="select-wrapper">
+                                    <i class="bi bi-map input-icon" aria-hidden="true"></i>
+                                    <select id="state-select" class="search-select" [(ngModel)]="selectedState"
+                                        (change)="onStateChange()" aria-label="Seleccionar estado">
+                                        <option value="">Selecciona un estado</option>
+                                        <option *ngFor="let state of states" [value]="state">{{ state }}</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <div class="input-group">
+                                <label for="city-select">Ciudad</label>
+                                <div class="select-wrapper">
+                                    <i class="bi bi-building input-icon" aria-hidden="true"></i>
+                                    <select id="city-select" class="search-select" [(ngModel)]="selectedCity"
+                                        (change)="onCityChange()" aria-label="Seleccionar ciudad">
+                                        <option value="">Selecciona una ciudad</option>
+                                        <option *ngFor="let city of cities" [value]="city">{{ city }}</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <button class="search-btn" (click)="performSearch()" aria-label="Buscar centros">
+                                <i class="bi bi-search btn-icon" aria-hidden="true"></i>
+                                Buscar
+                            </button>
+                        </div>
+
+                        <!-- Botón de geolocalización -->
+                        <div class="location-section">
+                            <button class="use-location" (click)="useLocation()">
+                                <i class="bi bi-crosshair location-btn-icon" aria-hidden="true"></i>
+                                Utiliza tu ubicación
+                            </button>
+                        </div>
+
+                        <!-- Filtros adicionales -->
+                        <div class="search-filters">
+                            <button class="filter-btn" [class.active]="activeFilter === 'all'"
+                                (click)="setFilter('all')" aria-label="Ver todos los centros">
+                                <i class="bi bi-shop filter-icon" aria-hidden="true"></i>
+                                Todos
+                            </button>
+                            <button class="filter-btn" [class.active]="activeFilter === '24h'"
+                                (click)="setFilter('24h')" aria-label="Ver centros abiertos 24 horas">
+                                <i class="bi bi-clock filter-icon" aria-hidden="true"></i>
+                                24 Horas
+                            </button>
+                            <button class="filter-btn" [class.active]="activeFilter === 'parking'"
+                                (click)="setFilter('parking')" aria-label="Ver centros con estacionamiento">
+                                <i class="bi bi-p-square filter-icon" aria-hidden="true"></i>
+                                Con Estacionamiento
+                            </button>
+                            <button class="filter-btn" [class.active]="activeFilter === 'installation'"
+                                (click)="setFilter('installation')"
+                                aria-label="Ver centros con servicio de instalación">
+                                <i class="bi bi-wrench filter-icon" aria-hidden="true"></i>
+                                Instalación
+                            </button>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Mapa mejorado -->
+                <section class="map-container">
+                    <div class="map-header">
+                        <h3>
+                            <i class="bi bi-geo-alt-fill map-icon" aria-hidden="true"></i>
+                            Ubicaciones en el Mapa
+                        </h3>
+                        <div class="map-controls">
+                            <button class="map-control-btn" title="Pantalla completa"
+                                aria-label="Ver mapa en pantalla completa">
+                                <i class="bi bi-arrows-fullscreen" aria-hidden="true"></i>
+                            </button>
+                            <button class="map-control-btn" title="Mi ubicación"
+                                aria-label="Centrar mapa en mi ubicación">
+                                <i class="bi bi-crosshair" aria-hidden="true"></i>
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="map-wrapper">
+                        <iframe class="map-iframe"
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d4266.209148794972!2d-98.18386699999999!3d19.0915642!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x85cfc1d33d17a4dd%3A0xf536c4df9e64266c!2sCENTRO%20DE%20SERVICIO%20LTH%20ABASTOS!5e1!3m2!1ses!2sco!4v1744347666298!5m2!1ses!2sco"
+                            allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"
+                            title="Mapa de ubicaciones LTH">
+                        </iframe>
+                    </div>
+                </section>
+            </main>
+        </div>
+    </div>
+
+    <!-- Información adicional - Beneficios -->
+    <section class="additional-info">
+        <div class="container">
+            <div class="benefits-header">
+                <h2>Al acudir a un Centro de Servicio LTH tienes los siguientes beneficios:</h2>
+            </div>
+
+            <div class="info-grid">
+                <div class="info-card">
+                    <i class="bi bi-clipboard-pulse info-icon" aria-hidden="true"></i>
+                    <h4>DIAGNÓSTICO</h4>
+                    <p>Recibirás un diagnóstico gratuito de tu batería siempre que lo necesites con equipo especializado
+                        y la asesoría de uno de nuestros técnicos especializados.</p>
+                </div>
+
+                <div class="info-card">
+                    <i class="bi bi-recycle info-icon" aria-hidden="true"></i>
+                    <h4>RECICLAJE</h4>
+                    <p>Crea un descuento en el precio de tu nueva batería al dejar tu batería usada y además nosotros
+                        nos aseguramos de enviarla a una de nuestras recicladoras para cuidar del medio ambiente.</p>
+                </div>
+
+                <div class="info-card">
+                    <i class="bi bi-tools info-icon" aria-hidden="true"></i>
+                    <h4>INSTALACIÓN</h4>
+                    <p>Al adquirir tu batería en el Centro de Servicio LTH la instalación está cubierta con la confianza
+                        de ser realizada por uno de nuestros técnicos especializados.</p>
+                </div>
+
+                <div class="info-card">
+                    <i class="bi bi-shield-check info-icon" aria-hidden="true"></i>
+                    <h4>PÓLIZA VIRTUAL DE GARANTÍA</h4>
+                    <p>Cuando adquieras tu batería en el Centro de Servicio LTH, te ofrecemos un resguardo electrónico
+                        de la Póliza de garantía la cual se valida en todo México y se protege en caso de extraviar la
+                        póliza física.</p>
+                </div>
+
+                <div class="info-card">
+                    <i class="bi bi-box-seam info-icon" aria-hidden="true"></i>
+                    <h4>PRODUCTOS</h4>
+                    <p>Encontrarás una gama de productos innovadores respaldados por la calidad de la marca LTH que
+                        tiene más de 90 años como líder en el mercado. Desde acumuladores baterías, hasta todo tipo de
+                        accesorios para tu auto y para todo tipo de necesidades.</p>
+                </div>
+
+                <div class="info-card">
+                    <i class="bi bi-geo-alt info-icon" aria-hidden="true"></i>
+                    <h4>COBERTURA</h4>
+                    <p>Estamos cerca de ti en una de 480 Centros de Servicio LTH en diferentes partes de México.</p>
+                </div>
+
+                <div class="info-card">
+                    <i class="bi bi-car-front info-icon" aria-hidden="true"></i>
+                    <h4>CONFORT</h4>
+                    <p>Los Centros de Servicio LTH son un espacio agradable y limpio para que atiendas en instalaciones
+                        donde te sientas cómodo y seguro.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>

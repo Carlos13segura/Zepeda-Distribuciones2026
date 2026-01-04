@@ -1,0 +1,140 @@
+<div class="lth-protect-content">
+    <!-- Hero Section -->
+    <section class="protect-hero-section">
+        <div class="container protect-hero-content">
+            <div class="row align-items-center">
+                <div class="col-lg-6 text-section">
+                    <div class="protect-badge">
+                        <i class="bi bi-shield-check"></i>
+                        Tecnología AGM
+                    </div>
+                    <h1 class="protect-title">LTH® <span class="text-highlight">PROTECT</span></h1>
+                    <h2 class="protect-subtitle">El Escudo de Energía Definitivo</h2>
+                    <p class="protect-description">
+                        Ingeniería avanzada para vehículos Start-Stop, híbridos y eléctricos.
+                        Máxima durabilidad y seguridad garantizada.
+                    </p>
+                    <button class="btn btn-protect-primary" (click)="scrollToProducts()">
+                        <i class="bi bi-lightning-charge-fill"></i>
+                        Ver Modelos
+                    </button>
+                </div>
+                <div class="col-lg-6 image-section">
+                    <div class="protect-image-wrapper">
+                        <img src="https://www.lth.com.mx/sfsites/c/cms/delivery/media/MCV7DSV4KCA5DJRIAS2Z4CACJFFI?version=1.1&channelId=0apQO0000000Ch8&oid=00DfL000007937e"
+                            alt="LTH Protect AGM Battery" class="main-battery-img">
+                        <div class="shield-overlay">
+                            <i class="bi bi-shield-check"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Tech Stats Bar -->
+    <div class="tech-stats-bar">
+        <div class="container">
+            <div class="stats-grid">
+                <div class="stat-item">
+                    <i class="bi bi-ev-front-fill stat-icon"></i>
+                    <div class="stat-text">
+                        <span class="value">Start-Stop</span>
+                        <span class="label">Compatible</span>
+                    </div>
+                </div>
+                <div class="stat-item">
+                    <i class="bi bi-battery-charging stat-icon"></i>
+                    <div class="stat-text">
+                        <span class="value">3x</span>
+                        <span class="label">Ciclos de Vida</span>
+                    </div>
+                </div>
+                <div class="stat-item">
+                    <i class="bi bi-shield-lock-fill stat-icon"></i>
+                    <div class="stat-text">
+                        <span class="value">100%</span>
+                        <span class="label">Seguridad</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Why Protect Section -->
+    <section class="why-protect-section">
+        <div class="container">
+            <div class="text-center mb-5">
+                <h2 class="section-title">¿Por qué <span class="text-highlight">LTH Protect?</span></h2>
+                <p class="section-desc">Diseñada para cumplir con las demandas de los vehículos modernos</p>
+            </div>
+
+            <div class="benefits-grid">
+                <div class="benefit-card">
+                    <div class="card-icon-wrapper">
+                        <i class="bi bi-flower1 card-icon"></i>
+                    </div>
+                    <h3>Eco-Performance</h3>
+                    <p>Optimiza el sistema Start-Stop reduciendo emisiones y ahorrando combustible.</p>
+                </div>
+
+                <div class="benefit-card">
+                    <div class="card-icon-wrapper">
+                        <i class="bi bi-shield-shaded card-icon"></i>
+                    </div>
+                    <h3>Seguridad Crítica</h3>
+                    <p>Alimenta sistemas vitales como ABS, dirección asistida y asistentes de conducción.</p>
+                </div>
+
+                <div class="benefit-card">
+                    <div class="card-icon-wrapper">
+                        <i class="bi bi-hourglass-split card-icon"></i>
+                    </div>
+                    <h3>Larga Duración</h3>
+                    <p>Tecnología AGM con fibra de vidrio absorbente para una vida útil extendida.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Products Section -->
+    <section class="protect-product-section">
+        <div class="container">
+            <h2 class="text-center section-title" style="color: white; margin-bottom: 60px;">Modelos <span
+                    class="text-highlight" style="color: var(--protect-yellow);">AGM</span></h2>
+
+            <div class="products-grid">
+                <div class="protect-product-card" *ngFor="let product of products">
+                    <div class="product-badge">Top Tech</div>
+                    <div class="product-image-area">
+                        <img [src]="product.image" [alt]="product.model" class="product-img">
+                    </div>
+
+                    <div class="product-info">
+                        <h3 class="product-name">{{ product.model }}</h3>
+                        <p class="product-app">{{ product.specs.application }}</p>
+
+                        <div class="specs-list">
+                            <div class="spec-item">
+                                <span class="spec-label">
+                                    <i class="bi bi-lightning-fill"></i> Arranque
+                                </span>
+                                <span class="spec-value">{{ product.specs.cca }}</span>
+                            </div>
+                            <div class="spec-item">
+                                <span class="spec-label">
+                                    <i class="bi bi-shield-fill-check"></i> Garantía
+                                </span>
+                                <span class="spec-value">{{ product.specs.warranty }}</span>
+                            </div>
+                        </div>
+
+                        <button class="btn btn-product-action" [routerLink]="[product.link]">
+                            Ver Detalle <i class="bi bi-arrow-right"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>

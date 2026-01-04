@@ -1,0 +1,623 @@
+/* America Battery Premium Redesign 2025 */
+@use "sass:color";
+
+// =========================================
+// 1. Variables & Configuration
+// =========================================
+
+// Color Palette - Vibrant & Premium
+$brand-primary: #ff3e3e; // Bright, energetic red
+$brand-secondary: #ff7b00; // Vivid orange
+$brand-dark: #8a0000; // Deep rich red
+$accent-color: #ffd700; // Gold for accents
+
+// Neumorphism / Glassmorphism Bases
+$surface-light: rgba(255, 255, 255, 0.95);
+$surface-glass: rgba(255, 255, 255, 0.7);
+$surface-dark: #1a1a1a;
+
+// Typography
+$font-main: 'Segoe UI', system-ui, -apple-system, sans-serif;
+$font-display: 'Montserrat', $font-main; // Assumes Montserrat is available or falls back
+
+// Spacing & Layout
+$border-radius-lg: 20px;
+$border-radius-md: 12px;
+$border-radius-sm: 8px;
+
+// =========================================
+// 2. Mixins & Effects
+// =========================================
+
+@mixin glass-effect {
+    background: $surface-glass;
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.6);
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.07);
+}
+
+@mixin hover-lift {
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+
+    &:hover {
+        transform: translateY(-8px);
+        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.12);
+    }
+}
+
+@mixin gradient-text {
+    background: linear-gradient(135deg, $brand-primary 0%, $brand-secondary 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+@mixin neumorphic-shadow {
+    box-shadow:
+        10px 10px 20px rgba(163, 177, 198, 0.3),
+        -10px -10px 20px rgba(255, 255, 255, 0.8);
+}
+
+// =========================================
+// 3. Global & Layout
+// =========================================
+
+.main-wrapper {
+    font-family: $font-main;
+    background: linear-gradient(135deg, #f6f8fd 0%, #f1f4f9 100%);
+    color: #333;
+    overflow-x: hidden;
+    position: relative;
+
+    // Abstract background shapes
+    &::before {
+        content: '';
+        position: absolute;
+        top: -10%;
+        right: -5%;
+        width: 600px;
+        height: 600px;
+        background: radial-gradient(circle, rgba($brand-primary, 0.05) 0%, rgba(255, 255, 255, 0) 70%);
+        border-radius: 50%;
+        z-index: 0;
+        pointer-events: none;
+    }
+}
+
+// =========================================
+// 4. Hero Section
+// =========================================
+
+.hero-section {
+    position: relative;
+    padding: 6rem 0 4rem;
+    z-index: 1;
+
+    .product-header {
+        position: relative;
+        margin-bottom: 3rem;
+
+        &::after {
+            content: '';
+            display: block;
+            width: 80px;
+            height: 4px;
+            background: linear-gradient(90deg, $brand-primary, transparent);
+            margin: 1.5rem auto;
+            border-radius: 2px;
+        }
+    }
+
+    .product-title {
+        font-family: $font-display;
+        font-size: 4rem;
+        font-weight: 800;
+        text-transform: uppercase;
+        letter-spacing: -1px;
+        margin-bottom: 0.5rem;
+        color: #2c3e50;
+        text-shadow: 2px 2px 0px rgba(255, 255, 255, 0.5);
+
+        @media (max-width: 768px) {
+            font-size: 2.5rem;
+        }
+    }
+
+    .price-container {
+        display: inline-flex;
+        align-items: baseline;
+        justify-content: center;
+        background: white;
+        padding: 0.5rem 2rem;
+        border-radius: 50px;
+        box-shadow: 0 10px 25px rgba($brand-primary, 0.15);
+        margin-bottom: 1rem;
+        animation: float 6s ease-in-out infinite;
+
+        .product-price {
+            font-size: 3rem;
+            font-weight: 700;
+            @include gradient-text;
+            margin-right: 0.5rem;
+        }
+
+        .badge {
+            background-color: #2c3e50 !important; // Override bootstrap
+            font-size: 0.9rem;
+            padding: 0.5em 0.8em;
+            border-radius: 6px;
+        }
+    }
+
+    .price-note {
+        font-size: 0.95rem;
+        color: #666;
+        font-style: italic;
+        margin-top: 0.5rem;
+    }
+}
+
+// =========================================
+// 5. Interactive Buttons
+// =========================================
+
+// Main CTA "Comprar Ahora"
+.btn-primary-custom {
+    position: relative;
+    background: linear-gradient(45deg, $brand-primary, $brand-secondary);
+    border: none;
+    padding: 1.2rem 3.5rem;
+    border-radius: 50px;
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: white;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    overflow: hidden;
+    transition: all 0.4s ease;
+    box-shadow: 0 10px 30px rgba($brand-primary, 0.4);
+    z-index: 1;
+
+    // Glowing sheen effect
+    &::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: -100%;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.4), transparent);
+        transition: 0.5s;
+        transform: skewX(-25deg);
+    }
+
+    &:hover {
+        transform: translateY(-5px) scale(1.02);
+        box-shadow: 0 20px 40px rgba($brand-primary, 0.6);
+        color: white;
+
+        &::before {
+            left: 100%;
+        }
+
+        i {
+            transform: translateX(5px) rotate(-10deg);
+        }
+    }
+
+    i {
+        transition: transform 0.3s ease;
+        font-size: 1.4rem;
+        vertical-align: middle;
+        margin-right: 0.5rem;
+    }
+}
+
+// Action Buttons Row (Delivery, Phone, Location)
+.action-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+    margin-top: 3rem;
+
+    @media (max-width: 768px) {
+        flex-direction: column;
+        align-items: stretch;
+        padding: 0 2rem;
+    }
+
+    .btn-outline-custom {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 1rem 1.5rem;
+        background: white;
+        border: 2px solid transparent; // Prepared for gradient border trick if needed
+        border-radius: 16px;
+        font-weight: 600;
+        color: #555;
+        transition: all 0.3s ease;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+
+        i {
+            font-size: 1.4rem;
+            margin-right: 0.8rem;
+            transition: transform 0.3s ease;
+        }
+
+        // Specific colors for each button type
+        &.btn-delivery {
+            &:hover {
+                background: #e3f2fd;
+                color: #1976d2;
+                transform: translateY(-3px);
+
+                i {
+                    transform: translateX(5px);
+                    color: #1976d2;
+                }
+            }
+        }
+
+        &.btn-phone {
+            &:hover {
+                background: #e8f5e9;
+                color: #2e7d32;
+                transform: translateY(-3px);
+
+                i {
+                    transform: rotate(15deg);
+                    color: #2e7d32;
+                }
+            }
+        }
+
+        &.btn-location {
+            &:hover {
+                background: #f3e5f5;
+                color: #7b1fa2;
+                transform: translateY(-3px);
+
+                i {
+                    transform: scale(1.2);
+                    color: #7b1fa2;
+                }
+            }
+        }
+    }
+}
+
+// =========================================
+// 6. Visualization & Details
+// =========================================
+
+.product-info-section {
+    padding-bottom: 5rem;
+}
+
+.section-title {
+    font-size: 2.5rem;
+    font-weight: 700;
+    text-align: center;
+    margin-bottom: 4rem;
+    position: relative;
+    display: inline-block;
+
+    &::after {
+        content: "";
+        position: absolute;
+        bottom: -15px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 60px;
+        height: 6px;
+        background: $brand-primary;
+        border-radius: 3px;
+    }
+}
+
+// Product Image Container
+.product-image-container {
+    position: relative;
+    perspective: 1000px;
+    z-index: 2;
+    padding: 2rem;
+
+    // Background Circle behind image
+    &::before {
+        content: '';
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 80%;
+        padding-bottom: 80%;
+        background: radial-gradient(circle, rgba(255, 255, 255, 0.8) 0%, rgba(255, 255, 255, 0) 70%);
+        border-radius: 50%;
+        z-index: -1;
+    }
+
+    .product-image {
+        width: 100%;
+        max-width: 450px;
+        filter: drop-shadow(0 20px 30px rgba(0, 0, 0, 0.3));
+        animation: float-image 6s ease-in-out infinite;
+        transition: transform 0.5s ease;
+
+        &:hover {
+            transform: scale(1.05) rotate(2deg);
+        }
+    }
+}
+
+// Highlight Card (e.g., "#1 Lider Mundial")
+.highlight-card {
+    background: linear-gradient(135deg, $brand-dark 0%, $brand-primary 100%);
+    border-radius: $border-radius-lg;
+    padding: 2rem;
+    color: white;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 15px 35px rgba($brand-primary, 0.4);
+
+    // Shine effect
+    &::before {
+        content: '';
+        position: absolute;
+        top: -50%;
+        left: -50%;
+        width: 200%;
+        height: 200%;
+        background: radial-gradient(circle, rgba(255, 255, 255, 0.3) 0%, transparent 60%);
+        animation: rotate-shine 10s linear infinite;
+    }
+
+    .highlight-content {
+        position: relative;
+        z-index: 2;
+
+        .highlight-header {
+            font-size: 1.5rem;
+            font-weight: 800;
+            margin-bottom: 0.5rem;
+            text-transform: uppercase;
+        }
+
+        .highlight-subtitle {
+            font-size: 1.1rem;
+            opacity: 0.9;
+            margin-bottom: 1.5rem;
+        }
+
+        .highlight-badge {
+            background: rgba(255, 255, 255, 0.2);
+            padding: 0.6rem 1.2rem;
+            border-radius: 30px;
+            font-weight: 600;
+            border: 1px solid rgba(255, 255, 255, 0.4);
+            letter-spacing: 1px;
+        }
+    }
+}
+
+// Feature Cards (Grid of small features)
+.feature-card {
+    @include glass-effect;
+    background: white;
+    padding: 2rem 1.5rem;
+    border-radius: $border-radius-md;
+    text-align: center;
+    height: 100%;
+    @include hover-lift;
+    border: 1px solid rgba($brand-primary, 0.1);
+
+    i {
+        font-size: 2.5rem;
+        margin-bottom: 1rem;
+        display: inline-block;
+        background: linear-gradient(180deg, $brand-secondary, $brand-primary);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+    }
+
+    .feature-title {
+        font-weight: 800;
+        font-size: 1.2rem;
+        color: #2c3e50;
+        margin-bottom: 0.25rem;
+    }
+
+    .feature-subtitle {
+        color: #7f8c8d;
+        font-size: 0.9rem;
+    }
+}
+
+// =========================================
+// 7. Product Description & Specs
+// =========================================
+
+.product-details {
+    .product-description {
+        @include glass-effect;
+        padding: 2.5rem;
+        border-radius: $border-radius-lg;
+        margin-bottom: 2.5rem;
+        background: white;
+
+        .brand-highlight {
+            color: $brand-primary;
+            font-weight: 800;
+        }
+
+        .description-text {
+            font-size: 1.05rem;
+            line-height: 1.8;
+            color: #4a4a4a;
+            margin-bottom: 1.5rem;
+
+            &:last-child {
+                margin-bottom: 0;
+            }
+        }
+    }
+}
+
+// Specifications Table
+.specifications-card {
+    background: white;
+    border-radius: $border-radius-lg;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+
+    .specifications-table {
+        margin: 0;
+        width: 100%;
+
+        tr {
+            transition: background-color 0.2s;
+
+            &:hover {
+                background-color: rgba($brand-primary, 0.03) !important;
+            }
+        }
+
+        th {
+            background-color: #f8f9fa;
+            color: #2c3e50;
+            font-weight: 700;
+            padding: 1.2rem;
+            text-transform: uppercase;
+            font-size: 0.85rem;
+            letter-spacing: 0.5px;
+            border-bottom: 1px solid #eee;
+            width: 25%;
+        }
+
+        td {
+            padding: 1.2rem;
+            color: #555;
+            font-weight: 500;
+            border-bottom: 1px solid #eee;
+        }
+
+        // Remove borders from last row
+        tr:last-child {
+
+            th,
+            td {
+                border-bottom: none;
+            }
+        }
+    }
+}
+
+// Benefits Card
+.benefits-card {
+    margin-top: 2rem;
+    background: linear-gradient(135deg, #fff 0%, #f4f6f9 100%);
+    border-radius: $border-radius-lg;
+    padding: 2.5rem;
+    border-left: 5px solid $brand-secondary;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.06);
+
+    .benefits-title {
+        color: #2c3e50;
+        font-size: 1.4rem;
+        font-weight: 700;
+        margin-bottom: 1.5rem;
+        display: flex;
+        align-items: center;
+
+        i {
+            color: $brand-secondary;
+            margin-right: 0.8rem;
+            font-size: 1.5rem;
+        }
+    }
+
+    .benefits-list {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 1rem;
+
+        li {
+            display: flex;
+            align-items: center;
+            font-weight: 500;
+            color: #555;
+            padding: 0.5rem 0;
+
+            .benefit-dot {
+                width: 10px;
+                height: 10px;
+                background-color: $brand-secondary;
+                border-radius: 50%;
+                margin-right: 1rem;
+                box-shadow: 0 0 10px rgba($brand-secondary, 0.5);
+            }
+        }
+    }
+}
+
+// =========================================
+// 8. Animations
+// =========================================
+
+@keyframes float {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+@keyframes float-image {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-15px);
+    }
+}
+
+@keyframes rotate-shine {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+// Helper classes for staggered animations
+.hero-section,
+.product-info-section,
+.footer-section {
+    animation: fadeInUp 0.8s ease-out forwards;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}

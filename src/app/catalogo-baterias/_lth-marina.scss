@@ -1,0 +1,157 @@
+/* LTH Marina Theme - Deep Blue & High Performance */
+.lth-marina-theme {
+    --marina-blue-deep: #01579b;
+    --marina-blue-mid: #0288d1;
+    --marina-blue-light: #4fc3f7;
+    --marina-sand: #e1f5fe;
+    --text-dark: #263238;
+
+    font-family: 'Segoe UI', system-ui, sans-serif;
+    color: var(--text-dark);
+    background: #f0f8ff;
+    /* AliceBlue */
+
+    /* Hero & Titles */
+    h1 {
+        color: var(--marina-blue-deep);
+        text-transform: uppercase;
+        letter-spacing: -1px;
+    }
+
+    .display-6 {
+        color: var(--marina-blue-mid);
+        font-weight: 800;
+    }
+
+    /* Badges */
+    .badge-premium {
+        background: linear-gradient(135deg, var(--marina-blue-mid), var(--marina-blue-deep));
+        color: white;
+        padding: 8px 16px;
+        border-radius: 50px;
+        font-weight: 700;
+        letter-spacing: 1px;
+        font-size: 0.9rem;
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        box-shadow: 0 4px 15px rgba(1, 87, 155, 0.3);
+    }
+
+    /* Buttons */
+    .btn-danger {
+        /* Overriding danger for a "Marine Action" color, maybe orange or keep red? 
+           User HTML had btn-danger. Let's keep it but style it nicely. 
+           Or change it to a marine action color. Let's stick to a vibrant accent. */
+        background: linear-gradient(135deg, #d84315, #bf360c);
+        border: none;
+        border-radius: 12px;
+        transition: all 0.3s ease;
+
+        &:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(191, 54, 12, 0.4) !important;
+        }
+    }
+
+    .btn-outline-primary {
+        color: var(--marina-blue-mid);
+        border-color: var(--marina-blue-mid);
+        border-radius: 10px;
+
+        &:hover {
+            background: var(--marina-blue-mid);
+            color: white;
+        }
+    }
+
+    /* Cards */
+    .card {
+        border: none;
+        border-radius: 20px;
+        transition: transform 0.3s;
+
+        &.shadow {
+            box-shadow: 0 10px 30px rgba(1, 87, 155, 0.08) !important;
+        }
+    }
+
+    /* Carousel */
+    .carousel-item {
+        padding: 20px;
+
+        img {
+            max-height: 400px;
+            object-fit: contain;
+            filter: drop-shadow(0 15px 30px rgba(0, 0, 0, 0.15));
+            transition: transform 0.4s ease;
+
+            &:hover {
+                transform: scale(1.02);
+            }
+        }
+    }
+
+    .carousel-control-prev-icon,
+    .carousel-control-next-icon {
+        background-color: var(--marina-blue-mid);
+        border-radius: 50%;
+        background-size: 50%;
+        width: 3rem;
+        height: 3rem;
+    }
+
+    /* Features */
+    .feature-icon {
+        width: 65px;
+        height: 65px;
+        background: var(--marina-sand);
+        color: var(--marina-blue-deep);
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 0 auto 15px;
+        font-size: 1.8rem;
+        transition: all 0.3s;
+
+        &:hover {
+            background: var(--marina-blue-mid);
+            color: white;
+            transform: rotateY(180deg);
+        }
+    }
+
+    /* Description */
+    .text-primary {
+        color: var(--marina-blue-deep) !important;
+    }
+
+    /* Specs Table */
+    .especificaciones-card {
+        position: relative;
+        overflow: hidden;
+
+        &::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 5px;
+            background: linear-gradient(90deg, var(--marina-blue-light), var(--marina-blue-deep));
+        }
+
+        .table {
+            th {
+                color: var(--marina-blue-deep);
+            }
+
+            tr:hover td {
+                background-color: var(--marina-sand);
+                color: var(--marina-blue-deep);
+                font-weight: 600;
+            }
+        }
+    }
+}

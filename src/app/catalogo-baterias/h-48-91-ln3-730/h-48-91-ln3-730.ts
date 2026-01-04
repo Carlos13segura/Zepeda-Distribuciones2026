@@ -1,0 +1,37 @@
+import { Component, inject } from '@angular/core';
+import { CommonModule } from '@angular/common';
+import { Router } from '@angular/router';
+import { CartService } from '../../services/cart.service';
+
+@Component({
+    selector: 'app-h-48-91-ln3-730',
+    standalone: true,
+    imports: [CommonModule],
+    templateUrl: './h-48-91-ln3-730.html',
+    styleUrls: ['./h-48-91-ln3-730.scss']
+})
+export class H4891Ln3730Component {
+    private cartService = inject(CartService);
+    private router = inject(Router);
+
+    addToCart() {
+        this.cartService.confirmAndAdd();
+    }
+
+    //funcion para llamar
+    callPhone() {
+        window.location.href = "tel:8008358400"
+    }
+
+    //funcion para localización
+    handleLocation() {
+        this.router.navigate(['/centros-servicio-resultados']);
+        console.log("Location request initiated")
+    }
+
+    //funcion para ordenar
+    handleOrder() {
+        this.router.navigate(['/lth-domicilio']);
+        console.log("Order request initiated")
+    }
+}

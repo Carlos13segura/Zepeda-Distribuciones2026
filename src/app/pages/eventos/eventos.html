@@ -1,0 +1,62 @@
+<div class="eventos-container">
+    <header class="eventos-header">
+        <h1>Calendario de Eventos</h1>
+        <p>Consulta nuestros próximos eventos y capacitaciones.</p>
+    </header>
+
+    <div class="calendar-layout">
+        <div class="calendar-wrapper">
+            <calendar-date (change)="onDateChange($event)" locale="es-MX" class="custom-calendar">
+                <!-- Header with Navigation -->
+                <div class="calendar-header" slot="header">
+                    <button type="button" class="nav-btn" aria-label="Anterior">
+                        <calendar-prev></calendar-prev>
+                        <i class="bi bi-chevron-left"></i>
+                    </button>
+
+                    <span class="month-label"></span>
+
+                    <button type="button" class="nav-btn" aria-label="Siguiente">
+                        <calendar-next></calendar-next>
+                        <i class="bi bi-chevron-right"></i>
+                    </button>
+                </div>
+
+                <!-- The Month Grid -->
+                <calendar-month></calendar-month>
+            </calendar-date>
+        </div>
+    </div>
+
+    <!-- Modal Overlay -->
+    <div class="modal-overlay" *ngIf="isModalOpen" (click)="closeModal()">
+        <div class="modal-content" (click)="$event.stopPropagation()">
+            <button class="close-btn" (click)="closeModal()">×</button>
+
+            <div class="modal-body">
+                <div *ngIf="selectedEvents.length > 0; else noEvents">
+                    <div *ngFor="let evento of selectedEvents" class="event-detail">
+                        <img *ngIf="evento.image" [src]="evento.image" alt="{{ evento.title }}" class="event-image">
+                        <h2>{{ evento.title }}</h2>
+                        <p class="event-date">
+                            <span class="icon">📅</span> {{ selectedDate | date:'longDate':'':'es-MX' }}
+                        </p>
+                        <p class="event-location" *ngIf="evento.location">
+                            <span class="icon">📍</span> {{ evento.location }}
+                        </p>
+                        <p class="event-description">{{ evento.description }}</p>
+                    </div>
+                </div>
+
+                <ng-template #noEvents>
+                    <div class="no-events-modal">
+                        <span class="icon-large">📅</span>
+                        <h3>No hay eventos</h3>
+                        <p>No hay evento por el momento.</p>
+                        <p class="date-context">{{ selectedDate | date:'longDate':'':'es-MX' }}</p>
+                    </div>
+                </ng-template>
+            </div>
+        </div>
+    </div>
+</div>

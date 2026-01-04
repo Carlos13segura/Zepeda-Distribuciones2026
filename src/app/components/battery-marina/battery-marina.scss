@@ -1,0 +1,837 @@
+/* LTH MARINA Premium Styles - Redesign */
+.lth-marina-content {
+    /* Premium Marine Palette */
+    --marina-depths: #001f3f;
+    --marina-ocean: #003366;
+    --marina-surface: #0074D9;
+    --marina-aqua: #7FDBFF;
+    --marina-accent: #39CCCC;
+    --marina-foam: #F0F8FF;
+    --marina-sand: #E3D2B4;
+    --marina-gold: #D4AF37;
+    --marina-gold-light: #F4C430;
+    --marina-platinum: #E5E4E2;
+    --marina-shadow-depth: 0 15px 40px rgba(0, 31, 63, 0.4);
+    --marina-glass: rgba(255, 255, 255, 0.1);
+    --marina-glass-border: rgba(255, 255, 255, 0.2);
+
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    color: var(--marina-depths);
+    overflow-x: hidden;
+    background-color: #f8fcfd;
+
+    i {
+        display: inline-block;
+        vertical-align: middle;
+    }
+
+    /* Enhanced Hero Section */
+    .marina-hero-enhanced {
+        min-height: 100vh;
+        background: radial-gradient(circle at top right, var(--marina-ocean), var(--marina-depths));
+        position: relative;
+        overflow: hidden;
+        display: flex;
+        align-items: center;
+        padding-top: 80px;
+        color: white;
+
+        /* Ambient Ocean overlay */
+        &::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background:
+                linear-gradient(45deg, transparent 40%, rgba(127, 219, 255, 0.05) 100%),
+                radial-gradient(circle at 20% 80%, rgba(0, 116, 217, 0.2), transparent 50%);
+            z-index: 1;
+            pointer-events: none;
+        }
+
+        .ocean-environment {
+            position: absolute;
+            inset: 0;
+            z-index: 0;
+
+            .ocean-surface {
+                position: absolute;
+                bottom: 0;
+                left: 0;
+                width: 100%;
+                height: 30%;
+                background: linear-gradient(to top, rgba(127, 219, 255, 0.1), transparent);
+                opacity: 0.6;
+            }
+
+            /* Floating Particles mimicking plankton/bubbles */
+            .maritime-elements {
+                position: absolute;
+                inset: 0;
+
+                .floating-element {
+                    position: absolute;
+                    color: rgba(255, 255, 255, 0.1);
+                    font-size: 3rem;
+                    animation: floatBubble 10s ease-in-out infinite;
+                    filter: blur(1px);
+
+                    &.lighthouse {
+                        top: 15%;
+                        right: 10%;
+                        animation-duration: 14s;
+                        font-size: 4rem;
+                        opacity: 0.15;
+                    }
+
+                    &.compass-float {
+                        top: 60%;
+                        left: 8%;
+                        animation-duration: 18s;
+                        animation-delay: 2s;
+                        font-size: 8rem;
+                        opacity: 0.05;
+                        transform: rotate(-15deg);
+                    }
+
+                    &.anchor {
+                        bottom: 10%;
+                        right: 20%;
+                        animation-duration: 12s;
+                        animation-delay: 1s;
+                        font-size: 5rem;
+                        opacity: 0.08;
+                    }
+
+                    &.ship-wheel {
+                        top: 20%;
+                        left: 20%;
+                        animation-duration: 20s;
+                        font-size: 6rem;
+                        opacity: 0.06;
+                        animation-name: floatRotate;
+                    }
+                }
+            }
+        }
+
+        .container-fluid {
+            position: relative;
+            z-index: 2;
+        }
+
+        .hero-content-enhanced {
+            padding: 2rem;
+
+            .marina-premium-badge {
+                display: inline-flex;
+                align-items: center;
+                gap: 0.8rem;
+                padding: 0.6rem 1.2rem;
+                background: rgba(0, 31, 63, 0.6);
+                border: 1px solid var(--marina-gold);
+                border-radius: 50px;
+                backdrop-filter: blur(10px);
+                margin-bottom: 1.5rem;
+                box-shadow: 0 0 20px rgba(212, 175, 55, 0.2);
+
+                .badge-icon {
+                    color: var(--marina-gold);
+                    font-size: 1.1rem;
+                }
+
+                .badge-text {
+                    font-size: 0.75rem;
+                    letter-spacing: 2px;
+                    text-transform: uppercase;
+                    color: var(--marina-gold);
+                    font-weight: 600;
+                }
+
+                .badge-glow,
+                .badge-waves {
+                    display: none;
+                }
+
+                /* Simplified for cleaner look */
+            }
+
+            .marina-title-enhanced {
+                font-size: clamp(3rem, 5vw, 4.5rem);
+                line-height: 1.1;
+                font-weight: 800;
+                margin-bottom: 1.5rem;
+                text-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+
+                .title-brand {
+                    display: block;
+                    font-size: 0.4em;
+                    letter-spacing: 4px;
+                    color: var(--marina-aqua);
+                    margin-bottom: 0.5rem;
+                }
+
+                .title-main {
+                    display: block;
+                    background: linear-gradient(to bottom, #fff, var(--marina-platinum));
+                    -webkit-background-clip: text;
+                    -webkit-text-fill-color: transparent;
+                }
+
+                .title-sub {
+                    display: block;
+                    font-size: 0.3em;
+                    font-weight: 300;
+                    letter-spacing: 6px;
+                    color: var(--marina-aqua);
+                    margin-top: 0.5rem;
+                    opacity: 0.9;
+                }
+
+                .title-decoration {
+                    display: flex;
+                    align-items: center;
+                    gap: 1rem;
+                    margin-top: 1rem;
+                    opacity: 0.6;
+
+                    .decoration-line {
+                        height: 1px;
+                        width: 50px;
+                        background: var(--marina-aqua);
+                    }
+
+                    .decoration-icon {
+                        color: var(--marina-aqua);
+                        font-size: 1.2rem;
+                    }
+                }
+            }
+
+            .hero-description-enhanced {
+                font-size: 1.1rem;
+                line-height: 1.7;
+                color: rgba(255, 255, 255, 0.85);
+                margin-bottom: 2.5rem;
+                max-width: 550px;
+                border-left: 3px solid var(--marina-gold);
+                padding-left: 1.5rem;
+
+                strong {
+                    color: white;
+                }
+
+                .highlight-text {
+                    color: var(--marina-aqua);
+                }
+            }
+
+            .marine-stats-grid {
+                display: grid;
+                grid-template-columns: repeat(3, 1fr);
+                gap: 1.5rem;
+                margin-bottom: 3rem;
+
+                .stat-card-enhanced {
+                    background: var(--marina-glass);
+                    border: 1px solid var(--marina-glass-border);
+                    padding: 1rem;
+                    border-radius: 12px;
+                    text-align: center;
+                    transition: transform 0.3s ease;
+
+                    &:hover {
+                        transform: translateY(-5px);
+                        background: rgba(255, 255, 255, 0.15);
+                    }
+
+                    .stat-icon-container {
+                        margin-bottom: 0.5rem;
+
+                        .stat-icon {
+                            font-size: 1.8rem;
+                            color: var(--marina-aqua);
+                        }
+
+                        .stat-ripple {
+                            display: none;
+                        }
+                    }
+
+                    .stat-number {
+                        display: block;
+                        font-family: 'Oswald', sans-serif;
+                        /* Example font */
+                        font-size: 1.5rem;
+                        font-weight: 700;
+                        color: white;
+                    }
+
+                    .stat-label {
+                        font-size: 0.7rem;
+                        text-transform: uppercase;
+                        letter-spacing: 1px;
+                        opacity: 0.7;
+                    }
+                }
+            }
+
+            .marina-features-enhanced {
+                display: none;
+                /* Hide features in hero to declutter, focus on CTA */
+            }
+
+            .hero-actions {
+                display: flex;
+                gap: 1rem;
+
+                .btn-marina-cta {
+                    padding: 1rem 2rem;
+                    border-radius: 5px;
+                    font-weight: 600;
+                    text-transform: uppercase;
+                    font-size: 0.9rem;
+                    letter-spacing: 1px;
+                    border: none;
+                    cursor: pointer;
+                    display: flex;
+                    align-items: center;
+                    gap: 0.5rem;
+                    transition: all 0.3s ease;
+
+                    &.primary {
+                        background: linear-gradient(135deg, var(--marina-gold), var(--marina-gold-light));
+                        color: var(--marina-depths);
+                        box-shadow: 0 4px 15px rgba(212, 175, 55, 0.3);
+
+                        &:hover {
+                            transform: translateY(-2px);
+                            box-shadow: 0 6px 20px rgba(212, 175, 55, 0.4);
+                        }
+                    }
+
+                    &.secondary {
+                        background: transparent;
+                        border: 1px solid rgba(255, 255, 255, 0.3);
+                        color: white;
+
+                        &:hover {
+                            background: rgba(255, 255, 255, 0.1);
+                            border-color: white;
+                        }
+                    }
+                }
+            }
+        }
+
+        .hero-visual-enhanced {
+            position: relative;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            .compass-system {
+                position: absolute;
+                width: 600px;
+                height: 600px;
+                opacity: 0.2;
+                /* Subtler */
+
+                .compass-outer-ring,
+                .compass-middle-ring,
+                .compass-inner-ring {
+                    border: 1px solid var(--marina-aqua);
+                    border-radius: 50%;
+                    position: absolute;
+                    top: 50%;
+                    left: 50%;
+                    transform: translate(-50%, -50%);
+                }
+
+                .compass-outer-ring {
+                    width: 100%;
+                    height: 100%;
+                    animation: spin 60s linear infinite;
+                }
+
+                .compass-middle-ring {
+                    width: 70%;
+                    height: 70%;
+                    border-style: dashed;
+                    animation: spin-rev 40s linear infinite;
+                }
+
+                .compass-inner-ring {
+                    width: 40%;
+                    height: 40%;
+                    border-color: var(--marina-gold);
+                    opacity: 0.5;
+                }
+
+                .compass-markers {
+                    .marker {
+                        display: none;
+                    }
+                }
+
+                .compass-center {
+                    display: none;
+                }
+            }
+
+            .battery-showcase-enhanced {
+                position: relative;
+                z-index: 5;
+
+                .battery-container {
+                    position: relative;
+
+                    .marina-battery-hero {
+                        max-width: 100%;
+                        height: auto;
+                        width: 450px;
+                        filter: drop-shadow(0 20px 40px rgba(0, 0, 0, 0.5));
+                        animation: floatBattery 6s ease-in-out infinite;
+                        transform-origin: center center;
+                    }
+
+                    .power-indicators {
+                        position: absolute;
+                        top: 50%;
+                        left: 50%;
+                        transform: translate(-50%, -50%);
+                        z-index: -1;
+
+                        .power-ring {
+                            position: absolute;
+                            top: 50%;
+                            left: 50%;
+                            transform: translate(-50%, -50%);
+                            border: 1px solid var(--marina-aqua);
+                            border-radius: 50%;
+                            opacity: 0;
+                            animation: pulseRing 3s ease-out infinite;
+
+                            &.ring-1 {
+                                width: 300px;
+                                height: 300px;
+                                animation-delay: 0s;
+                            }
+
+                            &.ring-2 {
+                                width: 400px;
+                                height: 400px;
+                                animation-delay: 1s;
+                            }
+
+                            &.ring-3 {
+                                width: 500px;
+                                height: 500px;
+                                animation-delay: 2s;
+                            }
+                        }
+                    }
+                }
+
+                .showcase-platform {
+                    position: absolute;
+                    bottom: -30px;
+                    left: 50%;
+                    transform: translateX(-50%);
+                    width: 300px;
+                    height: 20px;
+                    background: radial-gradient(ellipse at center, rgba(0, 116, 217, 0.4), transparent 70%);
+                    filter: blur(10px);
+                }
+            }
+        }
+
+        .scroll-indicator {
+            position: absolute;
+            bottom: 30px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            opacity: 0.7;
+            animation: bounce 2s infinite;
+
+            .scroll-text {
+                font-size: 0.7rem;
+                letter-spacing: 2px;
+                text-transform: uppercase;
+                margin-bottom: 0.5rem;
+            }
+
+            .scroll-arrow {
+                font-size: 1.2rem;
+                color: var(--marina-aqua);
+            }
+
+            .scroll-line {
+                display: none;
+            }
+        }
+    }
+
+    /* Products Section Enhanced */
+    .marina-products-enhanced {
+        padding: 5rem 0;
+        background: radial-gradient(circle at center, #fff, #f0f4f8);
+
+        .product-card-enhanced {
+            background: white;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            position: relative;
+            border: 1px solid rgba(0, 0, 0, 0.05);
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+
+            &:hover {
+                transform: translateY(-10px);
+                box-shadow: 0 20px 40px rgba(0, 31, 63, 0.15);
+                border-color: var(--marina-aqua);
+
+                .product-image {
+                    transform: scale(1.08) translateY(-5px);
+                }
+            }
+
+            &.premium-card {
+                border: 1px solid rgba(212, 175, 55, 0.3);
+
+                .card-header-enhanced {
+                    background: linear-gradient(to right, #fcfbf6, #fff);
+
+                    .card-status .status-dot.premium {
+                        background: var(--marina-gold);
+                        box-shadow: 0 0 10px var(--marina-gold);
+                    }
+                }
+            }
+
+            .card-header-enhanced {
+                padding: 1.5rem;
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                border-bottom: 1px solid rgba(0, 0, 0, 0.03);
+
+                .card-category {
+                    display: flex;
+                    align-items: center;
+                    gap: 0.8rem;
+
+                    .category-icon {
+                        color: var(--marina-ocean);
+                        font-size: 1.2rem;
+                    }
+
+                    .category-text {
+                        font-size: 0.8rem;
+                        font-weight: 700;
+                        text-transform: uppercase;
+                        letter-spacing: 1px;
+                        color: var(--marina-ocean);
+                    }
+                }
+
+                .card-status {
+                    display: flex;
+                    align-items: center;
+                    gap: 0.5rem;
+
+                    .status-dot {
+                        width: 8px;
+                        height: 8px;
+                        border-radius: 50%;
+                        background: #2ECC40;
+                    }
+
+                    .status-text {
+                        font-size: 0.7rem;
+                        font-weight: 600;
+                        color: #aaa;
+                        text-transform: uppercase;
+                    }
+                }
+            }
+
+            .product-showcase {
+                padding: 3rem 2rem;
+                background: linear-gradient(to bottom, #f8fcfd, white);
+                position: relative;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                min-height: 250px;
+
+                .showcase-background {
+                    position: absolute;
+                    inset: 0;
+                    overflow: hidden;
+                    opacity: 0.3;
+                    /* Abstract simple waves */
+                    background-image: repeating-linear-gradient(45deg, transparent, transparent 10px, rgba(127, 219, 255, 0.1) 10px, rgba(127, 219, 255, 0.1) 20px);
+                }
+
+                .product-image-container {
+                    position: relative;
+                    z-index: 10;
+                    width: 100%;
+                    text-align: center;
+
+                    .product-image {
+                        max-width: 80%;
+                        height: auto;
+                        filter: drop-shadow(0 15px 25px rgba(0, 0, 0, 0.15));
+                        transition: transform 0.4s ease;
+                    }
+
+                    .product-badge {
+                        position: absolute;
+                        top: -20px;
+                        right: 0;
+                        background: var(--marina-surface);
+                        color: white;
+                        padding: 0.4rem 0.8rem;
+                        border-radius: 30px;
+                        font-size: 0.7rem;
+                        font-weight: 700;
+                        text-transform: uppercase;
+                        display: flex;
+                        gap: 0.4rem;
+                        align-items: center;
+                        box-shadow: 0 5px 15px rgba(0, 116, 217, 0.3);
+
+                        &.premium {
+                            background: var(--marina-gold);
+                            color: var(--marina-depths);
+                        }
+                    }
+                }
+            }
+
+            .product-info-enhanced {
+                padding: 2rem;
+                flex-grow: 1;
+                display: flex;
+                flex-direction: column;
+
+                .product-name {
+                    font-size: 1.8rem;
+                    font-weight: 800;
+                    margin-bottom: 0.5rem;
+                    color: var(--marina-depths);
+                    letter-spacing: -0.5px;
+                }
+
+                .product-description {
+                    font-size: 0.9rem;
+                    color: #666;
+                    margin-bottom: 1.5rem;
+                    line-height: 1.6;
+                    flex-grow: 1;
+                    /* Pushes specs down */
+                }
+
+                .specs-compact {
+                    background: #f8f9fa;
+                    border-radius: 12px;
+                    padding: 1rem;
+                    display: grid;
+                    gap: 1rem;
+                    margin-bottom: 1.5rem;
+
+                    .spec-item {
+                        display: flex;
+                        gap: 1rem;
+                        align-items: flex-start;
+
+                        .spec-icon {
+                            color: var(--marina-surface);
+                            font-size: 1.2rem;
+                            padding: 0.5rem;
+                            background: rgba(0, 116, 217, 0.1);
+                            border-radius: 8px;
+                        }
+
+                        .spec-details {
+                            .spec-text {
+                                display: block;
+                                font-weight: 700;
+                                color: var(--marina-depths);
+                                font-size: 0.9rem;
+                            }
+
+                            .spec-description {
+                                display: block;
+                                font-size: 0.75rem;
+                                color: #888;
+                                margin-top: 0.2rem;
+                            }
+                        }
+
+                        &.price {
+                            margin-top: 0.5rem;
+                            padding-top: 1rem;
+                            border-top: 1px dashed rgba(0, 0, 0, 0.1);
+
+                            .spec-icon {
+                                color: #2ECC40;
+                                background: rgba(46, 204, 64, 0.1);
+                            }
+
+                            .price-details {
+                                .spec-price {
+                                    font-size: 1.3rem;
+                                    font-weight: 800;
+                                    color: var(--marina-depths);
+                                }
+
+                                .price-note {
+                                    display: block;
+                                    font-size: 0.7rem;
+                                    color: #999;
+                                }
+                            }
+                        }
+                    }
+                }
+
+                .product-actions {
+                    .btn-product {
+                        width: 100%;
+                        padding: 1rem;
+                        border: none;
+                        background: var(--marina-depths);
+                        color: white;
+                        font-weight: 700;
+                        border-radius: 10px;
+                        text-transform: uppercase;
+                        letter-spacing: 1px;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        gap: 0.8rem;
+                        cursor: pointer;
+                        transition: background 0.3s ease;
+
+                        &:hover {
+                            background: var(--marina-ocean);
+                        }
+
+                        i {
+                            font-size: 1.2rem;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+/* Animations */
+@keyframes oceanWave {
+    0% {
+        transform: translateX(0) translateZ(0) scaleY(1);
+    }
+
+    50% {
+        transform: translateX(-25%) translateZ(0) scaleY(0.85);
+    }
+
+    100% {
+        transform: translateX(-50%) translateZ(0) scaleY(1);
+    }
+}
+
+@keyframes floatBubble {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-20px);
+    }
+}
+
+@keyframes floatRotate {
+    0% {
+        transform: translateY(0) rotate(0deg);
+    }
+
+    50% {
+        transform: translateY(-15px) rotate(180deg);
+    }
+
+    100% {
+        transform: translateY(0) rotate(360deg);
+    }
+}
+
+@keyframes spin {
+    100% {
+        transform: translate(-50%, -50%) rotate(360deg);
+    }
+}
+
+@keyframes spin-rev {
+    100% {
+        transform: translate(-50%, -50%) rotate(-360deg);
+    }
+}
+
+@keyframes floatBattery {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-15px);
+    }
+}
+
+@keyframes pulseRing {
+    0% {
+        transform: translate(-50%, -50%) scale(0.8);
+        opacity: 0;
+    }
+
+    50% {
+        opacity: 0.5;
+    }
+
+    100% {
+        transform: translate(-50%, -50%) scale(1.2);
+        opacity: 0;
+    }
+}
+
+@keyframes bounce {
+
+    0%,
+    20%,
+    50%,
+    80%,
+    100% {
+        transform: translateX(-50%) translateY(0);
+    }
+
+    40% {
+        transform: translateX(-50%) translateY(-10px);
+    }
+
+    60% {
+        transform: translateX(-50%) translateY(-5px);
+    }
+}

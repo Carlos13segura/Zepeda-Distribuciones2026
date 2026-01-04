@@ -1,0 +1,502 @@
+/* ===== CSS ESPECÍFICO PARA PRODUCTO LTH TAXI - PALETA NARANJA/DORADO (MEJORADO) ===== */
+
+/* Variables CSS específicas con paleta Taxi */
+.producto-detalle {
+    /* Taxi Color Palette - Refined for Depth */
+    --taxi-primary: #ff6b35;
+    --taxi-secondary: #f7931e;
+    --taxi-accent: #ffd700;
+    --taxi-dark: #c0392b;
+    /* Slightly darker for better contrast */
+    --taxi-light: #fcd535;
+
+    /* Richer Gradients */
+    --taxi-gradient: linear-gradient(135deg, #ff6b35 0%, #f7931e 45%, #ffd700 100%);
+    --taxi-gradient-hover: linear-gradient(135deg, #ff854c 0%, #f9a33f 45%, #ffe033 100%);
+    --taxi-gradient-reverse: linear-gradient(135deg, #ffd700 0%, #f7931e 55%, #ff6b35 100%);
+    --taxi-gradient-dark: linear-gradient(135deg, #c0392b 0%, #ff6b35 100%);
+    --taxi-gradient-light: linear-gradient(135deg, #ffeaa7 0%, #ffd700 100%);
+
+    --taxi-glow: rgba(255, 107, 53, 0.4);
+    --taxi-shadow: rgba(255, 107, 53, 0.25);
+
+    /* Colores complementarios */
+    --taxi-white: #ffffff;
+    --taxi-off-white: #fcfcfc;
+    --taxi-black: #111111;
+    --taxi-gray: #636e72;
+    --taxi-light-bg: #fffbf5;
+    /* Slightly warmer */
+    --taxi-border: #ffdec0;
+
+    /* Efectos y sombras (Layered for Realism) */
+    --taxi-shadow-light: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
+    --taxi-shadow-medium: 0 10px 15px -3px rgba(255, 107, 53, 0.15), 0 4px 6px -2px rgba(255, 107, 53, 0.1);
+    --taxi-shadow-heavy: 0 20px 25px -5px rgba(255, 107, 53, 0.2), 0 10px 10px -5px rgba(255, 107, 53, 0.1);
+    --taxi-glow-effect: 0 0 25px var(--taxi-glow);
+
+    /* Configuraciones */
+    --taxi-border-radius: 20px;
+    /* Slightly rounder */
+    --taxi-border-radius-pill: 100px;
+    --taxi-transition: all 0.35s cubic-bezier(0.34, 1.56, 0.64, 1);
+    /* Bouncy "pop" feel */
+    --taxi-transition-smooth: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* ===== CONTENEDOR PRINCIPAL ===== */
+.producto-detalle {
+    font-family: 'Montserrat', 'Inter', system-ui, -apple-system, sans-serif;
+    background: linear-gradient(135deg, var(--taxi-light-bg) 0%, var(--taxi-white) 100%);
+    color: var(--taxi-black);
+    position: relative;
+    isolation: isolate;
+    padding: 4rem 1.5rem;
+    overflow: hidden;
+}
+
+/* Background Atmosphere */
+.producto-detalle::before {
+    content: '';
+    position: absolute;
+    top: -20%;
+    left: -10%;
+    width: 140%;
+    height: 140%;
+    background:
+        radial-gradient(circle at 15% 85%, rgba(255, 107, 53, 0.08) 0%, transparent 40%),
+        radial-gradient(circle at 85% 15%, rgba(255, 215, 0, 0.08) 0%, transparent 40%);
+    pointer-events: none;
+    z-index: -1;
+    filter: blur(40px);
+}
+
+/* ===== BADGE PREMIUM TAXI ===== */
+.producto-detalle .badge-premium {
+    background: var(--taxi-gradient);
+    color: var(--taxi-white);
+    padding: 0.8em 1.8em;
+    font-size: 0.9rem;
+    border-radius: var(--taxi-border-radius-pill);
+    display: inline-flex;
+    align-items: center;
+    gap: 0.6rem;
+    font-weight: 800;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    border: 2px solid rgba(255, 255, 255, 0.4);
+    box-shadow: var(--taxi-shadow-medium);
+    position: relative;
+    overflow: hidden;
+    transition: var(--taxi-transition);
+    margin-bottom: 2.5rem;
+    will-change: transform, box-shadow;
+}
+
+/* Shine Effect */
+.producto-detalle .badge-premium::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -150%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.6), transparent);
+    transform: skewX(-20deg);
+    transition: left 0.7s ease;
+}
+
+.producto-detalle .badge-premium:hover {
+    transform: translateY(-4px) scale(1.02);
+    box-shadow: var(--taxi-shadow-heavy), var(--taxi-glow-effect);
+    border-color: var(--taxi-white);
+}
+
+.producto-detalle .badge-premium:hover::before {
+    left: 150%;
+}
+
+.producto-detalle .badge-premium .iconify {
+    font-size: 1.4rem;
+    color: #fff;
+    filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.2));
+    animation: taxiCrownPulse 3s infinite ease-in-out;
+}
+
+@keyframes taxiCrownPulse {
+
+    0%,
+    100% {
+        transform: scale(1);
+        filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.2));
+    }
+
+    50% {
+        transform: scale(1.15);
+        filter: drop-shadow(0 0 10px rgba(255, 215, 0, 0.8));
+    }
+}
+
+/* ===== TÍTULO Y PRECIO ===== */
+.producto-detalle h1.fw-bold {
+    font-size: 4rem;
+    font-weight: 900;
+    letter-spacing: -1px;
+    background: var(--taxi-gradient);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    margin-bottom: 1rem;
+    filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.1));
+}
+
+.producto-detalle .display-6 {
+    font-size: 3.5rem;
+    font-weight: 900;
+    color: var(--taxi-primary);
+    margin-bottom: 2rem;
+    display: inline-block;
+}
+
+.producto-detalle .display-6::first-letter {
+    font-size: 0.6em;
+    vertical-align: top;
+    opacity: 0.8;
+}
+
+/* ===== BOTÓN PRINCIPAL COMPRAR ===== */
+.producto-detalle .btn.btn-danger {
+    background: var(--taxi-gradient);
+    border: none;
+    border-radius: var(--taxi-border-radius-pill);
+    color: var(--taxi-white);
+    font-weight: 800;
+    font-size: 1.25rem;
+    padding: 1.2rem 3.5rem;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    position: relative;
+    overflow: hidden;
+    transition: var(--taxi-transition);
+    box-shadow: 0 10px 20px -5px rgba(255, 107, 53, 0.4);
+    z-index: 1;
+}
+
+.producto-detalle .btn.btn-danger::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: var(--taxi-gradient-hover);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    z-index: -1;
+}
+
+.producto-detalle .btn.btn-danger:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 20px 30px -8px rgba(255, 107, 53, 0.6);
+}
+
+.producto-detalle .btn.btn-danger:hover::before {
+    opacity: 1;
+}
+
+.producto-detalle .btn.btn-danger:active {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 10px rgba(255, 107, 53, 0.3);
+}
+
+/* ===== BOTONES SECUNDARIOS ===== */
+.producto-detalle .btn.btn-outline-primary {
+    border: 2px solid var(--taxi-primary) !important;
+    color: var(--taxi-primary) !important;
+    background: transparent;
+    border-radius: var(--taxi-border-radius-pill);
+    font-weight: 700;
+    transition: var(--taxi-transition);
+    position: relative;
+    overflow: hidden;
+    box-shadow: none;
+}
+
+.producto-detalle .btn.btn-outline-primary::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: var(--taxi-gradient);
+    transition: left 0.4s ease;
+    z-index: -1;
+}
+
+.producto-detalle .btn.btn-outline-primary:hover {
+    color: var(--taxi-white) !important;
+    border-color: var(--taxi-secondary) !important;
+    transform: translateY(-3px);
+    box-shadow: var(--taxi-shadow-light), var(--taxi-glow-effect);
+}
+
+.producto-detalle .btn.btn-outline-primary:hover::before {
+    left: 0;
+}
+
+/* ===== CARDS CON TEMA TAXI ===== */
+.producto-detalle .card {
+    background: var(--taxi-white);
+    border: 1px solid rgba(255, 107, 53, 0.1);
+    border-radius: var(--taxi-border-radius);
+    transition: var(--taxi-transition-smooth);
+    position: relative;
+    overflow: hidden;
+}
+
+.producto-detalle .card::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    background: var(--taxi-gradient);
+    transform: scaleX(0);
+    transition: transform 0.4s cubic-bezier(0.2, 0.8, 0.2, 1);
+    transform-origin: left;
+}
+
+.producto-detalle .card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 40px -10px rgba(0, 0, 0, 0.1);
+    border-color: rgba(255, 107, 53, 0.3);
+}
+
+.producto-detalle .card:hover::after {
+    transform: scaleX(1);
+}
+
+/* ===== CARRUSEL TAXI ===== */
+.producto-detalle .carousel-item img {
+    border-radius: var(--taxi-border-radius);
+    transition: transform 0.5s ease;
+    filter: drop-shadow(0 10px 20px rgba(0, 0, 0, 0.15));
+}
+
+.producto-detalle .carousel-item img:hover {
+    transform: scale(1.05) rotate(-1deg);
+}
+
+.producto-detalle .carousel-control-prev,
+.producto-detalle .carousel-control-next {
+    width: 56px;
+    height: 56px;
+    background: var(--taxi-white);
+    border: 1px solid var(--taxi-border);
+    border-radius: 50%;
+    opacity: 0.8;
+    color: var(--taxi-primary);
+    top: 50%;
+    transform: translateY(-50%);
+    transition: var(--taxi-transition);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.producto-detalle .carousel-control-prev:hover,
+.producto-detalle .carousel-control-next:hover {
+    background: var(--taxi-gradient);
+    color: white;
+    border-color: transparent;
+    transform: translateY(-50%) scale(1.1);
+    box-shadow: var(--taxi-shadow-medium);
+}
+
+/* ===== ICONOS DE CARACTERÍSTICAS TAXI ===== */
+.producto-detalle .feature-icon {
+    width: 80px;
+    height: 80px;
+    background: var(--taxi-gradient);
+    color: var(--taxi-white);
+    font-size: 2.2rem;
+    border-radius: 24px;
+    /* Squircle */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 1rem;
+    transition: var(--taxi-transition);
+    box-shadow: var(--taxi-shadow-medium);
+    position: relative;
+    z-index: 1;
+}
+
+/* Icon Rotate Hover */
+.producto-detalle .feature-icon:hover {
+    transform: rotate(10deg) scale(1.1);
+    box-shadow: var(--taxi-shadow-heavy);
+    color: #fff;
+}
+
+.producto-detalle .feature-icon .iconify {
+    filter: drop-shadow(0 4px 6px rgba(0, 0, 0, 0.2));
+}
+
+/* ===== TEXTOS Y LISTAS ===== */
+.producto-detalle .text-primary {
+    color: var(--taxi-primary) !important;
+}
+
+.producto-detalle .text-danger {
+    color: var(--taxi-dark) !important;
+}
+
+.producto-detalle .lead {
+    font-size: 1.2rem;
+    line-height: 1.8;
+    color: var(--taxi-gray);
+    font-weight: 500;
+}
+
+.producto-detalle .list-unstyled li {
+    padding: 1rem;
+    margin-bottom: 0.5rem;
+    border-radius: 12px;
+    background: transparent;
+    transition: all 0.3s ease;
+    border: 1px solid transparent;
+}
+
+.producto-detalle .list-unstyled li:hover {
+    background: var(--taxi-white);
+    border-color: var(--taxi-border);
+    box-shadow: var(--taxi-shadow-light);
+    transform: translateX(5px);
+}
+
+.producto-detalle .list-unstyled li .iconify {
+    color: var(--taxi-primary);
+    font-size: 1.5rem;
+    margin-right: 0.5rem;
+    transition: transform 0.3s ease;
+}
+
+.producto-detalle .list-unstyled li:hover .iconify {
+    transform: scale(1.2);
+}
+
+/* ===== ESPECIFICACIONES CARD ===== */
+.producto-detalle .especificaciones-card {
+    background: var(--taxi-white);
+    border-radius: var(--taxi-border-radius);
+    box-shadow: var(--taxi-shadow-medium);
+    border: 1px solid var(--taxi-border);
+    position: relative;
+    overflow: hidden;
+}
+
+.producto-detalle .especificaciones-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 6px;
+    height: 100%;
+    background: var(--taxi-gradient);
+}
+
+.producto-detalle .especificaciones-header {
+    background: linear-gradient(to right, var(--taxi-light-bg), transparent);
+    padding: 1.5rem;
+    font-size: 1.4rem;
+    font-weight: 800;
+    color: var(--taxi-black);
+    border-bottom: 1px solid var(--taxi-border);
+}
+
+/* ===== TABLAS MEJORADAS ===== */
+.producto-detalle .table {
+    margin-bottom: 0;
+}
+
+.producto-detalle .table th {
+    background: var(--taxi-light-bg);
+    color: var(--taxi-primary);
+    font-weight: 700;
+    text-transform: uppercase;
+    font-size: 0.85rem;
+    letter-spacing: 0.5px;
+    border-bottom: 2px solid var(--taxi-border);
+}
+
+.producto-detalle .table td {
+    vertical-align: middle;
+    padding: 1.2rem 1rem;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+    color: var(--taxi-gray);
+    font-weight: 500;
+}
+
+.producto-detalle .table tr:last-child td {
+    border-bottom: none;
+}
+
+.producto-detalle .table tr:hover td {
+    background: #fff8f0;
+    color: var(--taxi-black);
+}
+
+/* ===== ANIMACIONES DE ENTRADA ===== */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.producto-detalle>* {
+    animation: fadeInUp 0.8s cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
+}
+
+.producto-detalle .row>*:nth-child(2) {
+    animation-delay: 0.2s;
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 991px) {
+    .producto-detalle h1.fw-bold {
+        font-size: 3rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .producto-detalle {
+        padding: 2rem 1rem;
+    }
+
+    .producto-detalle h1.fw-bold {
+        font-size: 2.5rem;
+    }
+
+    .producto-detalle .display-6 {
+        font-size: 2.5rem;
+    }
+
+    .producto-detalle .btn.btn-danger {
+        width: 100%;
+        padding: 1rem;
+        font-size: 1.1rem;
+    }
+
+    .producto-detalle .feature-icon {
+        width: 60px;
+        height: 60px;
+        font-size: 1.8rem;
+    }
+}

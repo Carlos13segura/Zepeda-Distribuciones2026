@@ -1,0 +1,46 @@
+<!-- Centros de Distribución -->
+<section class="location-section container text-center py-5">
+    <div class="row align-items-center">
+        <div class="col-md-6 text-md-start">
+            <h2 class="section-title animate-fade-in">Centros de Servicio <span class="highlight">LTH</span></h2>
+            <h5 class="subheading">Distribuidora Zepeda</h5>
+            <p class="description">Expertos en baterías: ofrecemos venta, diagnóstico e instalación, ajustes, garantías,
+                servicio a domicilio y reciclaje de baterías usadas.</p>
+
+            <div class="location-icon mb-3">
+                <iconify-icon icon="fa6-solid:map-marker-alt" width="48" height="48" class="icon-color"></iconify-icon>
+            </div>
+            <span class="use-location d-block mb-3" (click)="useLocation()">{{ locationButtonText }}</span>
+            <div class="red-line mb-4"></div>
+
+            <div class="row g-3">
+                <div class="col-md-4">
+                    <select class="form-select" id="state-select" aria-label="Selecciona un estado"
+                        (change)="onStateChange($event)" [value]="selectedState">
+                        <option value="" selected>Selecciona un estado</option>
+                        <option *ngFor="let state of objectKeys(serviceCenters)" [value]="state">
+                            {{ state }}
+                        </option>
+                    </select>
+                </div>
+                <div class="col-md-8">
+                    <select class="form-select" id="centros-select" aria-label="Selecciona un centro de servicio"
+                        (change)="onCenterChange($event)" [value]="selectedCenter">
+                        <option value="" selected>Selecciona un centro de servicio</option>
+                        <option *ngFor="let center of availableCenters" [value]="center.name">
+                            {{ center.name }}
+                        </option>
+                    </select>
+                </div>
+            </div>
+            <a class="btn btn-primary btn-search mt-4" id="search-btn" href="centros-servicio-resultados"
+                (click)="onSearch($event)">BUSCAR</a>
+        </div>
+
+        <div class="col-md-6 text-center">
+            <!-- Placeholder image until the user provides the real one or we find a better one -->
+            <img src="https://zepeda-distribuciones.vercel.app/img/Centro%20de%20Servico.png"
+                alt="Centro de Servicio LTH" class="img-fluid rounded service-img">
+        </div>
+    </div>
+</section>

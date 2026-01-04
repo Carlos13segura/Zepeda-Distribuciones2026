@@ -1,0 +1,191 @@
+<!-- Contenido Principal -->
+<div class="producto-detalle container py-5">
+    <!-- Título y precio -->
+    <div class="text-center mb-5">
+        <span class="badge-premium">
+            <i class="iconify" data-icon="mdi:crown"></i> TECNOLOGÍA AUX®
+        </span>
+        <h1 class="fw-bold">AUX12</h1>
+        <p class="display-6">$2,200.00</p>
+        <p class="text-muted">Precio entregando su batería usada</p>
+        <button type="button" class="btn btn-danger px-5 py-3 shadow" (click)="addToCart()">
+            <i class="iconify me-2" data-icon="mdi:cart-outline"></i> Comprar Ahora
+        </button>
+    </div>
+
+    <!-- Carrusel + Descripción -->
+    <div class="row g-4">
+        <div class="col-lg-6">
+            <div class="card shadow p-3">
+                <div id="carouselProducto" class="carousel slide" data-bs-ride="carousel">
+                    <div class="carousel-inner">
+                        <div class="carousel-item active">
+                            <img src="https://useast2prodbrandsites.blob.core.windows.net/lth-sfassets-prod/images/default-source/products/product-brands/baterias/lth-evolution-auxiliar/179669-lth_evolution_auto_aux12_front.png?sfvrsn=cd830d49_1"
+                                class="d-block w-100 rounded" alt="Batería LTH 1">
+                        </div>
+                        <div class="carousel-item">
+                            <img src="https://useast2prodbrandsites.blob.core.windows.net/lth-sfassets-prod/images/default-source/products/product-brands/baterias/lth-evolution-auxiliar/179669-lth_evolution_auto_aux12_3-4_right_v01.png?sfvrsn=22528d48_1"
+                                class="d-block w-100 rounded" alt="Batería LTH 2">
+                        </div>
+                        <div class="carousel-item">
+                            <img src="https://useast2prodbrandsites.blob.core.windows.net/lth-sfassets-prod/images/default-source/products/product-brands/baterias/lth-evolution-auxiliar/179669-lth_evolution_auto_aux12_3-4_left.png?sfvrsn=975bc56f_1"
+                                class="d-block w-100 rounded" alt="Batería LTH 3">
+                        </div>
+                    </div>
+                    <button class="carousel-control-prev" type="button" data-bs-target="#carouselProducto"
+                        data-bs-slide="prev">
+                        <span class="carousel-control-prev-icon"></span>
+                    </button>
+                    <button class="carousel-control-next" type="button" data-bs-target="#carouselProducto"
+                        data-bs-slide="next">
+                        <span class="carousel-control-next-icon"></span>
+                    </button>
+                </div>
+
+                <!-- Características clave -->
+                <div class="row mt-4 text-center g-3">
+                    <div class="col-4">
+                        <div class="feature-icon">
+                            <i class="iconify" data-icon="mdi:battery-high"></i>
+                        </div>
+                        <p class="mb-0 fw-bold">562 Amp</p>
+                        <small class="text-muted">Capacidad</small>
+                    </div>
+                    <div class="col-4">
+                        <div class="feature-icon">
+                            <i class="iconify" data-icon="mdi:timer-outline"></i>
+                        </div>
+                        <p class="mb-0 fw-bold">75 min</p>
+                        <small class="text-muted">Reserva</small>
+                    </div>
+                    <div class="col-4">
+                        <div class="feature-icon">
+                            <i class="iconify" data-icon="mdi:shield-check"></i>
+                        </div>
+                        <p class="mb-0 fw-bold">36 meses</p>
+                        <small class="text-muted">Garantía</small>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-lg-6">
+            <div class="card shadow p-4 bg-light h-100">
+                <h4 class="fw-bold mb-4 text-primary">Descripción del Producto</h4>
+                <p class="lead">
+                    Es la batería líder desde hace más de 90 años. Es la única batería convencional en el mercado con la
+                    tecnología patentada
+                    <strong class="text-primary">PowerFrame®</strong>, brindando fortaleza desde su interior.
+                </p>
+                <p>
+                    LTH es ideal para vehículos con equipamiento estándar como A/C o calefacción, vidrios y puertas
+                    eléctricos.
+                </p>
+
+                <div class="card bg-white p-3 mt-4 border-0 shadow-sm">
+                    <h5 class="fw-bold text-danger mb-3">Beneficios exclusivos:</h5>
+                    <ul class="list-unstyled">
+                        <li class="mb-2">
+                            <i class="iconify text-danger me-2" data-icon="mdi:gift-outline"></i>
+                            <span class="fw-bold">Bonificación</span> al comprar tu batería LTH y entregar la usada.
+                        </li>
+                        <li>
+                            <i class="iconify text-danger me-2" data-icon="mdi:shield-check-outline"></i>
+                            <span class="fw-bold">36 meses</span> de garantía. 12 de reemplazo sin costo.
+                            <a href="#" class="text-primary">Ver condiciones</a>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Rating & Reviews -->
+                <div class="d-flex align-items-center mt-4">
+                    <div class="me-3">
+                        <i class="iconify text-warning" data-icon="mdi:star"></i>
+                        <i class="iconify text-warning" data-icon="mdi:star"></i>
+                        <i class="iconify text-warning" data-icon="mdi:star"></i>
+                        <i class="iconify text-warning" data-icon="mdi:star"></i>
+                        <i class="iconify text-warning" data-icon="mdi:star-half"></i>
+                    </div>
+                    <small class="text-muted">(4.5/5 basado en 128 reseñas)</small>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Botones de acción -->
+    <div class="d-flex flex-wrap gap-3 justify-content-center mt-5">
+        <button class="btn btn-outline-primary d-flex align-items-center px-4 py-2 shadow-sm" (click)="handleOrder()">
+            <i class="iconify me-2" data-icon="mdi:truck-fast-outline"></i> Ordenar a domicilio
+        </button>
+        <button class="btn btn-outline-primary d-flex align-items-center px-4 py-2 shadow-sm" (click)="callPhone()">
+            <i class="iconify me-2" data-icon="mdi:phone"></i> Llamar 800 8358 400
+        </button>
+        <button class="btn btn-outline-primary d-flex align-items-center px-4 py-2 shadow-sm"
+            (click)="handleLocation()">
+            <i class="iconify me-2" data-icon="mdi:map-marker-outline"></i> Ubicar centro de servicio
+        </button>
+    </div>
+
+    <!-- Especificaciones -->
+    <div class="card shadow especificaciones-card p-4">
+        <h3 class="text-uppercase fw-bold especificaciones-header">Especificaciones Técnicas</h3>
+        <div class="row g-4">
+            <div class="col-md-6">
+                <div class="table-container">
+                    <table class="table">
+                        <tbody>
+                            <tr>
+                                <th>Referencia</th>
+                                <td>BCI</td>
+                            </tr>
+                            <tr>
+                                <th>BCI</th>
+                                <td>22F</td>
+                            </tr>
+                            <tr>
+                                <th>Voltaje (V)</th>
+                                <td>12V</td>
+                            </tr>
+                            <tr>
+                                <th>Capacidad de Arranque (CA)</th>
+                                <td>562 Amp</td>
+                            </tr>
+                            <tr>
+                                <th>Capacidad Reserva (CR)</th>
+                                <td>75 min</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="table-container">
+                    <table class="table">
+                        <tbody>
+                            <tr>
+                                <th>Garantía</th>
+                                <td>36 meses</td>
+                            </tr>
+                            <tr>
+                                <th>Reemplazo sin costo</th>
+                                <td>12 meses</td>
+                            </tr>
+                            <tr>
+                                <th>Largo (mm)</th>
+                                <td>244 mm</td>
+                            </tr>
+                            <tr>
+                                <th>Ancho (mm)</th>
+                                <td>174 mm</td>
+                            </tr>
+                            <tr>
+                                <th>Peso Húmedo (kg)</th>
+                                <td>14.107 kg</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

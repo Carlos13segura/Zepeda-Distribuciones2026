@@ -1,0 +1,193 @@
+<div class="lth-optima-content">
+    <!-- Hero Section -->
+    <section class="hero-section">
+        <div class="hero-background">
+            <div class="hero-particles"></div>
+        </div>
+
+        <div class="container">
+            <div class="row align-items-center min-vh-100">
+                <div class="col-lg-6">
+                    <div class="hero-content">
+                        <div class="hero-badge">
+                            <i class="bi bi-lightning-fill"></i>
+                            Energía Superior
+                        </div>
+                        <h1 class="hero-title">
+                            <span class="text-gradient">Optima</span><br>
+                            Pilas de Alta Calidad
+                        </h1>
+                        <p class="hero-description">
+                            Descubre nuestra línea completa de pilas diseñadas para ofrecer el máximo rendimiento y
+                            durabilidad.
+                        </p>
+                        <div class="hero-stats">
+                            <div class="stat-item">
+                                <div class="stat-number">10+</div>
+                                <div class="stat-label">Años</div>
+                            </div>
+                            <div class="stat-item">
+                                <div class="stat-number">50+</div>
+                                <div class="stat-label">Tipos</div>
+                            </div>
+                            <div class="stat-item">
+                                <div class="stat-number">99%</div>
+                                <div class="stat-label">Satisfacción</div>
+                            </div>
+                        </div>
+                        <div class="hero-buttons">
+                            <button class="btn btn-primary" (click)="scrollToCatalog()">
+                                <i class="bi bi-grid-3x3-gap-fill"></i>
+                                Ver Catálogo
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="hero-image">
+                        <div class="floating-elements">
+                            <div class="floating-battery battery-1">
+                                <i class="bi bi-battery-full"></i>
+                            </div>
+                            <div class="floating-battery battery-2">
+                                <i class="bi bi-battery-charging"></i>
+                            </div>
+                            <div class="floating-battery battery-3">
+                                <i class="bi bi-battery-half"></i>
+                            </div>
+                        </div>
+                        <div class="hero-main-image">
+                            <img src="https://useast2prodbrandsites.blob.core.windows.net/sf-assets/images/default-source/brands/optima/four-optima-batteries.jpg?sfvrsn=2dda4c63_9"
+                                alt="Optima Batteries">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Animated Wave -->
+        <div class="hero-wave">
+            <svg viewBox="0 0 1200 120" preserveAspectRatio="none">
+                <path
+                    d="M0,0V46.29c47.79,22.2,103.59,32.17,158,28,70.36-5.37,136.33-33.31,206.8-37.5C438.64,32.43,512.34,53.67,583,72.05c69.27,18,138.3,24.88,209.4,13.08,36.15-6,69.85-17.84,104.45-29.34C989.49,25,1113-14.29,1200,52.47V0Z"
+                    opacity=".25" class="shape-fill wave-1"></path>
+                <path
+                    d="M0,0V15.81C13,36.92,27.64,56.86,47.69,72.05,99.41,111.27,165,111,224.58,91.58c31.15-10.15,60.09-26.07,89.67-39.8,40.92-19,84.73-46,130.83-49.67,36.26-2.85,70.9,9.42,98.6,31.56,31.77,25.39,62.32,62,103.63,73,40.44,10.79,81.35-6.69,119.13-24.28s75.16-39,116.92-43.05c59.73-5.85,113.28,22.88,168.9,38.84,30.2,8.66,59,6.17,87.09-7.5,22.43-10.89,48-26.93,60.65-49.24V0Z"
+                    opacity=".5" class="shape-fill wave-2"></path>
+            </svg>
+        </div>
+    </section>
+
+    <!-- Catalog Section -->
+    <section class="catalog-section">
+        <div class="container">
+            <div class="row mb-5">
+                <div class="col-12 text-center">
+                    <div class="section-badge">
+                        <i class="bi bi-grid-3x3-gap-fill"></i>
+                        Nuestros Productos
+                    </div>
+                    <h2 class="section-title">Catálogo de Pilas</h2>
+                    <p class="section-description">
+                        Encuentra la pila perfecta para cada necesidad. Calidad garantizada y máximo rendimiento.
+                    </p>
+                </div>
+            </div>
+
+            <div class="row g-4">
+                <div class="col-lg-4 col-md-6" *ngFor="let product of optimaProducts">
+                    <div class="product-card">
+                        <div class="product-image">
+                            <div class="product-icon">
+                                <img [src]="product.image" [alt]="product.title" class="battery-image" />
+                            </div>
+                            <div class="product-badge" [ngClass]="product.badgeClass">{{ product.badge }}</div>
+                        </div>
+                        <div class="product-content">
+                            <h3 class="product-title">{{ product.title }}</h3>
+                            <p class="product-description">{{ product.description }}</p>
+                            <div class="product-features">
+                                <span class="feature-tag" *ngFor="let feature of product.features">
+                                    <i [class]="feature.icon"></i>
+                                    {{ feature.text }}
+                                </span>
+                            </div>
+                            <div class="product-footer">
+                                <div class="product-price">{{ product.price }}</div>
+                                <button class="btn btn-primary">
+                                    <i class="bi bi-cart-plus"></i>
+                                    Comprar
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features-section">
+        <div class="container">
+            <div class="row mb-5">
+                <div class="col-12 text-center">
+                    <div class="section-badge">
+                        <i class="bi bi-star-fill"></i>
+                        ¿Por qué Optima?
+                    </div>
+                    <h2 class="section-title text-white">Características que nos Distinguen</h2>
+                    <p class="section-description text-white-50">
+                        Calidad superior, tecnología avanzada y compromiso con la excelencia.
+                    </p>
+                </div>
+            </div>
+
+            <div class="row g-4">
+                <div class="col-lg-3 col-md-6">
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="bi bi-shield-fill-check"></i>
+                        </div>
+                        <h4 class="feature-title">Calidad Garantizada</h4>
+                        <p class="feature-description">
+                            Todas nuestras pilas pasan rigurosos controles de calidad.
+                        </p>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="bi bi-lightning-fill"></i>
+                        </div>
+                        <h4 class="feature-title">Energía Duradera</h4>
+                        <p class="feature-description">
+                            Tecnología avanzada que proporciona energía constante.
+                        </p>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="bi bi-flower1"></i>
+                        </div>
+                        <h4 class="feature-title">Eco-Friendly</h4>
+                        <p class="feature-description">
+                            Comprometidos con el medio ambiente.
+                        </p>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="bi bi-headset"></i>
+                        </div>
+                        <h4 class="feature-title">Soporte 24/7</h4>
+                        <p class="feature-description">
+                            Nuestro equipo está disponible siempre.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>

@@ -1,0 +1,235 @@
+<div class="lth-golf-content">
+    <!-- Hero Section -->
+    <section class="golf-hero-section">
+        <div class="golf-decorations">
+            <div class="golf-ball golf-ball-1"></div>
+            <div class="golf-ball golf-ball-2"></div>
+            <div class="golf-ball golf-ball-3"></div>
+            <div class="golf-tee golf-tee-1"></div>
+            <div class="golf-tee golf-tee-2"></div>
+        </div>
+
+        <div class="container">
+            <div class="text-center">
+                <div class="golf-hero-badge">
+                    <i class="bi bi-flag-fill"></i>
+                    SERIE PROFESIONAL
+                </div>
+
+                <h1 class="golf-hero-title">
+                    <span class="brand-text">LTH®</span>
+                    <span class="golf-text">GOLF</span>
+                </h1>
+
+                <p class="golf-hero-description">
+                    Diseñadas específicamente para carritos de golf y vehículos recreativos. Ofrecen un rendimiento
+                    excepcional
+                    con tecnología de ciclo profundo que garantiza largas jornadas en el campo sin interrupciones.
+                    Su durabilidad es 40% superior a las baterías convencionales.
+                </p>
+
+                <div class="golf-hero-features">
+                    <div class="golf-feature-item">
+                        <i class="bi bi-car-front-fill"></i>
+                        <span>Carritos de Golf</span>
+                    </div>
+                    <div class="golf-feature-item">
+                        <i class="bi bi-battery-charging"></i>
+                        <span>Ciclo Profundo</span>
+                    </div>
+                    <div class="golf-feature-item">
+                        <i class="bi bi-sun-fill"></i>
+                        <span>Todo Clima</span>
+                    </div>
+                </div>
+
+                <img src="https://useast2prodbrandsites.blob.core.windows.net/lth-sfassets-prod/images/default-source/products/product-brands/baterias/golf.png?sfvrsn=f5860169_0"
+                    alt="Baterías LTH Golf" class="golf-bateria-img" />
+            </div>
+        </div>
+    </section>
+
+    <!-- Products Section - 6V -->
+    <section class="golf-products-section">
+        <div class="container">
+            <h2 class="golf-section-title">Baterías para Carritos de Golf 6 Voltios</h2>
+
+            <div class="golf-product-card" *ngFor="let product of products6V">
+                <div class="row align-items-center">
+                    <div class="col-lg-6">
+                        <div class="golf-product-image-container">
+                            <img [src]="product.image" [alt]="product.model" class="golf-product-image">
+                        </div>
+                    </div>
+
+                    <div class="col-lg-6">
+                        <div class="golf-product-info">
+                            <h3 class="golf-product-title">{{ product.model }}</h3>
+
+                            <div class="golf-badges">
+                                <span class="badge badge-golf">Batería Golf</span>
+                                <span class="badge badge-stock">En Stock</span>
+                                <span class="badge badge-deep-cycle">Ciclo Profundo</span>
+                            </div>
+
+                            <div class="golf-specs-list">
+                                <div class="golf-spec-row">
+                                    <i class="bi bi-lightning-fill spec-icon yellow"></i>
+                                    <div class="spec-detail">
+                                        <small>Voltaje</small>
+                                        <strong>{{ product.voltage }}</strong>
+                                    </div>
+                                </div>
+
+                                <div class="golf-spec-row">
+                                    <i class="bi bi-battery-half spec-icon green"></i>
+                                    <div class="spec-detail">
+                                        <small>Capacidad</small>
+                                        <strong>{{ product.capacity }}</strong>
+                                    </div>
+                                </div>
+
+                                <div class="golf-spec-row">
+                                    <i class="bi bi-speedometer spec-icon blue"></i>
+                                    <div class="spec-detail">
+                                        <small>Capacidad de arranque en frío</small>
+                                        <strong>{{ product.cca }}</strong>
+                                    </div>
+                                </div>
+
+                                <div class="golf-spec-row">
+                                    <i class="bi bi-car-front-fill spec-icon primary"></i>
+                                    <div class="spec-detail">
+                                        <small>Aplicación</small>
+                                        <strong>Carritos de Golf, Vehículos Recreativos</strong>
+                                    </div>
+                                </div>
+
+                                <div class="golf-spec-row">
+                                    <i class="bi bi-shield-fill-check spec-icon secondary"></i>
+                                    <div class="spec-detail">
+                                        <small>Garantía</small>
+                                        <strong>18 Meses</strong>
+                                    </div>
+                                </div>
+
+                                <div class="golf-spec-row">
+                                    <i class="bi bi-recycle spec-icon warning"></i>
+                                    <div class="spec-detail">
+                                        <small>Entrega de batería usada</small>
+                                        <strong>Requerida</strong>
+                                    </div>
+                                </div>
+
+                                <div class="golf-spec-row price-row">
+                                    <i class="bi bi-currency-dollar spec-icon danger"></i>
+                                    <div class="spec-detail">
+                                        <small>Precio Golf</small>
+                                        <strong class="price">{{ product.price }}</strong>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <button class="btn btn-golf-primary" [routerLink]="product.link">
+                                <i class="bi bi-cart-plus"></i>
+                                Comprar Ahora
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Products Section - 8V -->
+    <section class="golf-products-section">
+        <div class="container">
+            <h2 class="golf-section-title">Baterías para Carritos de Golf 8 Voltios</h2>
+
+            <div class="golf-product-card" *ngFor="let product of products8V">
+                <div class="row align-items-center">
+                    <div class="col-lg-6">
+                        <div class="golf-product-image-container">
+                            <img [src]="product.image" [alt]="product.model" class="golf-product-image">
+                        </div>
+                    </div>
+
+                    <div class="col-lg-6">
+                        <div class="golf-product-info">
+                            <h3 class="golf-product-title">{{ product.model }}</h3>
+
+                            <div class="golf-badges">
+                                <span class="badge badge-golf">Batería Golf</span>
+                                <span class="badge badge-stock">En Stock</span>
+                                <span class="badge badge-deep-cycle">Ciclo Profundo</span>
+                            </div>
+
+                            <div class="golf-specs-list">
+                                <div class="golf-spec-row">
+                                    <i class="bi bi-lightning-fill spec-icon yellow"></i>
+                                    <div class="spec-detail">
+                                        <small>Voltaje</small>
+                                        <strong>{{ product.voltage }}</strong>
+                                    </div>
+                                </div>
+
+                                <div class="golf-spec-row">
+                                    <i class="bi bi-battery-half spec-icon green"></i>
+                                    <div class="spec-detail">
+                                        <small>Capacidad</small>
+                                        <strong>{{ product.capacity }}</strong>
+                                    </div>
+                                </div>
+
+                                <div class="golf-spec-row">
+                                    <i class="bi bi-speedometer spec-icon blue"></i>
+                                    <div class="spec-detail">
+                                        <small>Capacidad de arranque en frío</small>
+                                        <strong>{{ product.cca }}</strong>
+                                    </div>
+                                </div>
+
+                                <div class="golf-spec-row">
+                                    <i class="bi bi-car-front-fill spec-icon primary"></i>
+                                    <div class="spec-detail">
+                                        <small>Aplicación</small>
+                                        <strong>Carritos de Golf, Vehículos Recreativos</strong>
+                                    </div>
+                                </div>
+
+                                <div class="golf-spec-row">
+                                    <i class="bi bi-shield-fill-check spec-icon secondary"></i>
+                                    <div class="spec-detail">
+                                        <small>Garantía</small>
+                                        <strong>18 Meses</strong>
+                                    </div>
+                                </div>
+
+                                <div class="golf-spec-row">
+                                    <i class="bi bi-recycle spec-icon warning"></i>
+                                    <div class="spec-detail">
+                                        <small>Entrega de batería usada</small>
+                                        <strong>Requerida</strong>
+                                    </div>
+                                </div>
+
+                                <div class="golf-spec-row price-row">
+                                    <i class="bi bi-currency-dollar spec-icon danger"></i>
+                                    <div class="spec-detail">
+                                        <small>Precio Golf</small>
+                                        <strong class="price">{{ product.price }}</strong>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <button class="btn btn-golf-primary" [routerLink]="product.link">
+                                <i class="bi bi-cart-plus"></i>
+                                Comprar Ahora
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>

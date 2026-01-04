@@ -1,0 +1,129 @@
+<!-- Desktop Menu -->
+<nav class="menu-container desktop-nav">
+    <div class="menu-wrapper">
+        <!-- Left Menu Items -->
+        <div class="menu-section menu-left">
+            <a *ngFor="let item of menuItems" [routerLink]="item.route" class="menu-link" routerLinkActive="active">
+                <span class="iconify text-primary" [attr.data-icon]="item.icon" data-width="30"
+                    aria-hidden="true"></span>
+                <span class="menu-text">{{ item.label }}</span>
+            </a>
+        </div>
+
+        <!-- Logo -->
+        <a routerLink="/" class="logo-link" aria-label="Ir a Inicio">
+            <img src="https://images.seeklogo.com/logo-png/20/1/lth-acumuladores-logo-png_seeklogo-202395.png"
+                alt="Logo LTH" class="logo-img">
+        </a>
+
+        <!-- Right Menu Items -->
+        <div class="menu-section menu-right">
+            <a *ngFor="let item of menuItemsRight" [routerLink]="item.route" class="menu-link"
+                routerLinkActive="active">
+                <span class="iconify text-primary" [attr.data-icon]="item.icon" data-width="30"
+                    aria-hidden="true"></span>
+                <span class="menu-text">{{ item.label }}</span>
+            </a>
+
+            <!-- Dropdown: Ver Más -->
+            <div class="dropdown" (clickOutside)="closeDropdown()">
+                <button class="menu-link dropdown-toggle" type="button" (click)="toggleDropdown()"
+                    [class.active]="isDropdownOpen" [attr.aria-expanded]="isDropdownOpen" aria-haspopup="true">
+                    <span class="iconify text-primary" data-icon="mdi:menu" data-width="30" aria-hidden="true"></span>
+                    <span class="menu-text">Ver Más</span>
+                </button>
+
+                <div class="dropdown-menu custom-scroll" [class.show]="isDropdownOpen">
+                    <ng-container *ngFor="let section of dropdownSections; let isFirst = first; let isLast = last">
+                        <hr *ngIf="!isFirst" class="dropdown-divider">
+
+                        <h6 class="dropdown-header">{{ section.header }}</h6>
+
+                        <a *ngFor="let item of section.items" [routerLink]="item.route" class="dropdown-item"
+                            (click)="closeDropdown()">
+                            <span class="iconify" [attr.data-icon]="item.icon" aria-hidden="true"></span>
+                            {{ item.label }}
+                        </a>
+                    </ng-container>
+                </div>
+            </div>
+        </div>
+    </div>
+</nav>
+
+<!-- Mobile Menu -->
+<nav class="menu-container mobile-nav">
+    <div class="mobile-header">
+        <a routerLink="/" class="mobile-logo" (click)="closeMobileMenu()">
+            <img src="https://images.seeklogo.com/logo-png/20/1/lth-acumuladores-logo-png_seeklogo-202395.png"
+                alt="Logo LTH" class="logo-img">
+        </a>
+        <button class="hamburger-btn" (click)="toggleMobileMenu()" [class.active]="isMobileMenuOpen"
+            aria-label="Toggle menu">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+        </button>
+    </div>
+
+    <!-- Mobile Drawer -->
+    <div class="mobile-drawer" [class.open]="isMobileMenuOpen">
+        <div class="drawer-header">
+            <img src="https://images.seeklogo.com/logo-png/20/1/lth-acumuladores-logo-png_seeklogo-202395.png"
+                alt="Logo LTH" class="drawer-logo">
+            <button class="close-btn" (click)="closeMobileMenu()" aria-label="Cerrar menú">
+                <span class="iconify" data-icon="mdi:close" data-width="28"></span>
+            </button>
+        </div>
+
+        <div class="drawer-content custom-scroll">
+
+            <!-- Main Items -->
+            <div class="mobile-section">
+                <a *ngFor="let item of menuItems" [routerLink]="item.route" class="mobile-link"
+                    routerLinkActive="active" (click)="closeMobileMenu()">
+                    <span class="iconify" [attr.data-icon]="item.icon"></span>
+                    {{ item.label }}
+                </a>
+            </div>
+
+            <hr class="mobile-divider">
+
+            <!-- Secondary Items -->
+            <div class="mobile-section">
+                <a *ngFor="let item of menuItemsRight" [routerLink]="item.route" class="mobile-link"
+                    routerLinkActive="active" (click)="closeMobileMenu()">
+                    <span class="iconify" [attr.data-icon]="item.icon"></span>
+                    {{ item.label }}
+                </a>
+            </div>
+
+            <hr class="mobile-divider">
+
+            <!-- Dropdown Sections as Accordion/List -->
+            <div class="mobile-section">
+                <h6 class="mobile-section-title">Más Opciones</h6>
+                <ng-container *ngFor="let section of dropdownSections">
+                    <div class="mobile-group">
+                        <div class="mobile-group-header" (click)="toggleMobileSection(section.header)"
+                            [class.expanded]="visibleMobileSections[section.header]">
+                            <span>{{ section.header }}</span>
+                            <span class="iconify chevron" data-icon="mdi:chevron-down"></span>
+                        </div>
+
+                        <div class="mobile-group-items" [class.show]="visibleMobileSections[section.header]">
+                            <a *ngFor="let item of section.items" [routerLink]="item.route" class="mobile-sublink"
+                                routerLinkActive="active" (click)="closeMobileMenu()">
+                                <span class="iconify" [attr.data-icon]="item.icon"></span>
+                                {{ item.label }}
+                            </a>
+                        </div>
+                    </div>
+                </ng-container>
+            </div>
+        </div>
+    </div>
+
+    <!-- Backdrop -->
+    <div class="mobile-backdrop" [class.show]="isMobileMenuOpen" (click)="closeMobileMenu()"></div>
+</nav>

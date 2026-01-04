@@ -1,0 +1,158 @@
+<div class="lth-filtros-content">
+    <!-- Hero Section -->
+    <section class="filtros-hero">
+        <div class="hero-pattern"></div>
+
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 mx-auto text-center">
+                    <div class="hero-content">
+                        <div class="hero-icon-wrapper">
+                            <i class="bi bi-funnel-fill hero-icon"></i>
+                            <div class="icon-ring ring-1"></div>
+                            <div class="icon-ring ring-2"></div>
+                            <div class="icon-ring ring-3"></div>
+                        </div>
+
+                        <h1 class="hero-title">FILTROS</h1>
+
+                        <p class="hero-description">
+                            La línea de Filtros LTH cuenta con una oferta de productos de excelente calidad,
+                            asegurando una limpieza profunda para el funcionamiento óptimo de tu motor.
+                        </p>
+
+                        <div class="hero-features">
+                            <div class="feature-badge">
+                                <i class="bi bi-shield-check"></i>
+                                <span>Calidad Certificada</span>
+                            </div>
+                            <div class="feature-badge">
+                                <i class="bi bi-gear-fill"></i>
+                                <span>Alto Rendimiento</span>
+                            </div>
+                            <div class="feature-badge">
+                                <i class="bi bi-leaf-fill"></i>
+                                <span>Eco-Friendly</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Filters Grid -->
+    <section class="filters-grid-section">
+        <div class="container">
+            <div class="row g-4">
+                <div class="col-lg-6" *ngFor="let filter of filters; let i = index">
+                    <div class="filter-card" [attr.data-index]="i">
+                        <div class="card-icon-badge">
+                            <i [class]="'bi ' + filter.icon + ' card-icon'"></i>
+                        </div>
+
+                        <div class="row align-items-center">
+                            <div class="col-md-5">
+                                <div class="filter-image-wrapper">
+                                    <div class="image-background"></div>
+                                    <img [src]="filter.image" [alt]="filter.name" class="filter-image" loading="lazy">
+                                </div>
+                            </div>
+
+                            <div class="col-md-7">
+                                <div class="filter-info">
+                                    <h3 class="filter-name">{{ filter.name }}</h3>
+                                    <p class="filter-description">{{ filter.description }}</p>
+
+                                    <button class="btn-explore">
+                                        <span>Explorar filtros</span>
+                                        <i class="bi bi-arrow-right btn-arrow"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="card-number">{{ filter.id }}</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Benefits Section -->
+    <section class="benefits-section">
+        <div class="container">
+            <div class="row mb-5">
+                <div class="col-lg-8 mx-auto text-center">
+                    <h2 class="section-title">
+                        <span class="title-accent">Beneficios de los</span>
+                        <span class="title-main">Filtros LTH®</span>
+                    </h2>
+                </div>
+            </div>
+
+            <div class="row g-4">
+                <div class="col-md-6 col-lg-3">
+                    <div class="benefit-item">
+                        <div class="benefit-icon-wrapper">
+                            <i class="bi bi-gear-wide-connected benefit-icon"></i>
+                        </div>
+                        <h4 class="benefit-title">Protección del Motor</h4>
+                        <p class="benefit-text">Evitan el desgaste prematuro filtrando partículas dañinas.</p>
+                    </div>
+                </div>
+
+                <div class="col-md-6 col-lg-3">
+                    <div class="benefit-item">
+                        <div class="benefit-icon-wrapper">
+                            <i class="bi bi-speedometer2 benefit-icon"></i>
+                        </div>
+                        <h4 class="benefit-title">Mejor Rendimiento</h4>
+                        <p class="benefit-text">Optimizan el flujo de aire y combustible para máxima eficiencia.</p>
+                    </div>
+                </div>
+
+                <div class="col-md-6 col-lg-3">
+                    <div class="benefit-item">
+                        <div class="benefit-icon-wrapper">
+                            <i class="bi bi-cash-stack benefit-icon"></i>
+                        </div>
+                        <h4 class="benefit-title">Ahorro de Combustible</h4>
+                        <p class="benefit-text">Reducen el consumo al mantener el motor en condiciones óptimas.</p>
+                    </div>
+                </div>
+
+                <div class="col-md-6 col-lg-3">
+                    <div class="benefit-item">
+                        <div class="benefit-icon-wrapper">
+                            <i class="bi bi-globe2 benefit-icon"></i>
+                        </div>
+                        <h4 class="benefit-title">Menos Emisiones</h4>
+                        <p class="benefit-text">Contribuyen a reducir la contaminación ambiental.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="container">
+            <div class="cta-card">
+                <div class="row align-items-center">
+                    <div class="col-lg-8">
+                        <h3 class="cta-title">¿Necesitas ayuda para elegir el filtro correcto?</h3>
+                        <p class="cta-text">Nuestros expertos están listos para asesorarte y encontrar el filtro
+                            perfecto para tu vehículo.</p>
+                    </div>
+                    <div class="col-lg-4 text-lg-end">
+                        <button class="btn-cta">
+                            <i class="bi bi-telephone-fill"></i>
+                            <span>Contactar Asesor</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>

@@ -1,0 +1,169 @@
+<!-- Enhanced Header -->
+<section class="hero-section">
+    <!-- Floating Background Elements -->
+    <div class="floating-elements">
+        <i class="bi bi-battery-charging floating-icon"></i>
+        <i class="bi bi-lightning-fill floating-icon"></i>
+        <i class="bi bi-shield-check floating-icon"></i>
+    </div>
+
+    <div class="container hero-content">
+        <div class="text-center">
+            <!-- Hero Badge -->
+            <div class="hero-badge">
+                <i class="bi bi-star-fill" style="margin-right: 8px;"></i>
+                Calidad Superior
+            </div>
+
+            <!-- Main Title -->
+            <h1 class="hero-title">LTH® HI-TEC</h1>
+
+            <!-- Subtitle -->
+            <p class="hero-subtitle">
+                <i class="bi bi-battery-half" style="margin-right: 10px; font-size: 1.6rem; color: #e4002b;"></i>
+                La Batería de Alto Desempeño que Tu Vehículo Necesita
+            </p>
+
+            <!-- Description -->
+            <p class="hero-description">
+                Es la batería de calidad superior que ofrece un alto desempeño. Es el producto ideal para vehículos en
+                condiciones regulares de uso, pero que tienen una demanda eléctrica mayor, debido a que cuentan con
+                accesorios eléctricos adicionales como GPS, asientos y vidrios eléctricos o pantallas táctiles.
+            </p>
+
+            <!-- Features Grid -->
+            <div class="features-grid">
+                <div class="feature-card">
+                    <i class="bi bi-lightning-charge-fill feature-icon"></i>
+                    <h3 class="feature-title">Alto Rendimiento</h3>
+                    <p class="feature-description">Potencia superior para vehículos con alta demanda eléctrica</p>
+                </div>
+
+                <div class="feature-card">
+                    <i class="bi bi-shield-check feature-icon"></i>
+                    <h3 class="feature-title">Calidad Garantizada</h3>
+                    <p class="feature-description">Tecnología avanzada y materiales de primera calidad</p>
+                </div>
+
+                <div class="feature-card">
+                    <i class="bi bi-ev-front-fill feature-icon"></i>
+                    <h3 class="feature-title">Compatibilidad Total</h3>
+                    <p class="feature-description">Ideal para vehículos con accesorios eléctricos modernos</p>
+                </div>
+
+                <div class="feature-card">
+                    <i class="bi bi-recycle feature-icon"></i>
+                    <h3 class="feature-title">Eco-Friendly</h3>
+                    <p class="feature-description">Compromiso con el medio ambiente y reciclaje responsable</p>
+                </div>
+            </div>
+
+            <!-- Hero Image -->
+            <div class="hero-image-container">
+                <img src="https://useast2prodbrandsites.blob.core.windows.net/lth-sfassets-prod/images/default-source/default-album/categoria-hiteccdb9d8edbd5a427587d03e46eca28e21.png?sfvrsn=4ee39ab9_0"
+                    alt="Baterías LTH HI-TEC" class="bateria-img" />
+            </div>
+
+            <!-- Statistics -->
+            <div class="stats-container">
+                <div class="stat-item">
+                    <span class="stat-number">25+</span>
+                    <span class="stat-label">Años de Experiencia</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number">100%</span>
+                    <span class="stat-label">Calidad Garantizada</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number">24/7</span>
+                    <span class="stat-label">Soporte Técnico</span>
+                </div>
+            </div>
+
+            <!-- Call to Action Buttons -->
+            <div class="cta-buttons">
+                <button class="btn btn-hero-primary" (click)="scrollToProducts()">
+                    <i class="bi bi-cart" style="margin-right: 8px;"></i>
+                    Ver Productos
+                </button>
+                <button class="btn btn-hero-secondary" routerLink="/contacto">
+                    <i class="bi bi-telephone-fill" style="margin-right: 8px;"></i>
+                    Contactar Ahora
+                </button>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Productos -->
+<section class="container my-5" id="productos">
+    <h2 class="display-5 fw-bold mb-5 text-lth">Baterías Automotrices</h2>
+
+    <!-- Product Loop -->
+    <div class="card product-card rounded-4 p-4 border-0 mb-4" *ngFor="let product of products; let i = index">
+        <div class="row g-4 align-items-center">
+            <!-- Carrusel -->
+            <div class="col-lg-6">
+                <div [id]="'carouselLTH' + i" class="carousel slide" data-bs-ride="carousel">
+                    <div class="carousel-inner rounded-4 overflow-hidden shadow-sm">
+                        <div class="carousel-item active">
+                            <img [src]="product.images.front" class="d-block w-100" [alt]="product.model + ' Frontal'">
+                        </div>
+                        <div class="carousel-item">
+                            <img [src]="product.images.left" class="d-block w-100" [alt]="product.model + ' Izquierda'">
+                        </div>
+                        <div class="carousel-item">
+                            <img [src]="product.images.right" class="d-block w-100" [alt]="product.model + ' Derecha'">
+                        </div>
+                    </div>
+                    <button class="carousel-control-prev" type="button" [attr.data-bs-target]="'#carouselLTH' + i"
+                        data-bs-slide="prev">
+                        <span class="carousel-control-prev-icon"></span>
+                    </button>
+                    <button class="carousel-control-next" type="button" [attr.data-bs-target]="'#carouselLTH' + i"
+                        data-bs-slide="next">
+                        <span class="carousel-control-next-icon"></span>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Información del Producto -->
+            <div class="col-lg-6">
+                <h3 class="product-title fw-bold mb-3 text-lth">{{ product.model }}</h3>
+                <div class="mb-3 d-flex flex-wrap gap-2">
+                    <span class="badge bg-lth-blue">Batería Automotriz</span>
+                    <span class="badge bg-success">En Stock</span>
+                </div>
+
+                <ul class="list-group list-group-flush mb-4">
+                    <li class="list-group-item bg-transparent border-0 d-flex align-items-start gap-2">
+                        <i class="bi bi-battery-charging fs-4 text-primary"></i>
+                        <div>
+                            <small class="text-muted">Capacidad de arranque en frío</small>
+                            <p class="fw-semibold mb-0">{{ product.specs.cca }}</p>
+                        </div>
+                    </li>
+                    <li class="list-group-item bg-transparent border-0 d-flex align-items-start gap-2">
+                        <i class="bi bi-recycle fs-4 text-warning"></i>
+                        <div>
+                            <small class="text-muted">Entrega de batería usada</small>
+                            <p class="fw-semibold mb-0">Requerida</p>
+                        </div>
+                    </li>
+                    <li class="list-group-item bg-transparent border-0 d-flex align-items-start gap-2">
+                        <i class="bi bi-currency-dollar fs-4 text-danger"></i>
+                        <div>
+                            <small class="text-muted">Precio</small>
+                            <p class="fw-bold fs-4 mb-0 text-lth-red">{{ product.specs.price }}</p>
+                        </div>
+                    </li>
+                </ul>
+
+                <div class="d-flex flex-wrap gap-3">
+                    <button class="btn btn-lth-hitec-primary px-4 py-2 fw-bold shadow-sm"
+                        [routerLink]="[product.link]">Comprar Ahora</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

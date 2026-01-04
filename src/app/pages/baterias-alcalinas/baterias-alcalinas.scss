@@ -1,0 +1,408 @@
+/* Baterías Alcalinas Redesign */
+
+// Variables
+$primary-blue: #1C355E; // The dark header blue
+$bright-blue: #1877F2; // The benefits strip blue
+$text-white: #ffffff;
+$text-dark: #333333;
+$bg-light: #ffffff;
+$accent-gray: #f5f5f5;
+
+.alcalinas-page {
+    font-family: 'Roboto', 'Helvetica Neue', Arial, sans-serif;
+    overflow-x: hidden;
+}
+
+// ============================================
+// Hero Section
+// ============================================
+.hero-section {
+    background-color: $primary-blue;
+    color: $text-white;
+    padding: 80px 0 60px;
+    position: relative;
+    text-align: center;
+
+    .page-title {
+        font-size: 3rem;
+        font-weight: 700;
+        text-transform: uppercase;
+        margin-bottom: 2rem;
+        letter-spacing: 1px;
+    }
+
+    .hero-description {
+        font-size: 1rem;
+        line-height: 1.6;
+        max-width: 800px;
+        margin: 0 auto 3rem;
+        opacity: 0.9;
+        font-weight: 300;
+    }
+
+    .btn-benefits {
+        background: rgba(255, 255, 255, 0.1);
+        border: 1px solid rgba(255, 255, 255, 0.3);
+        color: $text-white;
+        padding: 10px 30px;
+        border-radius: 4px;
+        font-size: 0.9rem;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        display: inline-flex;
+        align-items: center;
+
+        &:hover,
+        &.active {
+            background: rgba(255, 255, 255, 0.2);
+        }
+    }
+
+    .benefits-content {
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.4s ease;
+
+        &.show {
+            max-height: 500px;
+        }
+
+        .benefit-item {
+            text-align: center;
+            padding: 20px;
+
+            i {
+                font-size: 2rem;
+                margin-bottom: 10px;
+                display: block;
+            }
+
+            p {
+                font-size: 0.9rem;
+            }
+        }
+    }
+
+    .hero-batteries {
+        max-width: 600px;
+        width: 100%;
+        margin-top: 40px;
+        // The image in the design sits slightly overlaid or just below content, 
+        // strictly centered.
+    }
+}
+
+// ============================================
+// Products Section
+// ============================================
+.products-section {
+    background-color: $bg-light;
+    padding: 60px 0;
+
+    .section-title {
+        color: $primary-blue;
+        font-weight: 800;
+        font-size: 2rem;
+        text-transform: uppercase;
+        margin-bottom: 3rem;
+    }
+
+    .product-card {
+        padding: 20px;
+        transition: transform 0.3s ease;
+
+        &:hover {
+            transform: translateY(-5px);
+        }
+
+        .product-image-wrapper {
+            height: 300px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 20px;
+
+            img {
+                max-height: 100%;
+                object-fit: contain;
+                filter: drop-shadow(0 10px 20px rgba(0, 0, 0, 0.15));
+            }
+        }
+
+        .product-name {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: $text-dark;
+            margin-top: 15px;
+        }
+    }
+
+    .sizes-container {
+        text-align: center;
+
+        .sizes-label {
+            font-weight: 600;
+            color: $primary-blue;
+            margin-bottom: 15px;
+            font-size: 1.1rem;
+        }
+
+        .size-badges {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            flex-wrap: wrap;
+
+            .size-badge {
+                background-color: #f0f0f0;
+                color: #555;
+                padding: 8px 15px;
+                border-radius: 4px;
+                font-size: 0.85rem;
+                font-weight: 600;
+                letter-spacing: 0.5px;
+            }
+        }
+    }
+}
+
+// ============================================
+// Blue Strip Section
+// ============================================
+.blue-strip-section {
+    background-color: $bright-blue;
+    color: $text-white;
+    padding: 60px 0;
+
+    .strip-item {
+        padding: 0 20px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        height: 100%;
+
+        &.border-left {
+            border-left: 1px solid rgba(255, 255, 255, 0.3);
+
+            @media (max-width: 768px) {
+                border-left: none;
+                border-top: 1px solid rgba(255, 255, 255, 0.3);
+                padding-top: 20px;
+                margin-top: 20px;
+            }
+        }
+
+        h4 {
+            font-size: 1rem;
+            font-weight: 700;
+            line-height: 1.4;
+            margin-bottom: 5px;
+        }
+
+        .subtitle {
+            font-size: 0.8rem;
+            font-weight: 300;
+            opacity: 0.9;
+        }
+    }
+}
+
+// ============================================
+// Lifestyle Section
+// ============================================
+.lifestyle-section {
+    .lifestyle-img-wrapper {
+        height: 250px;
+        overflow: hidden;
+
+        .img-cover {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+
+            &:hover {
+                transform: scale(1.05);
+            }
+        }
+    }
+}
+
+// ============================================
+// Buy Section
+// ============================================
+.buy-section {
+    background-color: #051025; // Very dark, almost black blue
+    padding: 80px 0;
+    color: $text-white;
+    overflow: hidden;
+
+    .floating-pack-wrapper {
+        position: relative;
+
+        .floating-pack {
+            max-width: 350px;
+            position: relative;
+            z-index: 2;
+            transform: rotate(-5deg);
+        }
+
+        .glow-effect {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 300px;
+            height: 300px;
+            background: radial-gradient(circle, rgba(24, 119, 242, 0.4) 0%, transparent 70%);
+            z-index: 1;
+        }
+    }
+
+    .buttons-col {
+        padding-left: 50px;
+
+        @media (max-width: 768px) {
+            padding-left: 15px;
+            margin-top: 40px;
+            text-align: center;
+        }
+    }
+
+    .buy-title {
+        font-size: 2rem;
+        font-weight: 700;
+        margin-bottom: 2rem;
+    }
+
+    .buy-buttons-stack {
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+        max-width: 300px;
+
+        @media (max-width: 768px) {
+            margin: 0 auto;
+        }
+
+        .btn-buy {
+            background-color: $text-white;
+            color: $text-dark; // Dark text on white button
+            padding: 12px 20px;
+            border-radius: 4px;
+            text-decoration: none;
+            font-weight: 600;
+            text-align: center;
+            transition: all 0.2s ease;
+
+            &:hover {
+                transform: translateX(5px);
+                background-color: darken($text-white, 5%);
+            }
+        }
+    }
+}
+
+// ============================================
+// Technology Section
+// ============================================
+.technology-section {
+    padding: 80px 0;
+    background-color: $bg-light;
+
+    .tech-main-title {
+        color: $primary-blue;
+        font-weight: 800;
+        text-transform: uppercase;
+        font-size: 1.8rem;
+        margin-bottom: 3rem;
+    }
+
+    .tech-text-col {
+        text-align: left;
+        padding-right: 40px;
+
+        .tech-subtitle {
+            color: $primary-blue;
+            font-weight: 700;
+            font-size: 1.3rem;
+            margin-bottom: 1.5rem;
+            line-height: 1.3;
+        }
+
+        .tech-description {
+            color: #666;
+            line-height: 1.6;
+            font-size: 1rem;
+        }
+    }
+
+    .tech-diagram-container {
+        position: relative;
+        background-color: #0A1E3F; // Dark blue container for diagram
+        padding: 40px;
+        border-radius: 8px;
+        min-height: 400px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        .diagram-img {
+            max-height: 350px;
+            mix-blend-mode: lighten; // Helps integrate diagram if it has black bg
+        }
+
+        .diagram-labels {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+
+            .label-item {
+                position: absolute;
+                right: 30px; // Align to right side
+                font-size: 0.85rem;
+                color: rgba(255, 255, 255, 0.7);
+
+                &::before {
+                    content: '';
+                    display: inline-block;
+                    width: 30px;
+                    height: 1px;
+                    background: rgba(255, 255, 255, 0.4);
+                    margin-right: 10px;
+                    vertical-align: middle;
+                }
+
+                // Positioning logic would ideally match specific image points
+                // Using generic spacing here as defined in HTML inline styles or classes
+                &.one {
+                    top: 15%;
+                }
+
+                &.two {
+                    top: 30%;
+                }
+
+                &.three {
+                    top: 45%;
+                }
+
+                &.four {
+                    top: 60%;
+                }
+
+                &.five {
+                    top: 75%;
+                }
+
+                &.six {
+                    top: 90%;
+                }
+            }
+        }
+    }
+}

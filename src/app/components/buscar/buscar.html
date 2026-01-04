@@ -1,0 +1,81 @@
+<div class="lth-buscar-page">
+    <section class="buscar-section">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 mx-auto">
+                    <div class="buscar-content">
+                        <!-- Title -->
+                        <div class="buscar-header">
+                            <h1 class="buscar-title">BUSCAR</h1>
+                            <p class="buscar-subtitle">¿Qué estás buscando?</p>
+                        </div>
+
+                        <!-- Search Box -->
+                        <div class="search-box-wrapper">
+                            <div class="search-box">
+                                <input #searchInput type="text" class="search-input" placeholder="Buscar"
+                                    [(ngModel)]="searchQuery" (input)="onInput()" (keydown)="onKeyDown($event)"
+                                    aria-label="Campo de búsqueda" aria-autocomplete="list"
+                                    [attr.aria-expanded]="showAutocomplete" autocomplete="off">
+
+                                <button class="search-button" (click)="performSearch()" aria-label="Buscar">
+                                    <i class="bi bi-search"></i>
+                                </button>
+
+                                <!-- Spinner -->
+                                <div class="spinner" *ngIf="showSpinner">
+                                    <div class="spinner-border spinner-border-sm" role="status">
+                                        <span class="visually-hidden">Buscando...</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Autocomplete List -->
+                            <ul #autocompleteList class="autocomplete-list" [class.show]="showAutocomplete"
+                                role="listbox" aria-label="Sugerencias de búsqueda">
+                                <li *ngFor="let suggestion of suggestions; let i = index" class="autocomplete-item"
+                                    [class.active]="i === activeIndex" (click)="selectItem(suggestion)" role="option"
+                                    [attr.aria-selected]="i === activeIndex" tabindex="0">
+                                    <i class="bi bi-search item-icon"></i>
+                                    <span class="item-text">{{ suggestion }}</span>
+                                    <i class="bi bi-arrow-return-left item-arrow"></i>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <!-- Popular Searches -->
+                        <div class="popular-searches" *ngIf="!showAutocomplete && !searchQuery">
+                            <h3 class="popular-title">Búsquedas populares</h3>
+                            <div class="popular-tags">
+                                <button class="tag-btn" (click)="searchQuery = 'baterías'; onInput()">
+                                    <i class="bi bi-battery-full"></i>
+                                    Baterías
+                                </button>
+                                <button class="tag-btn" (click)="searchQuery = 'filtros'; onInput()">
+                                    <i class="bi bi-funnel"></i>
+                                    Filtros
+                                </button>
+                                <button class="tag-btn" (click)="searchQuery = 'lubricantes'; onInput()">
+                                    <i class="bi bi-droplet"></i>
+                                    Lubricantes
+                                </button>
+                                <button class="tag-btn" (click)="searchQuery = 'moto-baterías'; onInput()">
+                                    <i class="bi bi-bicycle"></i>
+                                    Moto-Baterías
+                                </button>
+                                <button class="tag-btn" (click)="searchQuery = 'evolution'; onInput()">
+                                    <i class="bi bi-lightning"></i>
+                                    Evolution
+                                </button>
+                                <button class="tag-btn" (click)="searchQuery = 'marina'; onInput()">
+                                    <i class="bi bi-water"></i>
+                                    Marina
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>

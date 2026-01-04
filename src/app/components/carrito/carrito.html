@@ -1,0 +1,214 @@
+<!-- Floating Button -->
+<button class="carrito-float" *ngIf="cartService.isVisible()" (click)="toggleCart()">
+    <i class="bi bi-cart3"></i>
+    <span class="badge">{{ cartService.itemCount() }}</span>
+</button>
+
+<!-- Overlay Backdrop -->
+<div class="carrito-overlay-backdrop" [class.open]="isOpen()" (click)="closeCart()"></div>
+
+<!-- Slide-out Panel -->
+<div class="carrito-panel" [class.open]="isOpen()">
+    <div class="carrito-header">
+        <h2>MI CARRITO ({{ cartService.itemCount() }} producto{{ cartService.itemCount() !== 1 ? 's' : '' }})</h2>
+        <button class="close-btn" (click)="closeCart()">
+            <i class="bi bi-x-lg"></i>
+        </button>
+    </div>
+
+    <div class="carrito-content">
+        <!-- Promociones / Banner -->
+        <div class="promo-banner">
+            <p><strong>GRATIS en tu compra:</strong></p>
+            <div class="benefits-list">
+                <span><i class="bi bi-check-circle-fill"></i> Entrega</span>
+                <span><i class="bi bi-check-circle-fill"></i> Diagnóstico</span>
+                <span><i class="bi bi-check-circle-fill"></i> Asesoría</span>
+                <span><i class="bi bi-check-circle-fill"></i> Instalación</span>
+                <span><i class="bi bi-check-circle-fill"></i> Recolección de batería usada</span>
+            </div>
+            <p class="small-text">Recibe un descuento especial al entregar tu batería usada. *Aplican términos y
+                condiciones.</p>
+        </div>
+
+        <!-- Empty State -->
+        <div class="empty-state" *ngIf="cartService.itemCount() === 0">
+            <h3>Tu carrito está vacío</h3>
+            <p>Busca los productos que deseas y agrégalos. Tus selecciones aparecerán aquí.</p>
+            <button class="btn-primary" (click)="closeCart()">Continúa comprando</button>
+        </div>
+
+        <!-- Product List -->
+        <div class="cart-items-list" *ngIf="cartService.itemCount() > 0">
+            <div class="cart-item" *ngFor="let item of cartService.items(); let i = index">
+                <img [src]="item.image" [alt]="item.name" class="item-image">
+                <div class="item-details">
+                    <h4>{{ item.name }}</h4>
+                    <p class="item-price">{{ item.price }}</p>
+                </div>
+                <button class="remove-btn" (click)="cartService.removeFromCart(i)">
+                    <i class="bi bi-trash"></i>
+                </button>
+            </div>
+        </div>
+
+        <!-- Resumen de Orden -->
+        <div class="section-card">
+            <h3 class="section-title">RESUMEN DE ORDEN</h3>
+            <div class="summary-row">
+                <span>Precio Original</span>
+                <span>{{ cartService.total() | currency }}</span>
+            </div>
+            <div class="summary-row">
+                <span>Subtotal</span>
+                <span>{{ cartService.total() | currency }}</span>
+            </div>
+            <div class="summary-row total">
+                <span>Total</span>
+                <span>{{ cartService.total() | currency }}</span>
+            </div>
+
+            <div class="promo-mini">
+                <p><strong>GRATIS en tu compra:</strong></p>
+                <p>Envío, Diagnóstico, Asesoría, Instalación, Recolección de batería usada.</p>
+            </div>
+        </div>
+
+        <!-- Información de Tu Orden -->
+        <h2 class="main-title">INFORMACIÓN DE TU ORDEN</h2>
+
+        <!-- Dirección de Entrega -->
+        <div class="section-card">
+            <h3 class="section-title">DIRECCIÓN DE ENTREGA</h3>
+
+            <div class="delivery-address-display">
+                <p>Olivo 5221, Bosques de Manzanilla, 72307, Heroica Puebla de Zaragoza, Puebla, Mexico</p>
+                <button class="btn-link">Editar</button>
+            </div>
+
+            <p class="instruction-text">Por favor, ajusta la ubicación exacta del servicio y comparte cualquier
+                instrucción que creas necesaria.</p>
+
+            <div class="map-container">
+                <div class="map-placeholder">
+                    <!-- Placeholder for Map -->
+                    <div class="fake-map">
+                        <i class="bi bi-geo-alt-fill map-pin"></i>
+                    </div>
+                    <div class="map-overlay-info">
+                        <i class="bi bi-info-circle-fill"></i> puedes modificar el pin en el mapa
+                    </div>
+                </div>
+
+                <div class="instructions-input">
+                    <label>INDICACIONES/INSTRUCCIONES</label>
+                    <textarea [(ngModel)]="deliveryInstructions"
+                        placeholder="Cualquier detalle adicional que ayude a nuestro equipo de entrega a encontrarte fácilmente..."></textarea>
+                </div>
+            </div>
+
+            <div class="receiver-info">
+                <h4>¿Quién recibirá el servicio?</h4>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label>* Nombre</label>
+                        <input type="text" [(ngModel)]="firstName" placeholder="Escribe nombre">
+                    </div>
+                    <div class="form-group">
+                        <label>* Apellido</label>
+                        <input type="text" [(ngModel)]="lastName" placeholder="Escribe apellido">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Tipo de Entrega -->
+        <div class="section-card">
+            <h3 class="section-title">TIPO DE ENTREGA</h3>
+
+            <div class="delivery-option" [class.selected]="deliveryType === 'inmediata'"
+                (click)="deliveryType = 'inmediata'">
+                <div class="radio-circle">
+                    <div class="inner-circle" *ngIf="deliveryType === 'inmediata'"></div>
+                </div>
+                <div class="option-content">
+                    <h4>Gestión Inmediata</h4>
+                    <p>Gestionamos tu orden de servicio en este momento. Recuerda que el servicio tardará entre 60 a 90
+                        minutos en llegar a tu ubicación.</p>
+                </div>
+            </div>
+
+            <div class="delivery-option" [class.selected]="deliveryType === 'programada'"
+                (click)="deliveryType = 'programada'">
+                <div class="radio-circle">
+                    <div class="inner-circle" *ngIf="deliveryType === 'programada'"></div>
+                </div>
+                <div class="option-content">
+                    <h4>Entrega Programada</h4>
+                    <p>Esta opción te permite elegir una fecha y un horario de entrega.</p>
+
+                    <div class="schedule-inputs" *ngIf="deliveryType === 'programada'">
+                        <div class="input-group">
+                            <label>Fecha</label>
+                            <input type="date">
+                        </div>
+                        <div class="input-group">
+                            <label>Hora</label>
+                            <select>
+                                <option>Selecciona una hora...</option>
+                                <option>09:00 AM - 11:00 AM</option>
+                                <option>11:00 AM - 01:00 PM</option>
+                                <option>01:00 PM - 03:00 PM</option>
+                                <option>03:00 PM - 05:00 PM</option>
+                                <option>05:00 PM - 07:00 PM</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Forma de Pago -->
+        <div class="section-card">
+            <h3 class="section-title">FORMA DE PAGO</h3>
+            <p class="payment-info">El pago se realiza al técnico al finalizar el servicio, sin embargo, es importante
+                conocer que método de pago deseas usar para que el técnico esté preparado para recibirlo.</p>
+            <p class="payment-select-label">* Selecciona el método de pago deseado</p>
+
+            <div class="payment-options">
+                <button class="payment-btn" [class.active]="paymentMethod === 'credit'"
+                    (click)="paymentMethod = 'credit'">Tarjeta de crédito</button>
+                <button class="payment-btn" [class.active]="paymentMethod === 'debit'"
+                    (click)="paymentMethod = 'debit'">Tarjeta débito</button>
+                <button class="payment-btn" [class.active]="paymentMethod === 'cash'"
+                    (click)="paymentMethod = 'cash'">Efectivo</button>
+            </div>
+        </div>
+
+        <!-- Terms -->
+        <div class="terms-container">
+            <label class="checkbox-container">
+                <input type="checkbox" [(ngModel)]="termsAccepted">
+                <span class="checkmark"></span>
+                <span class="terms-text">Acepto los <a href="#">Términos y condiciones</a> y el <a href="#">Aviso de
+                        privacidad</a>.</span>
+            </label>
+
+            <p class="disclaimer">
+                *La entrega y el servicio son gratuitos con la compra de una batería nueva. Si no se adquiere una
+                batería, se aplicará una tarifa de entrega y servicio de $250.00.
+            </p>
+        </div>
+
+        <button class="btn-continue" [disabled]="!termsAccepted">Continuar con mi orden</button>
+
+        <div class="considerations">
+            <h4>Consideraciones:</h4>
+            <ul>
+                <li>En caso de no adquirir una batería nueva, se aplicará un cobro de $250 por el servicio a domicilio.
+                    Este mismo cargo también aplicará en casos de garantías y ajustes.</li>
+            </ul>
+        </div>
+
+    </div>
+</div>

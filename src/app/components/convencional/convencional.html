@@ -1,0 +1,96 @@
+<section class="hero-section">
+    <div class="container">
+        <div class="hero-content">
+            <h1 class="main-title">
+                LTH CONVENCIONAL<br>
+                DRY CHARGE
+            </h1>
+
+            <p class="subtitle-text">
+                Batería de tipo ácido líquido que cuenta con mayor diversidad de tamaños y capacidades para cubrir una
+                amplia gama de aplicaciones.
+            </p>
+
+            <div class="image-container text-center mt-5">
+                <!-- Aquí puedes agregar tu imagen -->
+                <img src="https://useast2prodbrandsites.blob.core.windows.net/lth-sfassets-prod/images/default-source/products/product-brands/moto-baterias/banner-motobats-conv-2025.png?sfvrsn=e17f297_0"
+                    alt="LTH Batteries" class="img-fluid" style="max-height: 400px;">
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Seccion de Productos -->
+<section class="products-section">
+    <div class="container">
+        <h2 class="section-title">
+            <i class="bi bi-battery-charging me-2"></i>
+            Nuestros Productos
+        </h2>
+
+        <div class="row g-4">
+            <div class="col-lg-4 col-md-6" *ngFor="let product of products; let i = index">
+                <div class="product-card">
+                    <div class="badge-new" *ngIf="i === 0">NUEVO</div>
+
+                    <!-- Carousel -->
+                    <div [id]="'carousel' + i" class="carousel slide product-carousel" data-bs-ride="carousel">
+                        <div class="carousel-inner">
+                            <div class="carousel-item" *ngFor="let img of product.images; let isFirst = first"
+                                [class.active]="isFirst">
+                                <img [src]="img" [alt]="product.model + ' Vista'">
+                            </div>
+                        </div>
+                        <button class="carousel-control-prev" type="button" [attr.data-bs-target]="'#carousel' + i"
+                            data-bs-slide="prev" *ngIf="product.images.length > 1">
+                            <i class="bi bi-chevron-left" style="font-size: 1.5rem;"></i>
+                        </button>
+                        <button class="carousel-control-next" type="button" [attr.data-bs-target]="'#carousel' + i"
+                            data-bs-slide="next" *ngIf="product.images.length > 1">
+                            <i class="bi bi-chevron-right" style="font-size: 1.5rem;"></i>
+                        </button>
+                    </div>
+
+                    <div class="product-info">
+                        <h3 class="product-model">
+                            <i class="bi bi-battery"></i>
+                            {{ product.model }}
+                        </h3>
+                        <div class="product-price">{{ product.price }}</div>
+
+                        <ul class="product-features">
+                            <li>
+                                <i class="bi bi-lightning-fill" style="color: #fbbf24;"></i>
+                                {{ product.specs.voltage }} - {{ product.specs.amperage }}
+                            </li>
+                            <li *ngFor="let feature of product.features">
+                                <i class="bi bi-shield-check" style="color: #10b981;"
+                                    *ngIf="feature.includes('Garantía')"></i>
+                                <i class="bi bi-motorcycle" style="color: #6366f1;"
+                                    *ngIf="feature.includes('motocicletas')"></i>
+                                <i class="bi bi-motorcycle" style="color: #6366f1;"
+                                    *ngIf="feature.includes('automóviles')"></i>
+                                <i class="bi bi-motorcycle" style="color: #6366f1;"
+                                    *ngIf="feature.includes('camiones')"></i>
+                                <i class="bi bi-droplet-half" style="color: #ef4444;"
+                                    *ngIf="feature.includes('Libre de mantenimiento')"></i>
+                                <i class="bi bi-recycle" style="color: #10b981;" *ngIf="feature.includes('Ácido')"></i>
+                                <i class="bi bi-lightning-fill" style="color: #f59e0b;"
+                                    *ngIf="feature.includes('Alto rendimiento')"></i>
+                                <!-- Default icon if no match -->
+                                <i class="bi bi-check-circle-fill" style="color: #6b7280;"
+                                    *ngIf="!feature.includes('Garantía') && !feature.includes('motocicletas') && !feature.includes('automóviles') && !feature.includes('camiones') && !feature.includes('Libre de mantenimiento') && !feature.includes('Ácido') && !feature.includes('Alto rendimiento')"></i>
+                                {{ feature }}
+                            </li>
+                        </ul>
+
+                        <button class="btn btn-primary-custom" [routerLink]="product.link">
+                            <i class="bi bi-cart-plus me-2"></i>
+                            Comprar Ahora
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

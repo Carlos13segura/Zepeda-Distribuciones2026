@@ -1,0 +1,189 @@
+<div class="alcalinas-page">
+    <!-- Hero Section -->
+    <section class="hero-section">
+        <div class="container text-center">
+            <h1 class="page-title">BATERÍAS ALCALINAS</h1>
+            <p class="hero-description">
+                Gracias a la experiencia, innovación y tecnología de LTH, ahora también puedes contar su
+                energía confiable en pilas alcalinas. Estas brindan la energía necesaria para todos los momentos
+                importantes en tu vida, ya que están diseñadas para brindarte el máximo desempeño en todos
+                tus dispositivos de alto consumo de energía. Descubre todos los beneficios que las pilas
+                alcalinas LTH te ofrecen.
+            </p>
+
+            <div class="benefits-toggle-wrapper">
+                <button class="btn-benefits" (click)="toggleBenefits()" [class.active]="showBenefits">
+                    Beneficios <i class="bi bi-chevron-down ms-2"></i>
+                </button>
+            </div>
+
+            <!-- Benefits Dropdown Content (Hidden by default) -->
+            <div class="benefits-content" [class.show]="showBenefits">
+                <div class="row mt-4">
+                    <div class="col-md-3" *ngFor="let benefit of benefits">
+                        <div class="benefit-item">
+                            <i [class]="'bi ' + benefit.icon"></i>
+                            <p>{{ benefit.title }}</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="hero-image-container mt-5">
+                <!-- Group of batteries image -->
+                <img src="https://www.lth.com.mx/sfsites/c/cms/delivery/media/MCIWDYWO5WOFAHPMMUGI2DRHUB5U?version=1.1&channelId=0apQO0000000Ch8&oid=00DfL000007937e"
+                    alt="Familia Baterías Alcalinas LTH" class="img-fluid hero-batteries">
+            </div>
+        </div>
+    </section>
+
+    <!-- Products Section -->
+    <section class="products-section">
+        <div class="container text-center">
+            <h2 class="section-title">PRODUCTOS</h2>
+
+            <div class="row justify-content-center mt-5">
+                <!-- AA Batteries -->
+                <div class="col-md-5 mb-5">
+                    <div class="product-card">
+                        <div class="product-image-wrapper">
+                            <!-- Placeholder: Replace with actual AA pack image -->
+                            <img src="https://www.lth.com.mx/webruntime/org-asset/34431f29ab/resource/081QO0000002Ryf"
+                                alt="LTH Pilas Alcalinas AA" class="img-fluid">
+                        </div>
+                        <h3 class="product-name">LTH pilas alcalinas AA</h3>
+                    </div>
+                </div>
+
+                <!-- AAA Batteries -->
+                <div class="col-md-5 mb-5">
+                    <div class="product-card">
+                        <div class="product-image-wrapper">
+                            <!-- Placeholder: Replace with actual AAA pack image -->
+                            <img src="https://www.lth.com.mx/webruntime/org-asset/34431f29ab/resource/081QO0000002Ryg"
+                                alt="LTH Pilas Alcalinas AAA" class="img-fluid">
+                        </div>
+                        <h3 class="product-name">LTH pilas alcalinas AAA</h3>
+                    </div>
+                </div>
+            </div>
+
+            <div class="sizes-container mt-4">
+                <p class="sizes-label">Tamaños de los paquetes</p>
+                <div class="size-badges">
+                    <span class="size-badge">2 PGT</span>
+                    <span class="size-badge">4 PGT</span>
+                    <span class="size-badge">10 PGT</span>
+                    <span class="size-badge">30 PGT</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Blue Benefits Strip -->
+    <section class="blue-strip-section">
+        <div class="container">
+            <div class="row text-center">
+                <div class="col-md-3 strip-item">
+                    <h4>Energía para todas tus actividades</h4>
+                </div>
+                <div class="col-md-3 strip-item border-left">
+                    <h4>Diseñadas para durar</h4>
+                </div>
+                <div class="col-md-3 strip-item border-left">
+                    <h4>Gran desempeño y alto rendimiento</h4>
+                    <span class="subtitle">en dispositivos de alto consumo</span>
+                </div>
+                <div class="col-md-3 strip-item border-left">
+                    <h4>Protegen tus equipos</h4>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Lifestyle Images -->
+    <section class="lifestyle-section">
+        <div class="container-fluid p-0">
+            <div class="row g-0">
+                <div class="col-md-4 lifestyle-img-wrapper">
+                    <!-- Using placeholders from lorem picsum or generic if specific not available -->
+                    <img src="https://www.lth.com.mx/webruntime/org-asset/34431f29ab/resource/081QO0000002HT0/slider_image_1.png"
+                        alt="Gaming" class="img-cover">
+                </div>
+                <div class="col-md-4 lifestyle-img-wrapper">
+                    <img src="https://www.lth.com.mx/webruntime/org-asset/34431f29ab/resource/081QO0000002HT1/slider_image_2.png"
+                        alt="Lectura" class="img-cover">
+                </div>
+                <div class="col-md-4 lifestyle-img-wrapper">
+                    <img src="https://www.lth.com.mx/webruntime/org-asset/34431f29ab/resource/081QO0000002HT1/slider_image_3.png"
+                        alt="Juguetes" class="img-cover">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Where to Buy Section -->
+    <section class="buy-section">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-md-6 text-center">
+                    <div class="floating-pack-wrapper">
+                        <!-- Reusing hero image for now as placeholder for the pack shot -->
+                        <img src="https://www.lth.com.mx/webruntime/org-asset/34431f29ab/resource/081QO0000002Ryl"
+                            alt="Pack Baterias LTH" class="floating-pack">
+                        <div class="glow-effect"></div>
+                    </div>
+                </div>
+                <div class="col-md-6 buttons-col">
+                    <h2 class="buy-title">¿Dónde comprar?</h2>
+
+                    <div class="buy-buttons-stack">
+                        <a href="#" class="btn-buy white">Centro de Servicio LTH</a>
+                        <a href="#" class="btn-buy white">Mercado Libre</a>
+                        <a href="#" class="btn-buy white">Liverpool en línea</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Technology Section -->
+    <section class="technology-section">
+        <div class="container text-center mb-5">
+            <h2 class="tech-main-title">TECNOLOGÍA</h2>
+        </div>
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-md-5 tech-text-col">
+                    <h3 class="tech-subtitle">¡Siempre tendrás energía cuando más lo necesites!</h3>
+                    <p class="tech-description">
+                        Con su revolucionaria tecnología, las pilas alcalinas LTH te brindan confiabilidad, poder y
+                        desempeño.
+                        Su composición de hidróxido de potasio y zinc maximiza la duración, ya que éste último al no
+                        estar expuesto
+                        en un ambiente ácido, facilita el movimiento de iones a través del electrolito, produciendo una
+                        corriente de energía
+                        mucho más potente y estable.
+                    </p>
+                </div>
+                <div class="col-md-7">
+                    <div class="tech-diagram-container">
+                        <!-- Using a generic battery diagram placeholder -->
+                        <img src="https://purabateria.com/cdn/shop/products/DSC_8423.jpg?v=1754936774&width=2925"
+                            alt="Tecnología Alcalina LTH" class="img-fluid diagram-img">
+
+                        <!-- Labels Overlay -->
+                        <div class="diagram-labels">
+                            <div class="label-item one">Vaso de Acero</div>
+                            <div class="label-item two">Pasta de Zinc</div>
+                            <div class="label-item three">Clavo de Acero</div>
+                            <div class="label-item four">Mezcla</div>
+                            <div class="label-item five">Papel Separador</div>
+                            <div class="label-item six">Sello Inferior</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>

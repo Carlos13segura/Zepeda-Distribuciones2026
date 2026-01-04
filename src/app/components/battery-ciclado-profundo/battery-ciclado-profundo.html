@@ -1,0 +1,214 @@
+<div class="deep-cycle-battery-page">
+    <div class="min-h-screen bg-gradient-to-br from-slate-900 via-blue-900 to-slate-900">
+        <!-- Animated Background Particles -->
+        <div class="dcb-particles-container">
+            <div class="dcb-particle dcb-particle-1"></div>
+            <div class="dcb-particle dcb-particle-2"></div>
+            <div class="dcb-particle dcb-particle-3"></div>
+            <div class="dcb-particle dcb-particle-4"></div>
+            <div class="dcb-particle dcb-particle-5"></div>
+        </div>
+
+        <!-- Hero Section -->
+        <section class="dcb-hero-section">
+            <!-- Energy Rings -->
+            <div class="dcb-energy-rings">
+                <div class="dcb-ring dcb-ring-1"></div>
+                <div class="dcb-ring dcb-ring-2"></div>
+                <div class="dcb-ring dcb-ring-3"></div>
+            </div>
+
+            <div class="container">
+                <div class="row align-items-center">
+                    <!-- Hero Content -->
+                    <div class="col-lg-6 dcb-animate-fade-in-up">
+                        <div class="dcb-hero-badge">
+                            <i class="bi bi-sun-fill"></i>
+                            Energía Renovable
+                        </div>
+
+                        <h1 class="dcb-hero-title">
+                            <span class="dcb-brand-highlight">LTH®</span>
+                            <span class="dcb-title-main">CICLADO PROFUNDO</span>
+                        </h1>
+
+                        <p class="dcb-hero-description">
+                            Diseñadas para aplicaciones que requieren descargas profundas y recarga constante. Perfectas
+                            para
+                            sistemas solares, UPS y aplicaciones marinas con tecnología de
+                            <strong class="text-cyan-400">máximo rendimiento energético</strong>.
+                        </p>
+
+                        <div class="dcb-features-list">
+                            <div class="dcb-feature-item">
+                                <i class="bi bi-battery-charging"></i>
+                                <span>Ciclos Profundos</span>
+                            </div>
+                            <div class="dcb-feature-item">
+                                <i class="bi bi-sun"></i>
+                                <span>Sistemas Solares</span>
+                            </div>
+                            <div class="dcb-feature-item">
+                                <i class="bi bi-water"></i>
+                                <span>Uso Marino</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Hero Image -->
+                    <div class="col-lg-6">
+                        <div class="dcb-hero-image-container">
+                            <img src="https://useast2prodbrandsites.blob.core.windows.net/lth-sfassets-prod/images/default-source/products/product-brands/baterias/servicio-pesado.png?sfvrsn=89d88df7_0"
+                                alt="Baterías LTH Ciclado Profundo" class="dcb-hero-battery-image dcb-animate-float">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Products Section -->
+        <section class="dcb-products-section">
+            <div class="container">
+                <!-- Section Header -->
+                <div class="text-center mb-5 dcb-animate-fade-in-up">
+                    <i class="bi bi-battery-full dcb-section-icon"></i>
+                    <h2 class="dcb-section-title">Baterías Ciclado Profundo</h2>
+                    <p class="dcb-section-subtitle">Tecnología avanzada para máximo rendimiento energético</p>
+                    <div class="dcb-divider"></div>
+                </div>
+
+                <!-- Product Card -->
+                <div class="dcb-deep-cycle-card">
+                    <div class="dcb-card-glow"></div>
+
+                    <div class="row g-0">
+                        <!-- Product Gallery -->
+                        <div class="col-lg-6 p-4">
+                            <div class="dcb-gallery-container">
+                                <div class="dcb-gallery-image">
+                                    <img [src]="productImages[currentSlide]" alt="L-31T/S-190M" class="product-image">
+
+                                    <!-- Navigation Buttons -->
+                                    <button (click)="prevSlide()" class="dcb-carousel-control dcb-carousel-prev">
+                                        <i class="bi bi-chevron-left"></i>
+                                    </button>
+
+                                    <button (click)="nextSlide()" class="dcb-carousel-control dcb-carousel-next">
+                                        <i class="bi bi-chevron-right"></i>
+                                    </button>
+                                </div>
+
+                                <!-- Dots Indicator -->
+                                <div class="dcb-dots-container">
+                                    <button *ngFor="let img of productImages; let i = index" (click)="goToSlide(i)"
+                                        class="dcb-slide-dot" [class.active]="currentSlide === i"></button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Product Info -->
+                        <div class="col-lg-6 p-4">
+                            <div class="dcb-product-info">
+                                <h3 class="dcb-product-title">L-31T/S-190M</h3>
+
+                                <div class="dcb-badges">
+                                    <span class="badge badge-primary">
+                                        <i class="bi bi-battery-charging"></i>
+                                        Ciclado Profundo
+                                    </span>
+                                    <span class="badge badge-success">
+                                        <i class="bi bi-check-circle-fill"></i>
+                                        En Stock
+                                    </span>
+                                    <span class="badge badge-solar">
+                                        <i class="bi bi-sun-fill"></i>
+                                        Solar Ready
+                                    </span>
+                                </div>
+
+                                <!-- Specifications Grid -->
+                                <div class="dcb-specs-grid">
+                                    <div class="dcb-spec-item">
+                                        <i class="bi bi-lightning-fill spec-icon yellow"></i>
+                                        <div class="spec-content">
+                                            <div class="spec-label">Capacidad de Arranque</div>
+                                            <div class="spec-value">450 CCA</div>
+                                        </div>
+                                    </div>
+
+                                    <div class="dcb-spec-item">
+                                        <i class="bi bi-battery-half spec-icon red"></i>
+                                        <div class="spec-content">
+                                            <div class="spec-label">Capacidad Reserva</div>
+                                            <div class="spec-value">190 Min</div>
+                                        </div>
+                                    </div>
+
+                                    <div class="dcb-spec-item">
+                                        <i class="bi bi-grid-fill spec-icon blue"></i>
+                                        <div class="spec-content">
+                                            <div class="spec-label">Aplicaciones</div>
+                                            <div class="spec-value">Solar, Marina, UPS</div>
+                                        </div>
+                                    </div>
+
+                                    <div class="dcb-spec-item">
+                                        <i class="bi bi-recycle spec-icon green"></i>
+                                        <div class="spec-content">
+                                            <div class="spec-label">Batería Usada</div>
+                                            <div class="spec-value">Requerida</div>
+                                        </div>
+                                    </div>
+
+                                    <div class="dcb-spec-item">
+                                        <i class="bi bi-shield-check spec-icon purple"></i>
+                                        <div class="spec-content">
+                                            <div class="spec-label">Garantía</div>
+                                            <div class="spec-value">24 Meses</div>
+                                        </div>
+                                    </div>
+
+                                    <div class="dcb-spec-item">
+                                        <i class="bi bi-currency-dollar spec-icon emerald"></i>
+                                        <div class="spec-content">
+                                            <div class="spec-label">Precio Especial</div>
+                                            <div class="spec-price">$4,580.00 MXN</div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Action Buttons -->
+                                <div class="dcb-actions">
+                                    <button class="dcb-btn-purchase" [routerLink]="link">
+                                        <i class="bi bi-cart-plus"></i>
+                                        Comprar Ahora
+                                    </button>
+
+                                    <button class="dcb-btn-info">
+                                        <i class="bi bi-info-circle"></i>
+                                        Más Info
+                                    </button>
+                                </div>
+
+                                <!-- Energy Efficiency Meter -->
+                                <!-- Efficiency Meter Removed -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Coming Soon Section -->
+                <div class="text-center mt-5 dcb-animate-fade-in-up">
+                    <h4 class="dcb-coming-soon-title">
+                        <i class="bi bi-battery-charging"></i>
+                        Más Productos de Ciclado Profundo
+                    </h4>
+                    <div class="dcb-coming-soon">
+                        <i class="bi bi-clock-history coming-soon-icon"></i>
+                        <p>Próximamente más modelos disponibles</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+</div>

@@ -1,0 +1,92 @@
+.not-found-container {
+    position: relative;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: white;
+    overflow: hidden;
+    font-family: 'Arial', sans-serif;
+    text-align: center;
+    padding: 20px;
+}
+
+.watermark {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 20rem; // Very large
+    font-weight: 900;
+    color: #f7f7f7; // Very light gray
+    z-index: 0;
+    line-height: 1;
+    pointer-events: none;
+    user-select: none;
+
+    @media (max-width: 768px) {
+        font-size: 10rem;
+    }
+}
+
+.content {
+    position: relative;
+    z-index: 1; // Above watermark
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 600px;
+}
+
+.image-wrapper {
+    margin-bottom: 2rem;
+
+    .battery-img {
+        max-width: 100%;
+        height: auto;
+        max-height: 200px; // Adjust based on image
+        filter: drop-shadow(0 10px 20px rgba(0, 0, 0, 0.15));
+    }
+}
+
+.error-title {
+    color: #D50032; // LTH Red approx
+    font-size: 2.5rem;
+    font-weight: 800;
+    margin-bottom: 1rem;
+    text-transform: uppercase;
+}
+
+.error-message {
+    color: #4b5563; // Gray
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+    font-weight: 400;
+}
+
+.btn-home {
+    background-color: #00205B; // LTH Dark Blue
+    color: white;
+    text-decoration: none;
+    padding: 12px 30px;
+    font-weight: 700;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    border-radius: 4px; // Sharp or slightly rounded
+    transition: background-color 0.3s ease;
+
+    &:hover {
+        background-color: #00338D;
+    }
+}
+
+.logo-footer {
+    margin-top: 4rem;
+
+    .lth-logo {
+        height: 60px;
+        width: auto;
+        opacity: 0.8;
+    }
+}
