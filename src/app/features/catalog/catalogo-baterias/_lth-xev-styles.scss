@@ -1,0 +1,334 @@
+// Variables
+$color-premium: #ffcc33;
+$color-premium-dark: #e6b82e;
+$color-premium-light: #ffdd77;
+$color-black: #121212;
+$color-white: #ffffff;
+$color-gray-light: #f8f9fa;
+$color-gray: #6c757d;
+$color-gray-dark: #343a40;
+$border-radius: 12px;
+$box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+$transition: all 0.3s ease;
+
+// Animations
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes slideInDown {
+    from {
+        transform: translateY(-30px);
+        opacity: 0;
+    }
+
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@keyframes slideInLeft {
+    from {
+        transform: translateX(-30px);
+        opacity: 0;
+    }
+
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+@keyframes slideInRight {
+    from {
+        transform: translateX(30px);
+        opacity: 0;
+    }
+
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+@keyframes pulse {
+    0% {
+        box-shadow: 0 0 0 0 rgba(255, 204, 51, 0.4);
+    }
+
+    70% {
+        box-shadow: 0 0 0 10px rgba(255, 204, 51, 0);
+    }
+
+    100% {
+        box-shadow: 0 0 0 0 rgba(255, 204, 51, 0);
+    }
+}
+
+@keyframes fadeInUp {
+    from {
+        transform: translateY(20px);
+        opacity: 0;
+    }
+
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+.fade-in {
+    animation: fadeIn 0.8s ease-out;
+}
+
+.slide-in-down {
+    animation: slideInDown 0.8s ease-out;
+}
+
+.slide-in-left {
+    animation: slideInLeft 0.8s ease-out;
+}
+
+.slide-in-right {
+    animation: slideInRight 0.8s ease-out;
+}
+
+.fade-in-up {
+    animation: fadeInUp 0.8s ease-out forwards;
+    opacity: 0;
+}
+
+.delay-1 {
+    animation-delay: 0.2s;
+}
+
+.delay-2 {
+    animation-delay: 0.4s;
+}
+
+// Main Styles
+:host {
+    display: block;
+    width: 100%;
+    overflow-x: hidden;
+    font-family: "Montserrat", "Roboto", sans-serif;
+    background-color: #f5f7fa;
+    color: $color-black;
+    line-height: 1.6;
+}
+
+.producto-detalle {
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+    max-width: 1400px;
+}
+
+// Badge
+.badge-premium {
+    display: inline-flex;
+    align-items: center;
+    padding: 0.6rem 1.5rem;
+    font-size: 1rem;
+    font-weight: 700;
+    border-radius: 50px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-bottom: 1.5rem;
+
+    &.yellow {
+        background: linear-gradient(135deg, #ffcc00, #ffaa00);
+        color: $color-black;
+        box-shadow: 0 4px 15px rgba(255, 170, 0, 0.4);
+
+        &.pulse {
+            animation: pulse 2s infinite;
+        }
+    }
+}
+
+// Gallery
+.gallery-card {
+    background: $color-white;
+    transition: $transition;
+
+    &:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15) !important;
+    }
+}
+
+.carousel-item img {
+    height: 400px;
+    object-fit: contain;
+    padding: 2rem;
+    transition: transform 0.5s ease;
+
+    &:hover {
+        transform: scale(1.05);
+    }
+}
+
+// Features
+.feature-box {
+    transition: $transition;
+    border-radius: $border-radius;
+
+    &:hover {
+        background-color: rgba(255, 204, 51, 0.1);
+        transform: translateY(-5px);
+    }
+}
+
+.feature-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 55px;
+    height: 55px;
+    border-radius: 50%;
+    flex-shrink: 0;
+    font-size: 1.5rem;
+
+    &.premium {
+        background: linear-gradient(135deg, $color-premium, $color-premium-dark);
+        color: $color-black;
+        box-shadow: 0 4px 10px rgba(255, 170, 0, 0.3);
+    }
+}
+
+// Description
+.description-card {
+    background: linear-gradient(to bottom right, #f8f9fa, #e9ecef) !important;
+}
+
+.benefits-card {
+    border-left: 5px solid $color-premium !important;
+    transition: transform 0.3s ease;
+
+    &:hover {
+        transform: translateX(5px);
+    }
+}
+
+// Buttons
+.btn-warning {
+    background: linear-gradient(135deg, $color-premium, $color-premium-dark);
+    border: none;
+    color: $color-black;
+    font-weight: 700;
+    transition: $transition;
+    position: relative;
+    overflow: hidden;
+
+    &::after {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: -100%;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.4), transparent);
+        transition: 0.5s;
+    }
+
+    &:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 10px 20px rgba(255, 170, 0, 0.4);
+
+        &::after {
+            left: 100%;
+        }
+    }
+}
+
+.btn-outline-premium {
+    border: 2px solid $color-premium;
+    color: $color-premium-dark;
+    background: transparent;
+    font-weight: 600;
+    transition: $transition;
+
+    &:hover {
+        background: $color-premium;
+        color: $color-black;
+        transform: translateY(-3px);
+        box-shadow: 0 5px 15px rgba(255, 170, 0, 0.2);
+    }
+}
+
+.hover-scale {
+    transition: transform 0.2s;
+
+    &:active {
+        transform: scale(0.95);
+    }
+}
+
+// Specifications
+.especificaciones-card {
+    &.premium {
+        border-top: 5px solid $color-premium !important;
+    }
+}
+
+.premium-text {
+    background: linear-gradient(135deg, #ffcc00, #ffaa00);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    display: inline-block;
+}
+
+.premium-table {
+    th {
+        background-color: rgba(255, 204, 51, 0.05);
+        color: $color-gray-dark;
+        font-weight: 600;
+        width: 40%;
+    }
+
+    td {
+        color: $color-black;
+        font-weight: 500;
+    }
+
+    tr:hover {
+        background-color: rgba(255, 204, 51, 0.1);
+    }
+}
+
+// Responsive
+@media (max-width: 992px) {
+    .carousel-item img {
+        height: 300px;
+    }
+}
+
+@media (max-width: 768px) {
+    .display-4 {
+        font-size: 2.5rem;
+    }
+
+    .display-6 {
+        font-size: 1.8rem;
+    }
+
+    .action-buttons {
+        flex-direction: column;
+
+        .btn {
+            width: 100%;
+        }
+    }
+
+    .table-container {
+        overflow-x: auto;
+    }
+}

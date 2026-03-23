@@ -1,0 +1,270 @@
+/* LTH Evolution Auxiliar - Premium Design System (Brand Aligned) */
+
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&display=swap');
+
+:host {
+    display: block;
+    width: 100%;
+    overflow-x: hidden;
+
+    // --- Color Palette (LTH Premium Brand Identity) ---
+    --aux-primary: #002d5c; // Deep LTH Navy
+    --aux-primary-light: #004b99;
+    --aux-secondary: #f3f4f6; // Light Silver/Gray
+    --aux-accent: #d61634; // LTH Red
+    --aux-accent-dark: #a30e23;
+    --aux-dark: #111827; // Almost Black
+    --aux-text: #374151; // Charcoal
+    --aux-white: #ffffff;
+
+    // Gradients
+    --gradient-hero: linear-gradient(135deg, #002d5c 0%, #001a35 100%); // Deep Navy to Dark
+    --gradient-card: linear-gradient(145deg, #ffffff, #f8fafc);
+    --gradient-red: linear-gradient(135deg, #d61634 0%, #a30e23 100%); // Premium Red
+
+    // Shadows
+    --shadow-soft: 0 10px 30px -10px rgba(0, 45, 92, 0.1);
+    --shadow-hover: 0 20px 40px -12px rgba(0, 45, 92, 0.2);
+    --shadow-inner: inset 0 2px 4px 0 rgba(0, 0, 0, 0.05);
+
+    font-family: 'Outfit', sans-serif;
+    color: var(--aux-text);
+    background-color: #f9fafb;
+}
+
+// --- Layout Utilities ---
+.producto-detalle {
+    max-width: 1400px;
+}
+
+// --- Typography ---
+h1.fw-bold {
+    font-weight: 800;
+    font-size: 4rem;
+    letter-spacing: -2px;
+    background: var(--gradient-hero);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin-bottom: 0.5rem;
+    animation: fadeInDown 0.8s ease-out;
+}
+
+.display-6 {
+    font-weight: 800;
+    color: var(--aux-accent);
+    font-size: 3rem;
+    letter-spacing: -1px;
+}
+
+.text-muted {
+    color: #6b7280 !important;
+    font-weight: 500;
+}
+
+// --- Components ---
+
+// Premium Badge
+.badge-premium {
+    background: var(--aux-primary);
+    color: white;
+    padding: 0.6rem 2rem;
+    border-radius: 4px; // Classic rectangular look like a tag
+    font-weight: 700;
+    font-size: 0.85rem;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    box-shadow: 0 4px 15px rgba(0, 45, 92, 0.3);
+    display: inline-flex;
+    align-items: center;
+    gap: 0.8rem;
+    margin-bottom: 1.5rem;
+    border-left: 4px solid var(--aux-accent);
+    animation: slideIn 0.6s ease-out;
+
+    i {
+        color: var(--aux-accent);
+        font-size: 1.2rem;
+    }
+}
+
+// Cards
+.card {
+    border: 1px solid rgba(229, 231, 235, 0.5);
+    border-radius: 16px; // Slightly less rounded for a tech look
+    background: white;
+    box-shadow: var(--shadow-soft);
+    position: relative;
+    overflow: hidden;
+    transition: all 0.3s ease;
+
+    &:hover {
+        transform: translateY(-5px);
+        box-shadow: var(--shadow-hover);
+        border-color: rgba(0, 45, 92, 0.1);
+    }
+}
+
+// Carousel Images
+.carousel-item {
+    padding: 2rem;
+
+    img {
+        max-height: 400px;
+        object-fit: contain;
+        filter: drop-shadow(0 20px 30px rgba(0, 0, 0, 0.2)); // Deeper shadow
+        transition: transform 0.5s ease;
+    }
+
+    &:hover img {
+        transform: scale(1.02);
+    }
+}
+
+// Feature Icons (Modern/Tech)
+.feature-icon {
+    width: 64px;
+    height: 64px;
+    background: white;
+    color: var(--aux-primary);
+    border: 2px solid var(--aux-secondary);
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.8rem;
+    margin: 0 auto 1rem;
+    transition: all 0.3s ease;
+    box-shadow: var(--shadow-soft);
+
+    &:hover {
+        border-color: var(--aux-primary);
+        color: var(--aux-accent);
+        transform: translateY(-3px);
+    }
+}
+
+// Primary Button (Comprar Ahora)
+.btn-danger {
+    background: var(--gradient-red);
+    border: none;
+    border-radius: 8px; // Boxier
+    padding: 1rem 2.5rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+    box-shadow: 0 10px 25px rgba(214, 22, 52, 0.25);
+
+    &:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 15px 30px rgba(214, 22, 52, 0.35);
+        background: linear-gradient(135deg, #b91c1c 0%, #991b1b 100%);
+    }
+}
+
+// Outline Buttons
+.btn-outline-primary {
+    color: var(--aux-primary);
+    border: 2px solid var(--aux-primary);
+    border-radius: 8px;
+    font-weight: 700;
+    background: transparent;
+    padding: 0.8rem 1.5rem;
+
+    &:hover {
+        background: var(--aux-primary);
+        color: white;
+        transform: translateY(-2px);
+    }
+}
+
+// Specs Table
+.especificaciones-card {
+    background: white;
+    border-radius: 20px;
+    padding: 0;
+    border: 1px solid #e5e7eb;
+
+    .especificaciones-header {
+        background: var(--aux-primary);
+        color: white;
+        padding: 1.5rem;
+        font-size: 1.25rem;
+        font-weight: 800;
+        text-transform: uppercase;
+        letter-spacing: 3px;
+        text-align: center;
+        border-bottom: 4px solid var(--aux-accent);
+    }
+
+    .table {
+        margin-bottom: 0;
+
+        th {
+            background: #f9fafb;
+            color: var(--aux-dark);
+            font-weight: 700;
+            text-transform: uppercase;
+            font-size: 0.8rem;
+            letter-spacing: 0.5px;
+            padding: 1.25rem;
+            border-bottom: 1px solid #e5e7eb;
+            width: 40%;
+            border-right: 1px solid #f3f4f6;
+        }
+
+        td {
+            padding: 1.25rem;
+            color: #374151;
+            font-weight: 600;
+            border-bottom: 1px solid #e5e7eb;
+        }
+
+        tr:last-child th,
+        tr:last-child td {
+            border-bottom: none;
+        }
+    }
+}
+
+// --- Animations ---
+@keyframes fadeInDown {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateX(-20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+// --- Media Queries ---
+@media (max-width: 768px) {
+    h1.fw-bold {
+        font-size: 2.5rem;
+    }
+
+    .display-6 {
+        font-size: 2.25rem;
+    }
+
+    .badge-premium {
+        width: 100%;
+        justify-content: center;
+    }
+}

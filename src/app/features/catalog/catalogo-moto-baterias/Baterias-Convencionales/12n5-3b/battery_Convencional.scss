@@ -1,0 +1,198 @@
+/* LTH Conventional Battery Design - Private Styles */
+
+:host {
+    display: block;
+    width: 100%;
+    overflow-x: hidden;
+
+    // Premium Color Palette - Specific for Conventional (Standard LTH Red/Blue)
+    --lth-deep-blue: #002d5c;
+    --lth-bright-blue: #0056b3;
+    --lth-red: #d61634;
+    --lth-gradient-red: linear-gradient(135deg, #d61634 0%, #a30e23 100%);
+    --lth-gradient-primary: linear-gradient(135deg, #002d5c 0%, #004b99 100%);
+
+    // Backgrounds
+    --bg-page: #f4f7fa;
+    --bg-card: #ffffff;
+    --bg-glass: rgba(255, 255, 255, 0.95);
+
+    // Shadows
+    --shadow-subtle: 0 4px 6px -1px rgba(0, 45, 92, 0.05), 0 2px 4px -1px rgba(0, 45, 92, 0.03);
+    --shadow-card: 0 20px 25px -5px rgba(0, 45, 92, 0.05), 0 10px 10px -5px rgba(0, 45, 92, 0.02);
+    --shadow-float: 0 25px 50px -12px rgba(0, 45, 92, 0.15);
+
+    font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+    background-color: var(--bg-page);
+    color: var(--lth-deep-blue);
+}
+
+/* Layout */
+.producto-detalle {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 60px 20px;
+}
+
+/* Typography */
+h1.fw-bold {
+    font-size: 3.5rem;
+    background: var(--lth-gradient-primary);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    letter-spacing: -1px;
+    margin-bottom: 0.5rem;
+}
+
+.display-6 {
+    font-size: 3rem;
+    color: var(--lth-red);
+    font-weight: 800;
+    letter-spacing: -1px;
+}
+
+.text-muted {
+    font-size: 1rem;
+    font-weight: 500;
+    opacity: 0.7;
+}
+
+/* Badges */
+.badge-premium {
+    background: var(--lth-gradient-red); // Red for Standard/Conventional
+    color: white;
+    padding: 8px 24px;
+    border-radius: 100px;
+    font-size: 0.85rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    box-shadow: 0 4px 15px rgba(214, 22, 52, 0.4);
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    position: relative;
+    overflow: hidden;
+    margin-bottom: 1.5rem;
+
+    i {
+        font-size: 1.1em;
+    }
+}
+
+/* Buttons */
+.btn-danger {
+    background: var(--lth-gradient-red);
+    border: none;
+    padding: 16px 40px;
+    border-radius: 50px;
+    font-size: 1.1rem;
+    font-weight: 700;
+    box-shadow: 0 10px 20px rgba(214, 22, 52, 0.3);
+    transition: all 0.3s cubic-bezier(0.165, 0.84, 0.44, 1);
+    color: white;
+
+    &:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 15px 30px rgba(214, 22, 52, 0.4);
+    }
+}
+
+.btn-outline-primary {
+    border: 2px solid var(--lth-deep-blue);
+    color: var(--lth-deep-blue);
+    background: transparent;
+    border-radius: 12px;
+    padding: 12px 24px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+
+    &:hover {
+        background: var(--lth-deep-blue);
+        color: white;
+        transform: translateY(-2px);
+    }
+}
+
+/* Cards */
+.card {
+    background: var(--bg-card);
+    border: 1px solid rgba(255, 255, 255, 0.6);
+    border-radius: 24px;
+    box-shadow: var(--shadow-card);
+
+    &.bg-light {
+        background: radial-gradient(circle at top right, #f8faff, #ffffff);
+    }
+}
+
+/* Carousel */
+.carousel-item img {
+    filter: drop-shadow(0 20px 30px rgba(0, 0, 0, 0.15));
+    transition: transform 0.6s ease;
+
+    &:hover {
+        transform: scale(1.03) translateY(-10px);
+    }
+}
+
+/* Icons */
+.feature-icon {
+    width: 64px;
+    height: 64px;
+    border-radius: 20px;
+    background: white;
+    box-shadow: var(--shadow-subtle);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.75rem;
+    color: var(--lth-bright-blue);
+    margin: 0 auto 12px;
+    border: 1px solid rgba(0, 45, 92, 0.05);
+}
+
+/* Specs Header */
+.especificaciones-card {
+    border-radius: 24px;
+    overflow: hidden;
+    padding: 0 !important;
+    background: white;
+    box-shadow: var(--shadow-float);
+    margin-top: 5rem;
+}
+
+.especificaciones-header {
+    background: var(--lth-deep-blue);
+    padding: 30px;
+    text-align: center;
+    color: white;
+    font-size: 1.5rem;
+    letter-spacing: 2px;
+    font-weight: 800 !important;
+    position: relative;
+
+    &::after {
+        content: '';
+        position: absolute;
+        bottom: -10px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 60px;
+        height: 6px;
+        background: var(--lth-red);
+        border-radius: 10px;
+    }
+}
+
+.table tbody tr th {
+    background: #f1f5f9;
+    color: var(--lth-deep-blue);
+    font-weight: 700;
+    padding: 15px;
+}
+
+.table tbody tr td {
+    padding: 15px;
+    color: #333;
+}

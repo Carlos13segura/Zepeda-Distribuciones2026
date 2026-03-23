@@ -1,0 +1,409 @@
+/* LTH Ultra-Premium Product Design Shared Styles */
+
+:host {
+    display: block;
+    width: 100%;
+    overflow-x: hidden;
+
+    // Premium Color Palette
+    --lth-deep-blue: #002d5c;
+    --lth-bright-blue: #0056b3;
+    --lth-red: #d61634;
+    --lth-gradient-red: linear-gradient(135deg, #d61634 0%, #a30e23 100%);
+    --lth-gradient-primary: linear-gradient(135deg, #002d5c 0%, #004b99 100%);
+    --lth-blue: #002d5c;
+    --lth-gradient-blue: linear-gradient(135deg, #002d5c 0%, #004b99 100%);
+    --lth-gold: #ffd700;
+    --lth-gradient-gold: linear-gradient(135deg, #ffd700 0%, #b8860b 100%);
+    // Backgrounds
+    --bg-page: #f4f7fa;
+    --bg-card: #ffffff;
+    --bg-glass: rgba(255, 255, 255, 0.95);
+
+    // Shadows (Soft & Deep)
+    --shadow-subtle: 0 4px 6px -1px rgba(0, 45, 92, 0.05), 0 2px 4px -1px rgba(0, 45, 92, 0.03);
+    --shadow-card: 0 20px 25px -5px rgba(0, 45, 92, 0.05), 0 10px 10px -5px rgba(0, 45, 92, 0.02);
+    --shadow-float: 0 25px 50px -12px rgba(0, 45, 92, 0.15);
+
+    font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+    background-color: var(--bg-page);
+    color: var(--lth-deep-blue);
+}
+
+/* Layout */
+.producto-detalle {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 60px 20px;
+}
+
+/* Typography Overrides */
+h1.fw-bold {
+    font-size: 3.5rem;
+    background: var(--lth-gradient-primary);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    letter-spacing: -1px;
+    margin-bottom: 0.5rem;
+}
+
+.display-6 {
+    font-size: 3rem;
+    color: var(--lth-red);
+    font-weight: 800;
+    letter-spacing: -1px;
+}
+
+.text-muted {
+    font-size: 1rem;
+    font-weight: 500;
+    letter-spacing: 0.5px;
+    opacity: 0.7;
+}
+
+/* Premium Badges */
+.badge-premium {
+    background: var(--lth-deep-blue);
+    color: white; // Dark text on gold for better contrast
+    padding: 8px 24px;
+    border-radius: 100px;
+    font-size: 0.85rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    box-shadow: 0 4px 15px rgba(207, 177, 97, 0.4);
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    position: relative;
+    overflow: hidden;
+    margin-bottom: 1.5rem;
+
+    i {
+        font-size: 1.1em;
+    }
+
+    // Shine effect
+    &::after {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: -100%;
+        width: 50%;
+        height: 100%;
+        background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.6), transparent);
+        transform: skewX(-20deg);
+        animation: shine 4s infinite;
+    }
+}
+
+@keyframes shine {
+    0% {
+        left: -100%;
+    }
+
+    20% {
+        left: 200%;
+    }
+
+    100% {
+        left: 200%;
+    }
+}
+
+/* Buttons */
+.btn-danger {
+    background: var(--lth-gradient-red);
+    border: none;
+    padding: 16px 40px;
+    border-radius: 50px;
+    font-size: 1.1rem;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    box-shadow: 0 10px 20px rgba(214, 22, 52, 0.3);
+    transition: all 0.3s cubic-bezier(0.165, 0.84, 0.44, 1);
+
+    &:hover {
+        transform: translateY(-2px) scale(1.02);
+        box-shadow: 0 15px 30px rgba(214, 22, 52, 0.4);
+    }
+
+    &:active {
+        transform: translateY(1px);
+    }
+}
+
+.btn-outline-primary {
+    border: 2px solid var(--lth-deep-blue);
+    color: var(--lth-deep-blue);
+    background: transparent;
+    border-radius: 12px;
+    padding: 12px 24px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+
+    &:hover {
+        background: var(--lth-deep-blue);
+        color: white;
+        box-shadow: 0 8px 20px rgba(0, 45, 92, 0.2);
+        transform: translateY(-2px);
+    }
+}
+
+/* Cards & Containers */
+.card {
+    background: var(--bg-card);
+    border: 1px solid rgba(255, 255, 255, 0.6);
+    border-radius: 24px;
+    box-shadow: var(--shadow-card);
+    transition: all 0.4s ease;
+
+    &.bg-light {
+        background: radial-gradient(circle at top right, #f8faff, #ffffff);
+    }
+}
+
+/* Carousel */
+.carousel-item img {
+    filter: drop-shadow(0 20px 30px rgba(0, 0, 0, 0.15));
+    transition: transform 0.6s cubic-bezier(0.34, 1.56, 0.64, 1);
+
+    &:hover {
+        transform: scale(1.03) translateY(-10px);
+    }
+}
+
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+    filter: invert(1) brightness(0.5); // Dark icons
+    background-color: white;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    border-radius: 50%;
+    width: 3rem;
+    height: 3rem;
+    background-size: 40%;
+
+    &:hover {
+        background-color: var(--lth-deep-blue);
+        filter: invert(0);
+    }
+}
+
+/* Feature Icons */
+.feature-icon {
+    width: 64px;
+    height: 64px;
+    border-radius: 20px;
+    background: white;
+    box-shadow: var(--shadow-subtle);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.75rem;
+    color: var(--lth-bright-blue);
+    margin: 0 auto 12px;
+    transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+    border: 1px solid rgba(0, 45, 92, 0.05);
+
+    &:hover {
+        transform: translateY(-5px) rotate(5deg);
+    }
+}
+
+.text-center.g-3 p.fw-bold {
+    font-size: 1.25rem;
+    color: var(--lth-deep-blue);
+    letter-spacing: -0.5px;
+}
+
+/* Description Text */
+h4.text-primary {
+    color: var(--lth-deep-blue) !important;
+    font-weight: 800;
+    font-size: 1.5rem;
+    margin-bottom: 1.5rem;
+    border-bottom: 2px solid rgba(0, 0, 0, 0.05);
+    padding-bottom: 1rem;
+    display: inline-block;
+}
+
+p.lead {
+    font-size: 1.15rem;
+    line-height: 1.8;
+    color: #4a5568;
+    font-weight: 400;
+}
+
+/* Benefits Box */
+.card.bg-white {
+    border-left: 6px solid var(--lth-red);
+    background: #fff;
+    border-radius: 12px;
+
+    ul.list-unstyled li {
+        padding: 12px 0;
+        border-bottom: 1px solid #f0f0f0;
+        display: flex;
+        align-items: center;
+
+        &:last-child {
+            border-bottom: none;
+        }
+
+        i {
+            color: var(--lth-red);
+            font-size: 1.25rem;
+            background: rgba(214, 22, 52, 0.1);
+            padding: 8px;
+            border-radius: 50%;
+            margin-right: 12px;
+        }
+    }
+}
+
+/* Specs Card */
+.especificaciones-card {
+    border-radius: 24px;
+    overflow: hidden;
+    padding: 0 !important;
+    background: white;
+    box-shadow: var(--shadow-float);
+    margin-top: 5rem;
+}
+
+.especificaciones-header {
+    background: var(--lth-deep-blue);
+    padding: 30px;
+    margin: 0;
+    text-align: center;
+    color: white;
+    font-size: 1.5rem;
+    letter-spacing: 2px;
+    font-weight: 800 !important;
+    position: relative;
+
+    &::after {
+        content: '';
+        position: absolute;
+        bottom: -10px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 60px;
+        height: 6px;
+        background: var(--lth-red);
+        border-radius: 10px;
+    }
+}
+
+.table-container {
+    padding: 2rem;
+}
+
+.table {
+    border-collapse: separate;
+    border-spacing: 0 10px; // Spacing between rows
+
+    tbody tr {
+        background: white;
+        transition: transform 0.2s ease;
+
+        &:hover {
+            transform: scale(1.02);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            z-index: 2;
+            position: relative;
+        }
+
+        th,
+        td {
+            padding: 20px;
+            border: none;
+        }
+
+        th {
+            background: var(--lth-gray-100);
+            color: var(--lth-deep-blue);
+            font-weight: 700;
+            border-radius: 10px 0 0 10px;
+            width: 40%;
+            text-transform: uppercase;
+            font-size: 0.8rem;
+            letter-spacing: 0.5px;
+        }
+
+        td {
+            background: #fafbfc;
+            color: #333;
+            border-radius: 0 10px 10px 0;
+            font-weight: 600;
+            font-size: 1rem;
+            box-shadow: inset 0 0 0 1px rgba(0, 0, 0, 0.03);
+        }
+    }
+}
+
+/* Stars */
+.text-warning {
+    color: var(--lth-gold) !important;
+    filter: drop-shadow(0 2px 4px rgba(207, 177, 97, 0.4));
+}
+
+/* Responsive */
+@media (max-width: 992px) {
+    h1.fw-bold {
+        font-size: 2.5rem;
+    }
+
+    .display-6 {
+        font-size: 2.5rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .producto-detalle {
+        padding: 40px 15px;
+    }
+
+    .carousel-item img {
+        height: auto;
+        max-height: 320px;
+        width: 100%;
+        object-fit: contain;
+        padding: 1rem;
+    }
+
+    .btn {
+        width: 100%;
+        margin-bottom: 10px;
+        justify-content: center;
+    }
+
+    .feature-icon {
+        width: 50px;
+        height: 50px;
+        font-size: 1.4rem;
+    }
+
+    .table tbody tr {
+        display: flex;
+        flex-direction: column;
+        margin-bottom: 15px;
+
+        th,
+        td {
+            width: 100%;
+            border-radius: 10px;
+            text-align: center;
+        }
+
+        th {
+            border-radius: 10px 10px 0 0;
+            padding: 10px;
+        }
+
+        td {
+            border-radius: 0 0 10px 10px;
+            padding: 15px;
+        }
+    }
+}

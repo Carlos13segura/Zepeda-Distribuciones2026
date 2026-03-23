@@ -1,0 +1,237 @@
+<div class="lth-podadora-content">
+    <!-- Hero Section -->
+    <section class="podadora-hero-section">
+        <div class="garden-decorations">
+            <div class="leaf leaf-1"></div>
+            <div class="leaf leaf-2"></div>
+            <div class="leaf leaf-3"></div>
+            <div class="leaf leaf-4"></div>
+            <div class="grass-blade grass-1"></div>
+            <div class="grass-blade grass-2"></div>
+            <div class="grass-blade grass-3"></div>
+            <div class="flower flower-1"></div>
+            <div class="flower flower-2"></div>
+        </div>
+
+        <div class="container">
+            <div class="text-center">
+                <div class="podadora-hero-badge">
+                    <i class="bi bi-flower1"></i>
+                    SERIE JARDINERÍA PROFESIONAL
+                </div>
+
+                <h1 class="podadora-hero-title">
+                    <span class="brand-text">LTH®</span>
+                    <span class="podadora-text">PODADORA</span>
+                </h1>
+
+                <p class="podadora-hero-description">
+                    Potencia confiable para equipos de jardinería y podadoras. Diseñadas específicamente para
+                    cortadoras de césped, podadoras eléctricas y herramientas de jardín. Con tecnología de
+                    arranque rápido y resistencia superior que garantiza un rendimiento óptimo en cada corte.
+                </p>
+
+                <div class="podadora-hero-features">
+                    <div class="podadora-feature-item">
+                        <i class="bi bi-scissors"></i>
+                        <span>Podadoras de Césped</span>
+                    </div>
+                    <div class="podadora-feature-item">
+                        <i class="bi bi-flower2"></i>
+                        <span>Herramientas Jardín</span>
+                    </div>
+                    <div class="podadora-feature-item">
+                        <i class="bi bi-sun-fill"></i>
+                        <span>Uso Exterior</span>
+                    </div>
+                    <div class="podadora-feature-item">
+                        <i class="bi bi-lightning-fill"></i>
+                        <span>Arranque Rápido</span>
+                    </div>
+                </div>
+
+                <div class="lawn-pattern">
+                    <div class="pattern-line"></div>
+                    <div class="pattern-line"></div>
+                    <div class="pattern-line"></div>
+                    <div class="pattern-line"></div>
+                </div>
+
+                <img src="https://useast2prodbrandsites.blob.core.windows.net/lth-sfassets-prod/images/default-source/products/product-brands/baterias/lth-podadora-2016.png?sfvrsn=d6fe7ff0_4"
+                    alt="Baterías LTH Podadora" class="podadora-bateria-img" />
+            </div>
+        </div>
+    </section>
+
+    <!-- Products Section -->
+    <section class="podadora-products-section">
+        <div class="container">
+            <div class="podadora-section-header">
+                <i class="bi bi-flower1 section-icon"></i>
+                <h2 class="podadora-section-title">Baterías para Equipos de Jardinería</h2>
+                <p class="section-subtitle">Potencia profesional para el cuidado perfecto de tu jardín</p>
+            </div>
+
+            <!-- Product Card -->
+            <div class="podadora-product-card">
+                <div class="product-stripe"></div>
+
+                <div class="row align-items-center">
+                    <!-- Carousel -->
+                    <div class="col-lg-6">
+                        <div class="podadora-carousel-container">
+                            <div [id]="product.carouselId" class="carousel slide" data-bs-ride="carousel">
+                                <div class="carousel-inner">
+                                    <div class="carousel-item" *ngFor="let img of product.images; let first = first"
+                                        [class.active]="first">
+                                        <img [src]="img" class="d-block w-100 podadora-carousel-image"
+                                            [alt]="product.model">
+                                    </div>
+                                </div>
+                                <button class="carousel-control-prev" type="button"
+                                    [attr.data-bs-target]="'#' + product.carouselId" data-bs-slide="prev">
+                                    <i class="bi bi-chevron-left carousel-icon"></i>
+                                </button>
+                                <button class="carousel-control-next" type="button"
+                                    [attr.data-bs-target]="'#' + product.carouselId" data-bs-slide="next">
+                                    <i class="bi bi-chevron-right carousel-icon"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Product Info -->
+                    <div class="col-lg-6">
+                        <div class="podadora-product-info">
+                            <h3 class="podadora-product-title">{{ product.model }}</h3>
+
+                            <div class="podadora-badges">
+                                <span class="badge badge-lawn">Batería Podadora</span>
+                                <span class="badge badge-stock">En Stock</span>
+                                <span class="badge badge-fast">Arranque Rápido</span>
+                            </div>
+
+                            <div class="podadora-specs-list">
+                                <div class="podadora-spec-row">
+                                    <i class="bi bi-lightning-fill spec-icon yellow"></i>
+                                    <div class="spec-detail">
+                                        <small>Voltaje</small>
+                                        <strong>{{ product.voltage }}</strong>
+                                    </div>
+                                </div>
+
+                                <div class="podadora-spec-row">
+                                    <i class="bi bi-battery-half spec-icon green"></i>
+                                    <div class="spec-detail">
+                                        <small>Capacidad</small>
+                                        <strong>{{ product.capacity }}</strong>
+                                    </div>
+                                </div>
+
+                                <div class="podadora-spec-row">
+                                    <i class="bi bi-speedometer spec-icon blue"></i>
+                                    <div class="spec-detail">
+                                        <small>Capacidad de arranque en frío</small>
+                                        <strong>{{ product.cca }}</strong>
+                                    </div>
+                                </div>
+
+                                <div class="podadora-spec-row">
+                                    <i class="bi bi-scissors spec-icon primary"></i>
+                                    <div class="spec-detail">
+                                        <small>Aplicación</small>
+                                        <strong>Podadoras Compactas, Herramientas Pequeñas</strong>
+                                    </div>
+                                </div>
+
+                                <div class="podadora-spec-row">
+                                    <i class="bi bi-stopwatch-fill spec-icon orange"></i>
+                                    <div class="spec-detail">
+                                        <small>Tiempo de trabajo</small>
+                                        <strong>{{ product.workTime }}</strong>
+                                    </div>
+                                </div>
+
+                                <div class="podadora-spec-row">
+                                    <i class="bi bi-shield-fill-check spec-icon secondary"></i>
+                                    <div class="spec-detail">
+                                        <small>Garantía</small>
+                                        <strong>{{ product.warranty }}</strong>
+                                    </div>
+                                </div>
+
+                                <div class="podadora-spec-row">
+                                    <i class="bi bi-recycle spec-icon warning"></i>
+                                    <div class="spec-detail">
+                                        <small>Entrega de batería usada</small>
+                                        <strong>Requerida</strong>
+                                    </div>
+                                </div>
+
+                                <div class="podadora-spec-row price-row">
+                                    <i class="bi bi-currency-dollar spec-icon danger"></i>
+                                    <div class="spec-detail">
+                                        <small>Precio Jardinería</small>
+                                        <strong class="price">{{ product.price }}</strong>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <button class="btn btn-lawn-primary" [routerLink]="product.link">
+                                <i class="bi bi-cart-plus"></i>
+                                Comprar Ahora
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Benefits Section -->
+            <!-- Benefits Section -->
+            <div class="lawn-benefits-section mt-5">
+                <div class="text-center mb-5">
+                    <h3 class="podadora-section-title fs-3">¿Por qué elegir LTH Podadora?</h3>
+                    <div class="header-underline mx-auto mt-3"
+                        style="width: 50px; height: 3px; background: var(--garden-green-mid);"></div>
+                </div>
+
+                <div class="lawn-benefits-grid">
+                    <div class="benefit-card">
+                        <div class="icon-wrapper mb-3">
+                            <i class="bi bi-lightning-fill benefit-icon"></i>
+                        </div>
+                        <h5>Arranque Instantáneo</h5>
+                        <p>Arranque rápido y confiable en cualquier condición climática para un trabajo sin
+                            interrupciones.</p>
+                    </div>
+
+                    <div class="benefit-card">
+                        <div class="icon-wrapper mb-3">
+                            <i class="bi bi-sun-fill benefit-icon"></i>
+                        </div>
+                        <h5>Resistente al Clima</h5>
+                        <p>Diseñadas para soportar condiciones extremas de humedad, calor y polvo del trabajo exterior.
+                        </p>
+                    </div>
+
+                    <div class="benefit-card">
+                        <div class="icon-wrapper mb-3">
+                            <i class="bi bi-battery-charging benefit-icon"></i>
+                        </div>
+                        <h5>Larga Duración</h5>
+                        <p>Mayor tiempo de trabajo continuo para completar tareas de jardinería sin paradas frecuentes.
+                        </p>
+                    </div>
+
+                    <div class="benefit-card">
+                        <div class="icon-wrapper mb-3">
+                            <i class="bi bi-wrench benefit-icon"></i>
+                        </div>
+                        <h5>Bajo Mantenimiento</h5>
+                        <p>Tecnología libre de mantenimiento que reduce costos y tiempo de inactividad del equipo.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>

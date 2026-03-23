@@ -1,0 +1,44 @@
+<section id="productos" class="product-section">
+    <div class="container">
+        <!-- Header -->
+        <div class="section-header">
+            <h2 class="section-title">PRODUCTOS LTH</h2>
+        </div>
+
+        <!-- Product List (Zig-Zag Layout) -->
+        <div class="product-list">
+            <div *ngFor="let product of products; let i = index" class="product-row" [class.reverse]="i % 2 !== 0">
+
+                <!-- Background Text (Absolute) -->
+                <div class="bg-text">{{ product.bgText }}</div>
+
+                <!-- Geometric Background Shape -->
+                <div class="geo-shape"
+                    [style.background-image]="'linear-gradient(135deg, rgba(0, 51, 102, 0.92), rgba(0, 26, 51, 0.85)), url(' + product.bgImage + ')'">
+                </div>
+
+                <!-- Content Wrapper -->
+                <div class="product-content-wrapper">
+
+                    <!-- Image Side -->
+                    <div class="product-image-side">
+                        <img [src]="product.image" [alt]="product.title" class="product-image" loading="lazy">
+                    </div>
+
+                    <!-- Info Side -->
+                    <div class="product-info-side">
+                        <h3 class="product-title">{{ product.title }}</h3>
+                        <p class="product-description" [class.text-dark]="product.darkDescription">
+                            {{ product.description }}
+                        </p>
+
+                        <a [routerLink]="product.route" class="btn-explore">
+                            Explorar {{ product.title }}
+                        </a>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

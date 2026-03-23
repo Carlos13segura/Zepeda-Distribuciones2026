@@ -1,0 +1,26 @@
+<!-- Botón flotante -->
+<button class="lth-floating-btn" title="Configuración de privacidad" (click)="toggleModal()">
+    ⚙️
+</button>
+
+<!-- Modal -->
+<div class="lth-privacy-modal" [class.lth-hidden]="!isModalOpen()">
+    <div class="lth-privacy-content">
+        <h2>Configuración de privacidad</h2>
+        <p>
+            Este sitio utiliza tecnologías de seguimiento de sitios web de terceros para proporcionar y mejorar
+            continuamente nuestros servicios,
+            y para mostrar anuncios de acuerdo con los intereses de los usuarios.
+        </p>
+        <div class="lth-links">
+            <a href="#">Política de privacidad</a>
+            <a href="#">Términos y condiciones</a>
+        </div>
+        <div class="lth-actions">
+            <button class="lth-btn gray" (click)="closeModal()">Más información</button>
+            <button class="lth-btn deny" (click)="denyAll()">Denegar</button>
+            <button class="lth-btn accept" (click)="acceptAll()">Aceptar todo</button>
+        </div>
+        <p class="lth-powered">Powered by Usercentrics Consent Management</p>
+    </div>
+</div>

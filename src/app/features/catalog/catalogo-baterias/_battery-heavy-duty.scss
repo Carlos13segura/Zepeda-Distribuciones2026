@@ -1,0 +1,218 @@
+/* ===== LTH HEAVY DUTY THEME: TITANIUM & HAZARD ===== */
+.producto-detalle {
+    /* ----- Palette: Industrial & Robust ----- */
+    --hd-titanium-dark: #2c2f33;
+    /* Main dark metal */
+    --hd-titanium-light: #e3e5e8;
+    /* Light Brushed Metal */
+    --hd-hazard-orange: #ff4d00;
+    /* High-Vis Orange */
+    --hd-hazard-yellow: #fecb00;
+    /* Warning Yellow */
+    --hd-carbon: #121214;
+    /* Deep black texture */
+    --hd-text-main: #1a1b1e;
+    --hd-text-muted: #5e626b;
+
+    /* ----- Typography: Technical ----- */
+    --hd-font-stack: 'Inter', system-ui, -apple-system, sans-serif;
+
+    font-family: var(--hd-font-stack);
+    color: var(--hd-text-main);
+    background-color: #f7f8fa;
+    /* Clean industrial workshop floor */
+}
+
+/* ===== BADGES: TECHNICAL PLATE ===== */
+.producto-detalle .badge-premium {
+    background: var(--hd-carbon);
+    color: var(--hd-hazard-yellow);
+    padding: 0.5rem 1rem;
+    font-weight: 700;
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    border-radius: 2px;
+    /* Sharp corners */
+    border-left: 4px solid var(--hd-hazard-orange);
+    /* Industrial accent */
+    display: inline-flex;
+    align-items: center;
+    gap: 0.6rem;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+}
+
+.producto-detalle .badge-premium i {
+    color: var(--hd-hazard-orange);
+}
+
+/* ===== HEADINGS ===== */
+.producto-detalle h1.fw-bold {
+    color: var(--hd-titanium-dark);
+    font-weight: 900;
+    text-transform: uppercase;
+    letter-spacing: -0.5px;
+    margin-bottom: 0.5rem;
+    position: relative;
+    display: inline-block;
+}
+
+.producto-detalle h1.fw-bold::after {
+    content: '';
+    display: block;
+    width: 60%;
+    height: 6px;
+    background: repeating-linear-gradient(45deg,
+            var(--hd-hazard-orange),
+            var(--hd-hazard-orange) 10px,
+            var(--hd-carbon) 10px,
+            var(--hd-carbon) 20px);
+    margin: 0.5rem auto 0;
+    opacity: 0.8;
+}
+
+.producto-detalle .display-6 {
+    font-weight: 800;
+    color: var(--hd-hazard-orange);
+    text-shadow: 2px 2px 0px rgba(0, 0, 0, 0.05);
+    /* Block shadow */
+}
+
+/* ===== CARDS: HEAVY PANELS ===== */
+.producto-detalle .card {
+    background: white;
+    border: 1px solid #dcdde0;
+    border-radius: 8px;
+    /* Slightly sharper */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+    /* Low, heavy shadow */
+    transition: all 0.3s cubic-bezier(0.2, 0.8, 0.2, 1);
+    position: relative;
+    overflow: hidden;
+}
+
+.producto-detalle .card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.1);
+    border-color: var(--hd-titanium-dark);
+}
+
+/* Top colored bar for cards */
+.producto-detalle .card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: var(--hd-titanium-dark);
+    transform: scaleX(0);
+    transition: transform 0.4s ease;
+    transform-origin: left;
+}
+
+.producto-detalle .card:hover::before {
+    transform: scaleX(1);
+}
+
+/* ===== BUTTONS: INDUSTRIAL CONTROLS ===== */
+.producto-detalle .btn-danger {
+    background: linear-gradient(180deg, #ff5e14, #d64000);
+    border: none;
+    border-bottom: 4px solid #b33600;
+    /* Physical button depth */
+    border-radius: 6px;
+    text-transform: uppercase;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    padding: 1rem 3rem;
+    transition: all 0.2s ease;
+    box-shadow: 0 4px 10px rgba(214, 64, 0, 0.3);
+}
+
+.producto-detalle .btn-danger:hover {
+    transform: translateY(2px);
+    /* Button press effect */
+    border-bottom-width: 2px;
+    box-shadow: 0 2px 5px rgba(214, 64, 0, 0.3);
+    margin-top: 2px;
+    /* Compensate layout shift */
+}
+
+.producto-detalle .btn-outline-primary {
+    border: 2px solid var(--hd-titanium-dark);
+    color: var(--hd-titanium-dark);
+    border-radius: 6px;
+    font-weight: 700;
+    transition: all 0.3s ease;
+}
+
+.producto-detalle .btn-outline-primary:hover {
+    background: var(--hd-titanium-dark);
+    color: white;
+    box-shadow: 0 8px 15px rgba(44, 47, 51, 0.3);
+    transform: translateY(-2px);
+}
+
+/* ===== ICONS ===== */
+.feature-icon {
+    font-size: 3rem;
+    background: linear-gradient(135deg, var(--hd-titanium-light), #fff);
+    width: 80px;
+    height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    margin: 0 auto 1rem;
+    border: 2px solid #e0e0e0;
+    color: var(--hd-hazard-orange);
+    box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+/* ===== SPECS TABLE: DATA SHEET ===== */
+.producto-detalle .especificaciones-card {
+    border: none;
+    border-left: 6px solid var(--hd-hazard-orange);
+    background: white;
+}
+
+.producto-detalle .especificaciones-header {
+    background: var(--hd-titanium-dark);
+    color: white;
+    padding: 1rem;
+    text-align: left;
+    margin: -1.5rem -1.5rem 2rem -1.5rem;
+    /* Full bleed header */
+    border-radius: 8px 8px 0 0;
+    /* Only top corners */
+    font-size: 1.25rem;
+    letter-spacing: 1px;
+}
+
+.producto-detalle .table {
+    border: 1px solid #eee;
+}
+
+.producto-detalle .table th {
+    background-color: #f2f4f6;
+    /* Technical grey */
+    width: 40%;
+    font-weight: 700;
+    text-transform: uppercase;
+    font-size: 0.8rem;
+    color: var(--hd-text-muted);
+    vertical-align: middle;
+}
+
+.producto-detalle .table td {
+    font-family: monospace;
+    /* Tech feel */
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--hd-titanium-dark);
+}
+
+.producto-detalle .table tr:nth-child(even) {
+    background-color: #fafbfc;
+}

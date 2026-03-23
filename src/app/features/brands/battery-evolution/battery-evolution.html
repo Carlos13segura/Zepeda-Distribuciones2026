@@ -1,0 +1,242 @@
+<div class="lth-evolution-content">
+    <!-- Hero Section -->
+    <section class="hero-section">
+        <!-- Floating Elements -->
+        <div class="floating-elements">
+            <i class="bi bi-battery-charging floating-icon"></i>
+            <i class="bi bi-speedometer floating-icon"></i>
+            <i class="bi bi-gear-fill floating-icon"></i>
+            <i class="bi bi-lightning-charge-fill floating-icon"></i>
+            <i class="bi bi-gear-wide-connected floating-icon"></i>
+        </div>
+
+        <div class="container hero-content">
+            <div class="text-center">
+                <div class="hero-badge">
+                    <i class="bi bi-stars"></i>
+                    AGM Technology
+                </div>
+
+                <h1 class="hero-title">LTH® <span class="highlight">EVOLUTION</span></h1>
+
+                <div class="hero-subtitle">
+                    <i class="bi bi-battery-charging subtitle-icon"></i>
+                    <span>La Evolución de la Energía Automotriz</span>
+                    <i class="bi bi-speedometer subtitle-icon"></i>
+                </div>
+
+                <p class="hero-description">
+                    Descubre la revolución en baterías automotrices con LTH® EVOLUTION. Equipada con la tecnología más
+                    avanzada en baterías plomo-ácido de placa plana, diseñada para soportar las condiciones extremas de
+                    los vehículos modernos.
+                </p>
+
+                <!-- Stats Grid (Moved Up for Impact) -->
+                <div class="stats-grid">
+                    <div class="stat-item">
+                        <span class="stat-number">AGM</span>
+                        <span class="stat-label">Tecnología</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number">100%</span>
+                        <span class="stat-label">Start-Stop</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number">24/7</span>
+                        <span class="stat-label">Power</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number">NEXT</span>
+                        <span class="stat-label">Gen</span>
+                    </div>
+                </div>
+
+                <!-- Hero Image -->
+                <div class="hero-image-container">
+                    <img src="https://useast2prodbrandsites.blob.core.windows.net/lth-sfassets-prod/images/default-source/default-album/lth_evo-baterias.png?sfvrsn=22b07ae8_0"
+                        alt="Baterías LTH Evolution" class="bateria-img" />
+                </div>
+
+                <div class="cta-section">
+                    <button class="btn btn-hero-primary" (click)="scrollToProducts()">
+                        <i class="bi bi-battery-charging"></i>
+                        Explorar Modelos
+                    </button>
+                    <button class="btn btn-hero-secondary">
+                        <i class="bi bi-file-earmark-text"></i>
+                        Ficha Técnica
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Tech Showcase -->
+    <section class="tech-showcase">
+        <div class="container tech-content">
+            <div class="text-center">
+                <h2 class="section-title white">Tecnología Evolution</h2>
+                <div class="tech-grid">
+                    <div class="tech-item">
+                        <i class="bi bi-battery-half tech-item-icon"></i>
+                        <h4 class="tech-item-title">AGM Avanzado</h4>
+                        <p class="tech-item-description">Absorción de vidrio mate para máxima durabilidad.</p>
+                    </div>
+                    <div class="tech-item">
+                        <i class="bi bi-gear-fill tech-item-icon"></i>
+                        <h4 class="tech-item-title">Start-Stop</h4>
+                        <p class="tech-item-description">Optimizada para sistemas de arranque automático.</p>
+                    </div>
+                    <div class="tech-item">
+                        <i class="bi bi-thermometer-half tech-item-icon"></i>
+                        <h4 class="tech-item-title">Resistencia Térmica</h4>
+                        <p class="tech-item-description">Funcionamiento óptimo en temperaturas extremas.</p>
+                    </div>
+                    <div class="tech-item">
+                        <i class="bi bi-recycle tech-item-icon"></i>
+                        <h4 class="tech-item-title">Eco-Friendly</h4>
+                        <p class="tech-item-description">Materiales reciclables y compromiso ambiental.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Products Section -->
+    <section class="product-section">
+        <div class="container">
+            <h2 class="section-title dark">
+                <i class="bi bi-battery"></i>
+                Baterías Automotrices
+            </h2>
+
+            <div class="product-card" *ngFor="let product of products; let i = index">
+                <div class="row align-items-center">
+                    <!-- Images/Carousel -->
+                    <div class="col-lg-6">
+                        <div [id]="'carouselEvolution'+i" class="carousel slide" data-bs-ride="carousel">
+                            <div class="carousel-inner">
+                                <div class="carousel-item" *ngFor="let img of product.images; let first = first"
+                                    [class.active]="first">
+                                    <img [src]="img" class="d-block w-100 product-img" [alt]="product.model">
+                                </div>
+                            </div>
+                            <button class="carousel-control-prev" type="button"
+                                [attr.data-bs-target]="'#carouselEvolution'+i" data-bs-slide="prev">
+                                <i class="bi bi-chevron-left"></i>
+                            </button>
+                            <button class="carousel-control-next" type="button"
+                                [attr.data-bs-target]="'#carouselEvolution'+i" data-bs-slide="next">
+                                <i class="bi bi-chevron-right"></i>
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Info -->
+                    <div class="col-lg-6 product-info">
+                        <h3 class="product-title">
+                            <i class="bi bi-battery-charging"></i>
+                            {{ product.model }}
+                        </h3>
+                        <div class="badges">
+                            <span class="badge badge-evolution">Evolution</span>
+                            <span class="badge badge-new">NUEVA</span>
+                            <span class="badge badge-stock">En Stock</span>
+                        </div>
+
+                        <div class="specs-list">
+                            <div class="spec-row">
+                                <i class="bi bi-lightning-fill spec-icon"></i>
+                                <div class="spec-detail">
+                                    <small>Arranque en frío</small>
+                                    <strong>{{ product.cca }}</strong>
+                                </div>
+                            </div>
+                            <div class="spec-row">
+                                <i class="bi bi-speedometer spec-icon"></i>
+                                <div class="spec-detail">
+                                    <small>Tecnología</small>
+                                    <strong>{{ product.tech }}</strong>
+                                </div>
+                            </div>
+                            <div class="spec-row price-row">
+                                <i class="bi bi-currency-dollar spec-icon danger"></i>
+                                <div class="spec-detail">
+                                    <small>Precio Sugerido</small>
+                                    <strong class="price">{{ product.price }}</strong>
+                                </div>
+                            </div>
+                        </div>
+
+                        <button class="btn btn-buy" [routerLink]="[product.link]">
+                            <i class="bi bi-cart-plus"></i>
+                            Comprar Ahora
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Heavy Duty Section -->
+    <section class="product-section heavy-duty">
+        <div class="container">
+            <h2 class="section-title dark">
+                <i class="bi bi-truck"></i>
+                Servicio Pesado
+            </h2>
+
+            <div class="product-card" *ngFor="let product of heavyDutyProducts; let i = index">
+                <div class="row align-items-center">
+                    <div class="col-lg-6">
+                        <div [id]="'carouselHD'+i" class="carousel slide" data-bs-ride="carousel">
+                            <div class="carousel-inner">
+                                <div class="carousel-item" *ngFor="let img of product.images; let first = first"
+                                    [class.active]="first">
+                                    <img [src]="img" class="d-block w-100 product-img" [alt]="product.model">
+                                </div>
+                            </div>
+                            <button class="carousel-control-prev" type="button" [attr.data-bs-target]="'#carouselHD'+i"
+                                data-bs-slide="prev">
+                                <i class="bi bi-chevron-left"></i>
+                            </button>
+                            <button class="carousel-control-next" type="button" [attr.data-bs-target]="'#carouselHD'+i"
+                                data-bs-slide="next">
+                                <i class="bi bi-chevron-right"></i>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 product-info">
+                        <h3 class="product-title">
+                            <i class="bi bi-truck-front"></i>
+                            {{ product.model }}
+                        </h3>
+                        <div class="badges">
+                            <span class="badge badge-hd">Heavy Duty</span>
+                            <span class="badge badge-stock">En Stock</span>
+                        </div>
+                        <div class="specs-list">
+                            <div class="spec-row">
+                                <i class="bi bi-lightning-fill spec-icon"></i>
+                                <div class="spec-detail">
+                                    <small>Arranque en frío</small>
+                                    <strong>{{ product.cca }}</strong>
+                                </div>
+                            </div>
+                            <div class="spec-row price-row">
+                                <div class="spec-detail">
+                                    <small>Precio Sugerido</small>
+                                    <strong class="price">{{ product.price }}</strong>
+                                </div>
+                            </div>
+                        </div>
+                        <button class="btn btn-buy" [routerLink]="[product.link]">
+                            <i class="bi bi-cart-plus"></i>
+                            Comprar Ahora
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>

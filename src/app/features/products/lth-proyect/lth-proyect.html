@@ -1,0 +1,328 @@
+<!-- Header Section -->
+<header class="page-heading">
+    <div class="page-heading__background gs-header-bg" aria-hidden="true"
+        style="background-image: url('https://useast2prodbrandsites.blob.core.windows.net/lth-sfassets-prod/images/librariesprovider2/default-album/hero-image.png?sfvrsn=e19e72ed_0');">
+    </div>
+    <div class="page-heading__content container">
+        <h1 class="page-heading__title gs-header-title">LTH&#174; PROTECT</h1>
+    </div>
+</header>
+
+<main>
+    <!-- Hero Section -->
+    <section class="hero-section position-relative overflow-hidden">
+        <!-- Hexagonal patterns -->
+        <div class="hex-pattern hex-pattern-1 gs-hex"></div>
+        <div class="hex-pattern hex-pattern-2 gs-hex"></div>
+        <div class="hex-pattern hex-pattern-3 gs-hex"></div>
+
+        <div class="container position-relative z-1">
+            <div class="row align-items-center justify-content-between g-5 mb-5">
+                <div class="col-lg-4 text-center text-lg-start hero-content gs-hero-content">
+                    <div class="mb-4">
+                        <img src="https://useast2prodbrandsites.blob.core.windows.net/lth-sfassets-prod/images/default-source/nueva-bateria/logos/lth_protect_c.png?sfvrsn=a5c6bf2_1"
+                            alt="LTH Protect Logo" class="logo-lth gs-fade-up">
+                    </div>
+                    <h1 class="display-4 fw-bold text-white mb-2 gs-fade-up">LTH<sup>®</sup> PROTECT</h1>
+                    <p class="fs-5 text-light mb-1 gs-fade-up">Nueva batería optimizada para vehículos:</p>
+                    <h2 class="display-3 fw-bold text-lth-gold mb-4 gs-fade-up">HÍBRIDOS Y ELÉCTRICOS</h2>
+                </div>
+
+                <div class="col-lg-4 text-center hero-image gs-hero-image">
+                    <img src="https://useast2prodbrandsites.blob.core.windows.net/lth-sfassets-prod/images/default-source/nueva-bateria/heroes/hero_protect.png?sfvrsn=cd2a0aae_5"
+                        alt="LTH Protect Battery" class="img-fluid">
+                </div>
+
+                <div class="col-lg-4 text-center text-lg-end hero-agm-block gs-hero-card">
+                    <div class="agm-card">
+                        <p class="fs-5 fw-bold text-white mb-2">CON</p>
+                        <h4 class="display-5 fw-bold text-lth-gold mb-3">AVANZADA TECNOLOGÍA <span
+                                class="text-white">AGM</span></h4>
+                        <div class="mb-4">
+                            <img src="https://useast2prodbrandsites.blob.core.windows.net/lth-sfassets-prod/images/default-source/nueva-bateria/badges/agm-badge_protect.png?sfvrsn=2ec6f3f_1"
+                                alt="AGM Badge" class="img-fluid" style="max-width: 150px;">
+                        </div>
+                        <p class="text-light small lh-base mb-3">
+                            <span class="fw-bold">AGM o Absorbent Glass Mat</span>, tecnología avanzada en los
+                            separadores de tu <span class="fw-bold text-lth-gold">LTH<sup>®</sup> PROTECT</span>.
+                        </p>
+                        <a href="#" class="btn btn-lth-cta mt-3">ORDENAR</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Additional Hero Content -->
+            <div class="row align-items-center justify-content-between g-5 mt-5 hero-cycling-section gs-hero-features">
+                <div class="col-lg-4 text-center text-lg-start">
+                    <h2 class="display-5 fw-bold text-white mb-2">LA ENERGÍA DEL FUTURO</h2>
+                    <h2 class="display-5 fw-bold text-lth-gold mb-4">HA LLEGADO</h2>
+                    <a href="#" class="btn btn-lth-outline">VER MÁS</a>
+                </div>
+                <div class="col-lg-4 text-center">
+                    <div class="position-relative">
+                        <img src="https://useast2qabrandsites.blob.core.windows.net/lth-sfassets-qa/images/default-source/nueva-bateria/backgrounds/protect/desktop/bg_img_02_pro.png"
+                            alt="Conducción segura" class="img-fluid rounded-3 shadow-lg gs-fade-in-scale">
+                    </div>
+                </div>
+                <div class="col-lg-4 text-center text-lg-end">
+                    <h4 class="display-6 fw-bold text-lth-gold mb-3">SEGURIDAD Y CONFORT</h4>
+                    <p class="fs-5 text-light mb-4">Respalda funciones esenciales</p>
+                    <h5 class="display-4 fw-bold text-white mb-0">30%</h5>
+                    <p class="text-lth-gold fw-bold mb-0">MÁS CICLADO</p>
+                    <p class="text-light small">vs batería AGM convencional</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- How It Works Section -->
+    <section class="how-it-works-section gs-section">
+        <div class="container">
+            <div class="text-center mb-5">
+                <h2 class="display-4 fw-bold gs-title-reveal">LTH<sup>®</sup> PROTECT<br>¿CÓMO FUNCIONA?</h2>
+            </div>
+
+            <div class="row align-items-center justify-content-center g-5">
+                <div class="col-lg-5 text-center text-lg-end slide-content gs-slide-text">
+                    <h3 class="display-5 fw-bold mb-3" [innerHTML]="slides[currentSlide].title"></h3>
+                    <p class="fs-5" [innerHTML]="slides[currentSlide].description"></p>
+                </div>
+                <div class="col-lg-7 position-relative slide-image text-center gs-slide-img">
+                    <img [src]="slides[currentSlide].image" alt="Car illustration" class="img-fluid">
+
+                    <!-- Navigation Buttons -->
+                    <button class="nav-btn position-absolute start-0 top-50 translate-middle-y ms-2"
+                        (click)="prevSlide()" aria-label="Anterior">
+                        <i class="bi bi-chevron-left fs-4"></i>
+                    </button>
+                    <button class="nav-btn position-absolute end-0 top-50 translate-middle-y me-2" (click)="nextSlide()"
+                        aria-label="Siguiente">
+                        <i class="bi bi-chevron-right fs-4"></i>
+                    </button>
+                </div>
+            </div>
+
+            <div class="d-flex justify-content-center mt-4 gap-2">
+                <span class="dot" *ngFor="let slide of slides; let i = index" [class.active]="i === currentSlide"
+                    (click)="setSlide(i)">
+                </span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Optimized Vehicles Section -->
+    <section class="optimized-vehicles-section gs-section">
+        <div class="hex-pattern hex-pattern-4"></div>
+        <div class="hex-pattern hex-pattern-5"></div>
+        <div class="container z-2">
+            <div class="row align-items-center g-5">
+                <div class="col-lg-6 text-center text-lg-start gs-fade-right">
+                    <h2 class="display-4 fw-bold text-white mb-0">OPTIMIZADA</h2>
+                    <h3 class="display-3 fw-bold text-lth-gold mb-4">PARA TU VEHÍCULO</h3>
+
+                    <div class="d-flex align-items-center gap-4 my-4 justify-content-center justify-content-lg-start">
+                        <img src="https://useast2prodbrandsites.blob.core.windows.net/lth-sfassets-prod/images/default-source/nueva-bateria/badges/icon_full_elec.png?sfvrsn=e28cc434_1"
+                            alt="Full Electric" class="img-fluid" width="80">
+                        <img src="https://useast2prodbrandsites.blob.core.windows.net/lth-sfassets-prod/images/default-source/nueva-bateria/badges/icon_full_hib.png?sfvrsn=598d1aa4_1"
+                            alt="Hybrid" class="img-fluid" width="80">
+                    </div>
+
+                    <p class="lead text-light">
+                        Compatible con tecnologías <span class="text-lth-gold fw-bold">EFB</span> y <span
+                            class="text-lth-gold fw-bold">AGM</span>.
+                    </p>
+                </div>
+                <div class="col-lg-6 text-center gs-fade-left">
+                    <img src="https://useast2prodbrandsites.blob.core.windows.net/lth-sfassets-prod/images/default-source/nueva-bateria/footer_img_prot12cea7ce0e3844f2a8824c7b29e50403.png?sfvrsn=50f6e33f_2"
+                        alt="LTH Protect Battery" class="img-fluid drop-shadow-xl">
+                </div>
+            </div>
+
+            <!-- Video -->
+            <div class="row mt-5">
+                <div class="col-lg-8 mx-auto text-center gs-scale-up">
+                    <h2 class="h2 fw-bold text-white mb-4">MIRA LA POTENCIA <span class="text-lth-gold">EN ACCIÓN</span>
+                    </h2>
+                    <div class="ratio ratio-16x9 rounded-4 overflow-hidden shadow-lg border-glass">
+                        <iframe src="https://www.youtube.com/embed/H6XIvoHiguY?si=It8uidFK2gyi5BiX&amp;rel=0"
+                            title="LTH Protect Video" allowfullscreen></iframe>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Equipment Section (Icons Grid) -->
+    <section class="equipment-section gs-section">
+        <div class="container z-2">
+            <div class="text-center mb-5 gs-title-reveal">
+                <h2 class="h4 text-white opacity-75">Ideal para vehículos con</h2>
+                <h3 class="display-4 fw-bold text-lth-gold">EQUIPAMIENTO AVANZADO</h3>
+            </div>
+
+            <div class="row justify-content-center g-4">
+                <!-- Items with looping -->
+                <div class="col-6 col-md-3 text-center equipment-item gs-equip-item">
+                    <div class="glass-card">
+                        <img src="https://useast2prodbrandsites.blob.core.windows.net/lth-sfassets-prod/images/default-source/nueva-bateria/icons/protect/e-icon_gps.png?sfvrsn=fe706052_0"
+                            alt="GPS" class="img-fluid mb-3" width="60">
+                        <p class="fw-bold text-white m-0">GPS / Navegación</p>
+                    </div>
+                </div>
+                <div class="col-6 col-md-3 text-center equipment-item gs-equip-item">
+                    <div class="glass-card">
+                        <img src="https://useast2prodbrandsites.blob.core.windows.net/lth-sfassets-prod/images/default-source/nueva-bateria/icons/protect/e-icon_elec.png?sfvrsn=3851ec36_0"
+                            alt="Vidrios" class="img-fluid mb-3" width="60">
+                        <p class="fw-bold text-white m-0">Vidrios Eléctricos</p>
+                    </div>
+                </div>
+                <div class="col-6 col-md-3 text-center equipment-item gs-equip-item">
+                    <div class="glass-card">
+                        <img src="https://useast2prodbrandsites.blob.core.windows.net/lth-sfassets-prod/images/default-source/nueva-bateria/icons/protect/e-icon_screen.png?sfvrsn=bb00413e_1"
+                            alt="Pantallas" class="img-fluid mb-3" width="60">
+                        <p class="fw-bold text-white m-0">Pantallas Táctiles</p>
+                    </div>
+                </div>
+                <div class="col-6 col-md-3 text-center equipment-item gs-equip-item">
+                    <div class="glass-card">
+                        <img src="https://useast2prodbrandsites.blob.core.windows.net/lth-sfassets-prod/images/default-source/nueva-bateria/icons/protect/e-icon_heat.png?sfvrsn=d4893f1b_1"
+                            alt="Calefacción" class="img-fluid mb-3" width="60">
+                        <p class="fw-bold text-white m-0">Asientos Térmicos</p>
+                    </div>
+                </div>
+                <!-- Row 2 -->
+                <div class="col-6 col-md-3 text-center equipment-item gs-equip-item">
+                    <div class="glass-card">
+                        <img src="https://useast2prodbrandsites.blob.core.windows.net/lth-sfassets-prod/images/default-source/nueva-bateria/icons/protect/e-icon_ac.png?sfvrsn=f5b75778_1"
+                            alt="AC" class="img-fluid mb-3" width="60">
+                        <p class="fw-bold text-white m-0">Climatización Automática</p>
+                    </div>
+                </div>
+                <div class="col-6 col-md-3 text-center equipment-item gs-equip-item">
+                    <div class="glass-card">
+                        <img src="https://useast2prodbrandsites.blob.core.windows.net/lth-sfassets-prod/images/default-source/nueva-bateria/icons/protect/e-icon_adas.png?sfvrsn=3701a3_1"
+                            alt="ADAS" class="img-fluid mb-3" width="60">
+                        <p class="fw-bold text-white m-0">Sistemas ADAS</p>
+                    </div>
+                </div>
+                <div class="col-6 col-md-3 text-center equipment-item gs-equip-item">
+                    <div class="glass-card">
+                        <img src="https://useast2prodbrandsites.blob.core.windows.net/lth-sfassets-prod/images/default-source/nueva-bateria/icons/protect/e-icon_ent.png?sfvrsn=4e37cf63_1"
+                            alt="Entretenimiento" class="img-fluid mb-3" width="60">
+                        <p class="fw-bold text-white m-0">Infoentretenimiento</p>
+                    </div>
+                </div>
+                <div class="col-6 col-md-3 text-center equipment-item gs-equip-item">
+                    <div class="glass-card">
+                        <img src="https://useast2prodbrandsites.blob.core.windows.net/lth-sfassets-prod/images/default-source/nueva-bateria/icons/protect/e-icon_wifi.png?sfvrsn=44c5911a_1"
+                            alt="WiFi" class="img-fluid mb-3" width="60">
+                        <p class="fw-bold text-white m-0">Conectividad Total</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Warranty Section -->
+    <section class="warranty-section gs-section">
+        <div class="container">
+            <div class="row align-items-center justify-content-center">
+                <div class="col-lg-6 order-2 order-lg-1 warranty-content gs-fade-right">
+                    <h2 class="display-1 fw-bold text-lth-red mb-0">5 AÑOS</h2>
+                    <h3 class="display-4 fw-bold text-dark mb-4">DE GARANTÍA*</h3>
+
+                    <div class="d-flex align-items-center gap-3 mb-4">
+                        <div class="bg-lth-gold text-dark fw-bold rounded-circle d-flex align-items-center justify-content-center"
+                            style="width: 80px; height: 80px; font-size: 1.5rem;">24</div>
+                        <div>
+                            <p class="h4 fw-bold m-0">MESES DE</p>
+                            <p class="h5 m-0 text-muted">REEMPLAZO SIN COSTO</p>
+                        </div>
+                    </div>
+
+                    <p class="small text-muted mb-4">*Consulta términos y condiciones de la póliza.</p>
+                    <a href="#" class="btn btn-lth-cta">OBTENER GARANTÍA</a>
+                </div>
+                <div class="col-lg-6 order-1 order-lg-2 text-center gs-fade-left">
+                    <img src="https://useast2prodbrandsites.blob.core.windows.net/lth-sfassets-prod/images/default-source/nueva-bateria/composites/co_img_02_pro.png?sfvrsn=ac285ce_1"
+                        alt="Garantía LTH" class="img-fluid">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Battery Details (Construction) -->
+    <section class="battery-details-section gs-section py-5">
+        <div class="hex-pattern hex-pattern-8"></div>
+        <div class="container z-2">
+            <div class="text-center mb-5">
+                <img src="https://useast2prodbrandsites.blob.core.windows.net/lth-sfassets-prod/images/default-source/nueva-bateria/badges/battery_head_pro.png?sfvrsn=d8f1847c_1"
+                    alt="Conoce tu batería" class="img-fluid gs-fade-down" width="300">
+            </div>
+
+            <div class="row align-items-center">
+                <div class="col-lg-6 position-relative text-center exploded-view gs-exploded-view">
+                    <img src="https://useast2prodbrandsites.blob.core.windows.net/lth-sfassets-prod/images/default-source/nueva-bateria/co_img_03_pro.png?sfvrsn=e28da625_1"
+                        alt="Vista Explotada" class="img-fluid" style="filter: drop-shadow(0 0 20px rgba(0,0,0,0.5));">
+
+                    <!-- Floating Labels -->
+                    <div class="position-absolute top-0 end-0 mt-5 translate-middle-x gs-label" style="right: 15%;">
+                        <span class="badge bg-lth-red fs-6 shadow-sm">TAPA SELLADA</span>
+                    </div>
+                    <div class="position-absolute top-50 end-0 translate-middle-y gs-label" style="right: 10%;">
+                        <span class="badge bg-lth-gold text-dark fs-6 shadow-sm">PLACAS REFORZADAS</span>
+                    </div>
+                    <div class="position-absolute bottom-0 end-0 mb-5 translate-middle-x gs-label" style="right: 20%;">
+                        <span class="badge bg-lth-deep-blue border border-light fs-6 shadow-sm">CAJA ROBUSTA</span>
+                    </div>
+                </div>
+
+                <div class="col-lg-6">
+                    <div class="detail-card gs-detail-card">
+                        <div class="row g-3 mb-4">
+                            <div class="col-6">
+                                <div class="detail-img">
+                                    <img src="https://useast2prodbrandsites.blob.core.windows.net/lth-sfassets-prod/images/default-source/nueva-bateria/slides/co_img_carr_01_pro.jpg?sfvrsn=2a9a6974_2"
+                                        class="img-fluid">
+                                </div>
+                            </div>
+                            <div class="col-6">
+                                <div class="detail-img">
+                                    <img src="https://useast2prodbrandsites.blob.core.windows.net/lth-sfassets-prod/images/default-source/nueva-bateria/slides/co_img_carr_02_pro.jpg?sfvrsn=b91108d9_2"
+                                        class="img-fluid">
+                                </div>
+                            </div>
+                            <div class="col-6">
+                                <div class="detail-img">
+                                    <img src="https://useast2prodbrandsites.blob.core.windows.net/lth-sfassets-prod/images/default-source/nueva-bateria/slides/co_img_carr_03_pro.jpg?sfvrsn=64305a6d_2"
+                                        class="img-fluid">
+                                </div>
+                            </div>
+                            <div class="col-6">
+                                <div class="detail-img">
+                                    <img src="https://useast2prodbrandsites.blob.core.windows.net/lth-sfassets-prod/images/default-source/nueva-bateria/slides/co_img_carr_04_pro.jpg?sfvrsn=3055bee6_2"
+                                        class="img-fluid">
+                                </div>
+                            </div>
+                        </div>
+                        <h4 class="fw-bold text-lth-deep-blue">TECNOLOGÍA POWERFRAME®</h4>
+                        <p class="text-muted">
+                            Rejillas patentadas de <span class="text-lth-red fw-bold">aleación forjada</span>, diseñadas
+                            para resistir la corrosión y optimizar el flujo de energía.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Final CTA Section -->
+    <section class="discover-power-section py-5 text-center">
+        <div class="container z-2">
+            <h2 class="display-3 fw-bold text-white mb-2 gs-cta-title">DESCUBRE EL PODER</h2>
+            <h3 class="display-2 fw-bold text-lth-gold mb-5 gs-cta-title">LTH<sup>®</sup> PROTECT</h3>
+            <a href="/src/app/components/battery-protect/battery-protect.html"
+                class="btn btn-lth-cta btn-lg gs-pulse-btn">COMPRAR AHORA</a>
+        </div>
+    </section>
+</main>

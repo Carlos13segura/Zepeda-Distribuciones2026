@@ -1,0 +1,426 @@
+/* LTH GOLF Premium Styles */
+.lth-golf-content {
+    /* Color Palette - Premium Golf Course Theme */
+    --golf-green-deep: #004d40;
+    --golf-green-mid: #2e7d32;
+    --golf-green-bright: #43a047;
+    --golf-gold: #ffd700;
+    --golf-gold-dark: #f9a825;
+    --golf-sand: #f9f7e8;
+
+    --text-primary: #1b5e20;
+    --text-secondary: #546e7a;
+
+    --shadow-soft: 0 4px 20px rgba(0, 77, 64, 0.1);
+    --shadow-hover: 0 10px 30px rgba(0, 77, 64, 0.2);
+
+    font-family: 'Segoe UI', system-ui, sans-serif;
+    background-color: var(--golf-sand);
+    overflow-x: hidden;
+
+    i {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        vertical-align: middle;
+    }
+
+    /* Hero Section */
+    .golf-hero-section {
+        background: radial-gradient(circle at top right, var(--golf-green-mid), var(--golf-green-deep));
+        color: white;
+        padding: 120px 0;
+        position: relative;
+        overflow: hidden;
+
+        &::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background: url("data:image/svg+xml,%3Csvg width='40' height='40' viewBox='0 0 40 40' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23ffffff' fill-opacity='0.05' fill-rule='evenodd'%3E%3Cpath d='M0 40L40 0H20L0 20M40 40V20L20 40'/%3E%3C/g%3E%3C/svg%3E");
+            opacity: 0.3;
+        }
+
+        .container {
+            position: relative;
+            z-index: 2;
+        }
+
+        .golf-hero-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            background: rgba(255, 255, 255, 0.1);
+            color: var(--golf-gold);
+            padding: 10px 24px;
+            border-radius: 50px;
+            font-weight: 700;
+            font-size: 0.9rem;
+            margin-bottom: 24px;
+            backdrop-filter: blur(8px);
+            border: 1px solid rgba(255, 215, 0, 0.4);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+
+            i {
+                color: var(--golf-gold);
+                font-size: 1.1rem;
+            }
+        }
+
+        .golf-hero-title {
+            font-size: clamp(3.5rem, 8vw, 6.5rem);
+            font-weight: 900;
+            line-height: 1;
+            margin-bottom: 24px;
+            text-transform: uppercase;
+
+            .brand-text {
+                display: block;
+                font-size: 0.4em;
+                letter-spacing: 4px;
+                color: #ffcdd2;
+                /* Soft red tint */
+                margin-bottom: 5px;
+            }
+
+            .golf-text {
+                display: block;
+                background: linear-gradient(to bottom, #fff, #b2dfdb);
+                -webkit-background-clip: text;
+                -webkit-text-fill-color: transparent;
+                filter: drop-shadow(0 4px 0 rgba(0, 0, 0, 0.2));
+            }
+        }
+
+        .golf-hero-description {
+            font-size: 1.25rem;
+            line-height: 1.6;
+            margin-bottom: 40px;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+            color: rgba(255, 255, 255, 0.9);
+            font-weight: 300;
+        }
+
+        .golf-hero-features {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+            margin-bottom: 40px;
+
+            .golf-feature-item {
+                display: flex;
+                align-items: center;
+                gap: 12px;
+                background: rgba(0, 0, 0, 0.2);
+                padding: 12px 24px;
+                border-radius: 12px;
+                transition: transform 0.3s;
+                border: 1px solid rgba(255, 255, 255, 0.05);
+
+                &:hover {
+                    transform: translateY(-3px);
+                    background: rgba(0, 0, 0, 0.3);
+                }
+
+                i {
+                    font-size: 1.5rem;
+                    color: var(--golf-gold);
+                }
+
+                span {
+                    font-weight: 600;
+                    letter-spacing: 0.5px;
+                }
+            }
+        }
+
+        .golf-bateria-img {
+            max-width: 420px;
+            width: 100%;
+            display: block;
+            margin: 0 auto;
+            filter: drop-shadow(0 25px 50px rgba(0, 0, 0, 0.4));
+            transition: transform 0.4s ease;
+
+            &:hover {
+                transform: scale(1.02) translateY(-5px);
+            }
+        }
+    }
+
+    /* Products Section */
+    .golf-products-section {
+        padding: 80px 0;
+
+        .golf-section-title {
+            color: var(--golf-green-deep);
+            font-weight: 800;
+            font-size: 2.5rem;
+            text-align: center;
+            margin-bottom: 60px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            position: relative;
+
+            &::after {
+                content: '';
+                display: block;
+                width: 60px;
+                height: 4px;
+                background: var(--golf-gold);
+                margin: 15px auto 0;
+                border-radius: 2px;
+            }
+        }
+
+        .golf-product-card {
+            background: white;
+            border-radius: 20px;
+            padding: 0;
+            box-shadow: var(--shadow-soft);
+            margin-bottom: 40px;
+            transition: all 0.3s ease;
+            overflow: hidden;
+            border: 1px solid rgba(0, 0, 0, 0.03);
+
+            &:hover {
+                transform: translateY(-5px);
+                box-shadow: var(--shadow-hover);
+            }
+
+            .row {
+                margin: 0;
+            }
+
+            .golf-product-image-container {
+                background: linear-gradient(135deg, #f1f8e9, #ffffff);
+                height: 100%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                padding: 40px;
+                position: relative;
+
+                &::after {
+                    content: '';
+                    position: absolute;
+                    bottom: 0;
+                    right: 0;
+                    width: 100px;
+                    height: 100px;
+                    background: radial-gradient(circle at bottom right, var(--golf-gold), transparent 70%);
+                    opacity: 0.1;
+                }
+
+                .golf-product-image {
+                    max-width: 100%;
+                    max-height: 300px;
+                    object-fit: contain;
+                    filter: drop-shadow(0 15px 25px rgba(0, 0, 0, 0.15));
+                }
+            }
+
+            .golf-product-info {
+                padding: 40px;
+
+                .golf-product-title {
+                    color: var(--golf-green-deep);
+                    font-size: 2rem;
+                    font-weight: 800;
+                    margin-bottom: 16px;
+                }
+
+                .golf-badges {
+                    display: flex;
+                    flex-wrap: wrap;
+                    gap: 10px;
+                    margin-bottom: 30px;
+
+                    .badge {
+                        padding: 6px 14px;
+                        border-radius: 6px;
+                        font-weight: 600;
+                        font-size: 0.8rem;
+                        text-transform: uppercase;
+                        letter-spacing: 0.5px;
+
+                        &.badge-golf {
+                            background: var(--golf-green-mid);
+                            color: white;
+                        }
+
+                        &.badge-stock {
+                            background: #e8f5e9;
+                            color: #2e7d32;
+                            border: 1px solid #c8e6c9;
+                        }
+
+                        &.badge-deep-cycle {
+                            background: #fff8e1;
+                            color: #f57f17;
+                            border: 1px solid #ffecb3;
+                        }
+                    }
+                }
+
+                .golf-specs-list {
+                    display: grid;
+                    gap: 16px;
+                    margin-bottom: 35px;
+
+                    .golf-spec-row {
+                        display: flex;
+                        align-items: center;
+                        gap: 15px;
+                        padding: 10px;
+                        background: rgba(0, 0, 0, 0.02);
+                        border-radius: 10px;
+
+                        .spec-icon {
+                            font-size: 1.4rem;
+                            width: 40px;
+                            height: 40px;
+                            display: flex;
+                            align-items: center;
+                            justify-content: center;
+                            border-radius: 8px;
+                            background: white;
+                            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+
+                            &.yellow {
+                                color: #fbc02d;
+                            }
+
+                            &.green {
+                                color: #43a047;
+                            }
+
+                            &.blue {
+                                color: #1e88e5;
+                            }
+
+                            &.primary {
+                                color: var(--golf-green-deep);
+                            }
+
+                            &.secondary {
+                                color: #78909c;
+                            }
+
+                            &.warning {
+                                color: #ffa000;
+                            }
+
+                            &.danger {
+                                color: #e53935;
+                            }
+                        }
+
+                        .spec-detail {
+                            flex: 1;
+
+                            small {
+                                display: block;
+                                font-size: 0.75rem;
+                                color: var(--text-secondary);
+                                text-transform: uppercase;
+                                font-weight: 600;
+                                margin-bottom: 2px;
+                            }
+
+                            strong {
+                                display: block;
+                                color: var(--text-primary);
+                                font-size: 1rem;
+                            }
+                        }
+
+                        &.price-row {
+                            background: var(--golf-green-deep);
+
+                            .spec-icon {
+                                background: rgba(255, 255, 255, 0.1);
+                                color: white;
+                            }
+
+                            .spec-detail small {
+                                color: rgba(255, 255, 255, 0.7);
+                            }
+
+                            .spec-detail strong {
+                                color: white;
+                                font-size: 1.5rem;
+                            }
+                        }
+                    }
+                }
+
+                .btn-golf-primary {
+                    width: 100%;
+                    padding: 18px;
+                    border: none;
+                    background: linear-gradient(45deg, var(--golf-gold), var(--golf-gold-dark));
+                    color: var(--golf-green-deep);
+                    font-weight: 800;
+                    text-transform: uppercase;
+                    letter-spacing: 1px;
+                    border-radius: 12px;
+                    box-shadow: 0 4px 15px rgba(249, 168, 37, 0.3);
+                    transition: all 0.3s;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    gap: 10px;
+
+                    &:hover {
+                        transform: translateY(-2px);
+                        box-shadow: 0 8px 25px rgba(249, 168, 37, 0.4);
+                        filter: brightness(1.05);
+                    }
+                }
+            }
+        }
+    }
+}
+
+/* Animations */
+@keyframes float {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+@media (max-width: 991px) {
+    .lth-golf-content {
+        .golf-hero-section {
+            padding: 80px 0;
+            text-align: center;
+        }
+
+        .golf-products-section {
+            .golf-product-card {
+                .golf-product-image-container {
+                    padding: 30px;
+                    height: 250px;
+
+                    .golf-product-image {
+                        max-height: 200px;
+                    }
+                }
+
+                .golf-product-info {
+                    padding: 30px;
+                }
+            }
+        }
+    }
+}

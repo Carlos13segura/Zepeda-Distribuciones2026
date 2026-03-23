@@ -1,0 +1,267 @@
+// Variables - Colores Originales (Default)
+$lth-dark-blue: #001f4f; // Original Dark Blue
+$lth-yellow: #ffd700; // Original Yellow
+$lth-black: #000000; // Original Black
+$lth-white: #ffffff;
+$lth-gray-text: #6c757d;
+$lth-deep-blue: $lth-dark-blue; // Mapping for compatibility
+$lth-gold: $lth-yellow; // Mapping for compatibility
+$lth-red: #d61634; // Keeping red for accents if needed
+
+:host {
+    display: block;
+    font-family: "Arial", sans-serif;
+    background-color: $lth-black;
+    color: $lth-white;
+    overflow-x: hidden;
+}
+
+/* Global Utilities */
+.text-lth-gold {
+    color: $lth-yellow !important;
+}
+
+.text-lth-red {
+    color: $lth-red !important;
+}
+
+.bg-lth-gold {
+    background-color: $lth-yellow !important;
+}
+
+.bg-lth-red {
+    background-color: $lth-red !important;
+}
+
+/* Buttons */
+.btn-lth-cta {
+    background-color: $lth-yellow;
+    color: $lth-black;
+    border: 2px solid $lth-yellow;
+    padding: 0.75rem 2rem;
+    font-size: 1.25rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    border-radius: 6px;
+    transition: all 0.3s ease;
+
+    &:hover {
+        background-color: darken($lth-yellow, 10%);
+        color: $lth-black;
+        border-color: darken($lth-yellow, 10%);
+        transform: translateY(-2px);
+    }
+}
+
+.btn-lth-outline {
+    color: $lth-yellow;
+    border: 2px solid $lth-yellow;
+    background-color: transparent;
+    padding: 0.75rem 2rem;
+    font-size: 1.25rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    border-radius: 6px;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    display: inline-block;
+
+    &:hover {
+        background-color: $lth-yellow;
+        color: $lth-black;
+    }
+}
+
+/* Page Header */
+.page-heading {
+    position: relative;
+    padding: 6rem 1rem;
+    text-align: center;
+    background-color: $lth-dark-blue;
+    overflow: hidden;
+
+    &__background {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-size: cover;
+        background-position: center;
+        filter: brightness(0.5);
+        transform: scale(1.1);
+    }
+
+    &__content {
+        position: relative;
+        z-index: 2;
+    }
+
+    &__title {
+        font-size: 3.5rem;
+        font-weight: 800;
+        color: $lth-white;
+        letter-spacing: 2px;
+    }
+}
+
+/* Hero Section */
+.hero-section {
+    background-color: $lth-black;
+    padding: 6rem 0;
+    position: relative;
+    overflow: visible; // Allow elements to overflow if needed
+
+    .logo-lth {
+        max-width: 250px;
+        filter: drop-shadow(0 0 10px rgba(255, 255, 255, 0.1));
+    }
+
+    .hero-agm-block {
+        .agm-card {
+            border: 1px solid $lth-yellow;
+            padding: 2rem;
+            border-radius: 8px;
+            background: transparent;
+        }
+    }
+}
+
+/* Hex Pattern */
+.hex-pattern {
+    position: absolute;
+    width: 300px;
+    height: 300px;
+    background-color: $lth-yellow;
+    opacity: 0.15;
+    border-radius: 50%;
+    filter: blur(40px);
+    mix-blend-mode: screen;
+    z-index: 0;
+    animation: flow 15s infinite ease-in-out;
+}
+
+@keyframes flow {
+
+    0%,
+    100% {
+        transform: translate(0, 0) scale(1);
+    }
+
+    50% {
+        transform: translate(20px, -20px) scale(1.1);
+    }
+}
+
+/* How It Works */
+.how-it-works-section {
+    background-color: $lth-white;
+    color: $lth-black;
+    padding: 6rem 0;
+
+    .slide-image {
+        .nav-btn {
+            background: $lth-yellow;
+            color: $lth-black;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            border: none;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: transform 0.2s;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+
+            &:hover {
+                transform: scale(1.1) translateY(-50%) !important;
+            }
+        }
+    }
+
+    .dot {
+        width: 15px;
+        height: 15px;
+        background-color: #ddd;
+        border-radius: 50%;
+        margin: 0 5px;
+        cursor: pointer;
+        transition: all 0.3s;
+
+        &.active {
+            background-color: $lth-yellow;
+            transform: scale(1.2);
+        }
+    }
+}
+
+/* Optimized Sections - Black Background */
+.optimized-vehicles-section,
+.equipment-section,
+.battery-details-section,
+.discover-power-section {
+    background-color: $lth-black;
+    padding: 6rem 0;
+    position: relative;
+
+    .container {
+        position: relative;
+        z-index: 2;
+    }
+}
+
+/* Equipment Grid */
+.equipment-item {
+    padding: 1rem;
+
+    .glass-card {
+        transition: transform 0.3s ease;
+
+        &:hover {
+            transform: translateY(-5px);
+
+            img {
+                filter: drop-shadow(0 0 8px $lth-yellow);
+            }
+        }
+    }
+}
+
+/* Warranty */
+.warranty-section {
+    background-color: $lth-white;
+    color: $lth-black;
+    padding: 6rem 0;
+
+    h2 {
+        line-height: 1.2;
+    }
+}
+
+/* Details Grid */
+.grid-details {
+    .detail-card {
+        background: $lth-white;
+        border-radius: 12px;
+        padding: 2rem;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        color: $lth-black;
+
+        .detail-img img {
+            width: 100%;
+            border-radius: 8px;
+        }
+    }
+}
+
+/* Responsive */
+@media (max-width: 992px) {
+    .page-heading__title {
+        font-size: 3rem;
+    }
+
+    .hero-section {
+        text-align: center;
+    }
+}

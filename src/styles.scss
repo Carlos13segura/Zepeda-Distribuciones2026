@@ -1,0 +1,17 @@
+// ==============================================================================
+// LTH SCSS Architecture (7-1 Pattern)
+// ==============================================================================
+
+// 1. ABSTRACTS (Variables, Mixins, Functions)
+@use 'styles/abstracts' as *;
+
+// 2. VENDORS (Bootstrap, Iconify, etc. is managed via angular.json)
+
+// 3. BASE (Reset, Typography, Global Styles)
+@use 'styles/base';
+
+// Global utility for preventing x-overflow
+html, body {
+  width: 100%;
+  overflow-x: hidden;
+}

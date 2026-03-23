@@ -1,0 +1,715 @@
+<!-- Contenido Principal -->
+<!-- Banner Section -->
+<div class="banner">
+    <h1>
+        <i class="bi bi-headset me-3"></i>
+        SOPORTE
+    </h1>
+    <div class="d-flex justify-content-center align-items-center flex-wrap">
+        <a routerLink="/abc-de-tus-productos" class="item text-center">
+            <i class="bi bi-book-half icon"></i>
+            <p>ABC de Tus Productos</p>
+            <div class="red-underline"></div>
+        </a>
+        <a routerLink="/garantia" class="item text-center">
+            <i class="bi bi-award-fill icon"></i>
+            <p>Garantía</p>
+        </a>
+        <a routerLink="/instalacion" class="item text-center">
+            <i class="bi bi-tools icon"></i>
+            <p>Instalación y Reemplazo</p>
+        </a>
+        <a routerLink="/mantenimiento" class="item text-center">
+            <i class="bi bi-wrench icon"></i>
+            <p>Mantenimiento</p>
+        </a>
+    </div>
+</div>
+
+<!-- Main Content -->
+<div class="container main-content">
+    <h1 class="section-title fade-in-up">
+        <i class="bi bi-info-circle-fill me-3"></i>
+        Información de Productos LTH
+    </h1>
+
+    <!-- BATERÍAS Section -->
+    <div class="accordion accordion-custom fade-in-up" id="accordionBaterias">
+        <div class="accordion-item">
+            <h2 class="accordion-header" id="headingBaterias">
+                <button class="accordion-button" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#collapseBaterias" aria-expanded="true" aria-controls="collapseBaterias">
+                    <i class="bi bi-car-front-fill me-3"></i>
+                    BATERÍAS
+                </button>
+            </h2>
+            <div id="collapseBaterias" class="accordion-collapse collapse show" aria-labelledby="headingBaterias"
+                data-bs-parent="#accordionBaterias">
+                <div class="accordion-body">
+                    <!-- Conoce tu Batería LTH -->
+                    <div class="collapsible-section">
+                        <div class="collapsible-header" (click)="toggleCollapsible($event)">
+                            <h6>
+                                <i class="bi bi-battery-full me-2"></i>
+                                Conoce tu Batería LTH para Autos
+                            </h6>
+                            <i class="bi bi-chevron-down chevron-icon"></i>
+                        </div>
+                        <div class="collapsible-content">
+                            <div class="content-card">
+                                <h5><strong>¿Qué es una batería?</strong></h5>
+                                <p>Es un dispositivo que almacena energía en forma química, para posteriormente
+                                    liberarla en forma eléctrica al momento de ser requerida por una carga,
+                                    principalmente la marcha/arrancador para encender el motor de un vehículo.</p>
+
+                                <h5><strong>Funciones de una batería</strong></h5>
+                                <p>La principal tarea de una batería es brindar la energía necesaria para poner en
+                                    marcha un vehículo. No obstante, en la actualidad la batería cumple otras tareas
+                                    complementarias como brindar energía a algunos dispositivos mientras el vehículo
+                                    está apagado.</p>
+
+                                <h5><strong>¿Qué es la capacidad de arranque?</strong></h5>
+                                <p>Es la corriente que la batería puede otorgar durante 30 segundos antes de descargarse
+                                    completamente.</p>
+
+                                <div class="alert-danger-custom alert-custom">
+                                    <strong><i class="bi bi-exclamation-triangle-fill me-2"></i>DATO
+                                        IMPORTANTE:</strong> Es la corriente de descarga (en amperios) que un acumulador
+                                    completamente cargado, puede entregar continuamente durante 30 segundos sin bajar de
+                                    7.2 volts (esto para baterías de 12 volts).
+                                </div>
+
+                                <h5><strong>¿Qué es la capacidad de reserva?</strong></h5>
+                                <p>Es una especificación para uso en caso de emergencia, y se refiere al tiempo en que
+                                    un acumulador completamente cargado puede otorgar la corriente mínima para el
+                                    funcionamiento del vehículo en caso de una falla en el sistema eléctrico bajo
+                                    condiciones críticas de manejo (de noche y con lluvia).</p>
+
+                                <div class="alert-danger-custom alert-custom">
+                                    <strong><i class="bi bi-exclamation-triangle-fill me-2"></i>DATO
+                                        IMPORTANTE:</strong> Capacidad de reserva es el número de minutos en que un
+                                    acumulador completamente cargado, puede descargarse de manera continua y mantener un
+                                    voltaje terminal igual o mayor de 1.75 volts por celda.
+                                </div>
+
+                                <p>Los vehículos cuentan con un indicador/aviso (tablero o pantallas) en forma de
+                                    batería que enciende cuando el sistema eléctrico presenta una falla, la batería
+                                    comienza a suministrar toda la energía en el vehículo y comienza el tiempo de la
+                                    capacidad de reserva.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Mitos de la batería -->
+                    <div class="collapsible-section">
+                        <div class="collapsible-header" (click)="toggleCollapsible($event)">
+                            <h6>
+                                <i class="bi bi-question-circle-fill me-2"></i>
+                                Mitos de la batería
+                            </h6>
+                            <i class="bi bi-chevron-down chevron-icon"></i>
+                        </div>
+                        <div class="collapsible-content">
+                            <div class="content-card">
+                                <h5>Agregar sustancias al acumulador</h5>
+                                <h6><strong>Es bueno agregar agua mineralizada a la batería para autos</strong></h6>
+                                <p>Esta creencia es incorrecta ya que, al añadir agua con minerales al interior de la
+                                    batería, estamos ocasionando que éstos acaben rápidamente con los componentes
+                                    internos de la misma, reduciendo su tiempo de vida.</p>
+
+                                <div class="alert-danger-custom alert-custom">
+                                    <strong><i class="bi bi-exclamation-triangle-fill me-2"></i>DATO
+                                        IMPORTANTE:</strong> En caso de no ser baterías de libre mantenimiento, lo
+                                    correcto es añadir agua desmineralizada. Recomendamos llevar su batería a un Centro
+                                    de Servicio LTH más cercano.
+                                </div>
+
+                                <h6><strong>Cargas Rápidas</strong></h6>
+                                <p>Siempre que tenemos una batería que nos comienza a fallar, creemos que con una carga
+                                    rápida podemos extender la vida de la batería. Esto es incorrecto, ya que lo único
+                                    que lograremos es quedarnos varados en la próxima avenida.</p>
+
+                                <h6><strong>Agitar la batería</strong></h6>
+                                <p>Se cree que al agitar la batería se puede lograr una recuperación de carga, sin
+                                    embargo, esta práctica puede provocar que el material activo interno se desprenda
+                                    prematuramente de las placas, acortando considerablemente la vida de la batería.</p>
+
+                                <h6><strong>Peso de la batería</strong></h6>
+                                <p>"Una batería pesada y con más placas o placas más gruesas es mejor". Esto es
+                                    incorrecto, las placas gruesas poseen material muerto que no reacciona con el ácido.
+                                </p>
+
+                                <h6><strong>Cantidad de placas</strong></h6>
+                                <p>"A mayor cantidad de placas, es una mejor batería". Esta creencia es incorrecta, ya
+                                    que la capacidad real de la batería nos da la capacidad de arranque en frío (CCA) y
+                                    la capacidad de reserva (CR).</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Glosario -->
+                    <div class="collapsible-section">
+                        <div class="collapsible-header" (click)="toggleCollapsible($event)">
+                            <h6>
+                                <i class="bi bi-sort-alpha-down me-2"></i>
+                                Glosario
+                            </h6>
+                            <i class="bi bi-chevron-down chevron-icon"></i>
+                        </div>
+                        <div class="collapsible-content">
+                            <div class="content-card">
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <h6><strong>AGM</strong></h6>
+                                        <p>Por sus siglas en inglés (Absorbed Glass Mat), es un separador de fibra de
+                                            vidrio absorbente.</p>
+
+                                        <h6><strong>Ampere (A)</strong></h6>
+                                        <p>Es la unidad de medida del flujo de corriente eléctrica.</p>
+
+                                        <h6><strong>Ampere hora (Ah)</strong></h6>
+                                        <p>Es la corriente de Amperes que puede entregar la batería a -18 °C por 30
+                                            segundos.</p>
+
+                                        <h6><strong>Autodescarga</strong></h6>
+                                        <p>Pérdida de capacidad sin conexión a un circuito externo.</p>
+
+                                        <h6><strong>Capacidad de Arranque (CA)</strong></h6>
+                                        <p>Es la cantidad de corriente eléctrica, medida en amperios, que una batería
+                                            puede dar en condiciones de frío (0 °C).</p>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <h6><strong>Capacidad de Arranque en Frío (CCA)</strong></h6>
+                                        <p>Es la cantidad de corriente eléctrica que una batería puede dar a -18°C para
+                                            accionar un motor de arranque.</p>
+
+                                        <h6><strong>Capacidad de Reserva</strong></h6>
+                                        <p>Es el tiempo en minutos que una batería proporciona 25 amperes a 80°
+                                            Fahrenheit.</p>
+
+                                        <h6><strong>Celda</strong></h6>
+                                        <p>La mínima unidad de la cual la batería está compuesta.</p>
+
+                                        <h6><strong>Electrolito</strong></h6>
+                                        <p>Cualquier sustancia que contiene iones libres, los que se comportan como un
+                                            medio conductor eléctrico.</p>
+
+                                        <h6><strong>Voltaje</strong></h6>
+                                        <p>La tensión eléctrica o diferencia de potencial, es una magnitud física que
+                                            cuantifica la diferencia de potencial eléctrico entre dos puntos.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- MOTO-BATERÍAS Section -->
+    <div class="accordion accordion-custom fade-in-up" id="accordionMotoBaterias">
+        <div class="accordion-item">
+            <h2 class="accordion-header" id="headingMotoBaterias">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#collapseMotoBaterias" aria-expanded="false" aria-controls="collapseMotoBaterias">
+                    <i class="bi bi-bicycle me-3"></i>
+                    MOTO-BATERÍAS
+                </button>
+            </h2>
+            <div id="collapseMotoBaterias" class="accordion-collapse collapse" aria-labelledby="headingMotoBaterias"
+                data-bs-parent="#accordionMotoBaterias">
+                <div class="accordion-body">
+                    <!-- Conoce tu Moto-Batería -->
+                    <div class="collapsible-section">
+                        <div class="collapsible-header" (click)="toggleCollapsible($event)">
+                            <h6>
+                                <i class="bi bi-battery me-2"></i>
+                                Conoce tu Moto-Batería LTH
+                            </h6>
+                            <i class="bi bi-chevron-down chevron-icon"></i>
+                        </div>
+                        <div class="collapsible-content">
+                            <div class="content-card">
+                                <h5><strong>¿Qué es una Moto-Batería?</strong></h5>
+                                <p>Así como la batería para autos, la batería para motos es un dispositivo formado
+                                    principalmente por plomo y ácido que convierte la energía química en energía
+                                    eléctrica y la almacena.</p>
+
+                                <h6>Componentes principales:</h6>
+                                <ul class="custom-list">
+                                    <li>Rejillas</li>
+                                    <li>Material Activo</li>
+                                    <li>Separadores</li>
+                                    <li>Conectores</li>
+                                    <li>Electrolitos</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Nomenclatura -->
+                    <div class="collapsible-section">
+                        <div class="collapsible-header" (click)="toggleCollapsible($event)">
+                            <h6>
+                                <i class="bi bi-list-ol me-2"></i>
+                                Nomenclatura de las Moto-Baterías LTH
+                            </h6>
+                            <i class="bi bi-chevron-down chevron-icon"></i>
+                        </div>
+                        <div class="collapsible-content">
+                            <div class="content-card">
+                                <p>Cada letra en la nomenclatura de la Moto-Batería tiene un significado, este es
+                                    respetado a nivel mundial por todos los fabricantes.</p>
+
+                                <h6>1. CONVENCIONAL</h6>
+                                <div class="table-responsive">
+                                    <table class="table table-custom">
+                                        <thead>
+                                            <tr>
+                                                <th>a</th>
+                                                <th>b</th>
+                                                <th>c</th>
+                                                <th>d</th>
+                                                <th>e</th>
+                                                <th>f</th>
+                                                <th>g</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td>6</td>
+                                                <td>N</td>
+                                                <td>4</td>
+                                                <td>-</td>
+                                                <td>2</td>
+                                                <td>A</td>
+                                                <td>4</td>
+                                            </tr>
+                                            <tr>
+                                                <td>12</td>
+                                                <td>N</td>
+                                                <td>12</td>
+                                                <td>A</td>
+                                                <td>-</td>
+                                                <td>4</td>
+                                                <td>A</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+
+                                <h6>2. CONVENCIONAL (Alto desempeño)</h6>
+                                <div class="table-responsive">
+                                    <table class="table table-custom">
+                                        <thead>
+                                            <tr>
+                                                <th>h</th>
+                                                <th>i</th>
+                                                <th>j</th>
+                                                <th>d</th>
+                                                <th>e</th>
+                                                <th>f</th>
+                                                <th>g</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td>CB</td>
+                                                <td>16</td>
+                                                <td>C</td>
+                                                <td>L</td>
+                                                <td>-</td>
+                                                <td>B</td>
+                                                <td></td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+
+                                <h6>3. LIBRE MANTENIMIENTO (AGM)</h6>
+                                <div class="table-responsive">
+                                    <table class="table table-custom">
+                                        <thead>
+                                            <tr>
+                                                <th>k</th>
+                                                <th>m</th>
+                                                <th>i</th>
+                                                <th>m</th>
+                                                <th>e</th>
+                                                <th>g</th>
+                                                <th>l</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td>CT</td>
+                                                <td>X</td>
+                                                <td>7</td>
+                                                <td>L</td>
+                                                <td>-</td>
+                                                <td>B</td>
+                                                <td>S</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Activación Convencionales -->
+                    <div class="collapsible-section">
+                        <div class="collapsible-header" (click)="toggleCollapsible($event)">
+                            <h6>
+                                <i class="bi bi-play-circle-fill me-2"></i>
+                                Activación de Moto-Baterías Convencionales
+                            </h6>
+                            <i class="bi bi-chevron-down chevron-icon"></i>
+                        </div>
+                        <div class="collapsible-content">
+                            <div class="content-card">
+                                <h5>Antes de Instalar, te recomendamos:</h5>
+                                <ul class="red-bullet-list">
+                                    <li>Usar un delantal de hule o de plástico para proteger tu ropa</li>
+                                    <li>Usar alguna clase de protector para tus ojos</li>
+                                    <li>Usar guantes plásticos para prevenir quemaduras de ácido</li>
+                                </ul>
+
+                                <div class="alert-danger-custom alert-custom">
+                                    <strong><i class="bi bi-exclamation-triangle-fill me-2"></i>PRECAUCIÓN:</strong> Las
+                                    baterías emiten gas explosivo, mantenerlas alejadas de chispas, flamas y cigarros
+                                    encendidos.
+                                </div>
+
+                                <h5>Preparación de la Moto-Batería Convencional</h5>
+                                <div class="steps-container">
+                                    <div class="step-item">
+                                        <div class="step-number">1</div>
+                                        <div class="step-content">
+                                            <strong>Quita la cinta selladora</strong> y deséchala.
+                                        </div>
+                                    </div>
+                                    <div class="step-item">
+                                        <div class="step-number">2</div>
+                                        <div class="step-content">
+                                            <strong>Quita la faja de ventilación</strong> y consérvala.
+                                        </div>
+                                    </div>
+                                    <div class="step-item">
+                                        <div class="step-number">3</div>
+                                        <div class="step-content">
+                                            <strong>Quita los tapones de ventilación</strong> y consérvalos.
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="alert-primary-custom alert-custom">
+                                    <strong><i class="bi bi-info-circle-fill me-2"></i>Importante:</strong> Asegúrate de
+                                    quitar el tapón rojo de escape.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Activación AGM -->
+                    <div class="collapsible-section">
+                        <div class="collapsible-header" (click)="toggleCollapsible($event)">
+                            <h6>
+                                <i class="bi bi-battery-charging me-2"></i>
+                                Activación de Moto-Baterías Libres de Mantenimiento (AGM)
+                            </h6>
+                            <i class="bi bi-chevron-down chevron-icon"></i>
+                        </div>
+                        <div class="collapsible-content">
+                            <div class="content-card">
+                                <h5>Preparación de la Moto-Batería AGM</h5>
+                                <div class="steps-container">
+                                    <div class="step-item">
+                                        <div class="step-number">1</div>
+                                        <div class="step-content">
+                                            Coloca la batería sobre una superficie plana y <strong>retira la cinta de
+                                                sellado</strong>.
+                                        </div>
+                                    </div>
+                                    <div class="step-item">
+                                        <div class="step-number">2</div>
+                                        <div class="step-content">
+                                            <strong>Saca el recipiente del electrolito</strong>. Retira y conserva la
+                                            tira de tapas para su uso posterior.
+                                        </div>
+                                    </div>
+                                    <div class="step-item">
+                                        <div class="step-number">3</div>
+                                        <div class="step-content">
+                                            <strong>No manipules las superficies selladas</strong>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="alert-primary-custom alert-custom">
+                                    <strong><i class="bi bi-exclamation-triangle-fill me-2"></i>PRECAUCIÓN:</strong> Al
+                                    activar la batería, usa únicamente el electrolito proporcionado.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Capacidad de Carga -->
+                    <div class="collapsible-section">
+                        <div class="collapsible-header" (click)="toggleCollapsible($event)">
+                            <h6>
+                                <i class="bi bi-plus-circle-fill me-2"></i>
+                                Aumentando la Capacidad de Carga
+                            </h6>
+                            <i class="bi bi-chevron-down chevron-icon"></i>
+                        </div>
+                        <div class="collapsible-content">
+                            <div class="content-card">
+                                <p>La moto-batería tiene la característica de incrementar su rendimiento dependiendo del
+                                    proceso que utilice en la carga inicial. Si se tiene el cuidado de revisar el
+                                    proceso de carga y contamos con un voltímetro digital, es posible incrementar la
+                                    capacidad de la batería y llevarla a un nivel máximo.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- LUBRICANTES Section -->
+    <div class="accordion accordion-custom fade-in-up" id="accordionLubricantes">
+        <div class="accordion-item">
+            <h2 class="accordion-header" id="headingLubricantes">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#collapseLubricantes" aria-expanded="false" aria-controls="collapseLubricantes">
+                    <i class="bi bi-droplet-fill me-3"></i>
+                    LUBRICANTES
+                </button>
+            </h2>
+            <div id="collapseLubricantes" class="accordion-collapse collapse" aria-labelledby="headingLubricantes"
+                data-bs-parent="#accordionLubricantes">
+                <div class="accordion-body">
+                    <!-- Conoce tu Lubricante -->
+                    <div class="collapsible-section">
+                        <div class="collapsible-header" (click)="toggleCollapsible($event)">
+                            <h6>
+                                <i class="bi bi-droplet-half me-2"></i>
+                                Conoce tu Lubricante LTH
+                            </h6>
+                            <i class="bi bi-chevron-down chevron-icon"></i>
+                        </div>
+                        <div class="collapsible-content">
+                            <div class="content-card">
+                                <h5><strong>¿Qué es un Lubricante?</strong></h5>
+                                <p>Es una sustancia que se coloca entre dos piezas móviles, formando una película que
+                                    minimiza su contacto, permitiendo el movimiento incluso a elevadas temperaturas y
+                                    presiones.</p>
+
+                                <h5><strong>Funciones de un Lubricante en un Motor</strong></h5>
+
+                                <h6><strong>Lubricación del mecanismo</strong></h6>
+                                <p>La función básica de un aceite lubricante es lubricar todas las partes internas del
+                                    motor mediante una película o capa de aceite lubricante.</p>
+
+                                <h6><strong>Reducción de la fricción</strong></h6>
+                                <p>La fricción es una fuerza que se opone al libre movimiento entre superficies. La
+                                    película del lubricante evita el contacto metal-metal.</p>
+
+                                <h6><strong>Facilidad de arranque</strong></h6>
+                                <p>Un motor que use el aceite lubricante adecuado no tendrá problemas en el arranque,
+                                    especialmente a bajas temperaturas.</p>
+
+                                <h6><strong>Sellado</strong></h6>
+                                <p>El aceite contribuye al sellado de la cámara de combustión, evitando la fuga de gases
+                                    y combustible hacia el cárter.</p>
+
+                                <h6><strong>Protección contra la corrosión</strong></h6>
+                                <p>El aceite debe tener aditivos que neutralicen ácidos generados para evitar daños por
+                                    corrosión en las partes metálicas internas.</p>
+
+                                <h6><strong>Limpieza Interna del Motor</strong></h6>
+                                <p>Los aditivos detergentes evitan la formación de depósitos y residuos en el interior
+                                    del motor.</p>
+
+                                <h6><strong>Enfriamiento</strong></h6>
+                                <p>El aceite lubricante retira aproximadamente un 33% de la carga térmica generada por
+                                    el motor durante su operación normal.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Clasificación de Lubricantes -->
+                    <div class="collapsible-section">
+                        <div class="collapsible-header" (click)="toggleCollapsible($event)">
+                            <h6>
+                                <i class="bi bi-list-ul me-2"></i>
+                                Clasificación de Lubricantes para Motor
+                            </h6>
+                            <i class="bi bi-chevron-down chevron-icon"></i>
+                        </div>
+                        <div class="collapsible-content">
+                            <div class="content-card">
+                                <p>El Instituto Americano del Petróleo (API) es la principal asociación en los Estados
+                                    Unidos representando a más de 400 corporaciones implicadas en la producción,
+                                    refinamiento, distribución y otras actividades relacionadas con el petróleo.</p>
+
+                                <p>En el caso de los lubricantes para motor, API certifica que aquellos presentes en el
+                                    mercado cumplan con los estándares establecidos por la industria automotriz
+                                    estadounidense e internacional.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Sintéticos vs Minerales -->
+                    <div class="collapsible-section">
+                        <div class="collapsible-header" (click)="toggleCollapsible($event)">
+                            <h6>
+                                <i class="bi bi-arrow-left-right me-2"></i>
+                                Lubricantes Sintéticos vs los Minerales
+                            </h6>
+                            <i class="bi bi-chevron-down chevron-icon"></i>
+                        </div>
+                        <div class="collapsible-content">
+                            <div class="content-card">
+                                <p>Comparación entre lubricantes sintéticos y minerales, y sus ventajas y desventajas...
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- FILTROS Section -->
+    <div class="accordion accordion-custom fade-in-up" id="accordionFiltros">
+        <div class="accordion-item">
+            <h2 class="accordion-header" id="headingFiltros">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#collapseFiltros" aria-expanded="false" aria-controls="collapseFiltros">
+                    <i class="bi bi-filter-circle me-3"></i>
+                    FILTROS
+                </button>
+            </h2>
+            <div id="collapseFiltros" class="accordion-collapse collapse" aria-labelledby="headingFiltros"
+                data-bs-parent="#accordionFiltros">
+                <div class="accordion-body">
+                    <!-- Conoce tu Filtro -->
+                    <div class="collapsible-section">
+                        <div class="collapsible-header" (click)="toggleCollapsible($event)">
+                            <h6>
+                                <i class="bi bi-funnel-fill me-2"></i>
+                                Conoce tu Filtro LTH
+                            </h6>
+                            <i class="bi bi-chevron-down chevron-icon"></i>
+                        </div>
+                        <div class="collapsible-content">
+                            <div class="content-card">
+                                <p>Información detallada sobre los filtros LTH y sus beneficios para el motor...</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Contaminantes -->
+                    <div class="collapsible-section">
+                        <div class="collapsible-header" (click)="toggleCollapsible($event)">
+                            <h6>
+                                <i class="bi bi-exclamation-circle-fill me-2"></i>
+                                Contaminantes que atrapan los Filtros
+                            </h6>
+                            <i class="bi bi-chevron-down chevron-icon"></i>
+                        </div>
+                        <div class="collapsible-content">
+                            <div class="content-card">
+                                <h5><strong>Tipos de contaminantes y origen</strong></h5>
+                                <p>Los contaminantes son originados de varias fuentes y se clasifican de la siguiente
+                                    manera:</p>
+
+                                <h6><strong>Líquidos</strong></h6>
+                                <ul class="custom-list">
+                                    <li><strong>COMBUSTIBLE:</strong> La gasolina o gasóleo en el aceite reduce su
+                                        viscosidad</li>
+                                    <li><strong>AGUA:</strong> Humedad condensada que forma lodos y cambia la viscosidad
+                                        del aceite</li>
+                                    <li><strong>ANTICONGELANTE:</strong> El que contiene etilen-glicol puede provocar
+                                        falla completa del motor</li>
+                                </ul>
+
+                                <h6><strong>Sólidos</strong></h6>
+                                <ul class="custom-list">
+                                    <li><strong>GOMAS Y ALQUITRANES:</strong> Productos de la combustión que reducen la
+                                        vida del filtro</li>
+                                    <li><strong>HOLLÍN Y CARBÓN:</strong> Colorea el aceite pero no causa daños serios
+                                        en bajas concentraciones</li>
+                                    <li><strong>POLVO, ARENA, METAL:</strong> Contaminantes abrasivos que aceleran el
+                                        desgaste del motor</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- BATERÍAS ALCALINAS Section -->
+    <div class="accordion accordion-custom fade-in-up" id="accordionAlcalinas">
+        <div class="accordion-item">
+            <h2 class="accordion-header" id="headingAlcalinas">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#collapseAlcalinas" aria-expanded="false" aria-controls="collapseAlcalinas">
+                    <i class="bi bi-battery-full me-3"></i>
+                    BATERÍAS ALCALINAS
+                </button>
+            </h2>
+            <div id="collapseAlcalinas" class="accordion-collapse collapse" aria-labelledby="headingAlcalinas"
+                data-bs-parent="#accordionAlcalinas">
+                <div class="accordion-body">
+                    <!-- Conoce tu Pila Alcalina -->
+                    <div class="collapsible-section">
+                        <div class="collapsible-header" (click)="toggleCollapsible($event)">
+                            <h6>
+                                <i class="bi bi-battery-charging me-2"></i>
+                                Conoce tu Pila Alcalina LTH
+                            </h6>
+                            <i class="bi bi-chevron-down chevron-icon"></i>
+                        </div>
+                        <div class="collapsible-content">
+                            <div class="content-card">
+                                <p>Con su revolucionaria tecnología, las Pilas Alcalinas LTH te brindan confiabilidad,
+                                    poder y desempeño. Su composición de hidróxido de potasio y Zinc, maximiza la
+                                    duración, ya que este último al no estar expuesto en un ambiente ácido, facilita el
+                                    movimiento de iones a través del electrolito, produciendo una corriente de energía
+                                    más potente y estable.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Características y beneficios -->
+                    <div class="collapsible-section">
+                        <div class="collapsible-header" (click)="toggleCollapsible($event)">
+                            <h6>
+                                <i class="bi bi-star-fill me-2"></i>
+                                Características y beneficios de las Pilas Alcalinas LTH
+                            </h6>
+                            <i class="bi bi-chevron-down chevron-icon"></i>
+                        </div>
+                        <div class="collapsible-content">
+                            <div class="content-card">
+                                <h5><strong>Beneficios de las Pilas Alcalinas LTH</strong></h5>
+                                <ul class="custom-list">
+                                    <li>Protegen tus equipos</li>
+                                    <li>Gran desempeño y alto rendimiento</li>
+                                    <li>Energía duradera (hasta 10 veces más que las pilas comunes de zinc-carbón)</li>
+                                    <li>Preservan la carga por 10 años</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,535 @@
+// Variables
+$lth-primary: #0066cc;
+$lth-black: #000000;
+$lth-white: #ffffff;
+$lth-dark-gray: #343a40;
+$lth-text-muted: #6c757d;
+
+:host {
+    display: block;
+    font-family: "Red Hat Text", sans-serif;
+    color: $lth-white;
+    background-color: $lth-black;
+    overflow-x: hidden;
+}
+
+// Global Animations & Utilities
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(40px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes slideInLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-50px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes slideInRight {
+    from {
+        opacity: 0;
+        transform: translateX(50px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.02);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+
+@keyframes float {
+
+    0%,
+    100% {
+        transform: translateY(0px);
+    }
+
+    50% {
+        transform: translateY(-15px);
+    }
+}
+
+@keyframes glow {
+    0% {
+        filter: drop-shadow(0 4px 12px rgba(0, 102, 204, 0.3));
+    }
+
+    100% {
+        filter: drop-shadow(0 4px 20px rgba(0, 102, 204, 0.6));
+    }
+}
+
+// Utility Mixins
+@mixin bg-section($url-desktop, $url-mobile) {
+    background-image: url($url-mobile);
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    background-attachment: fixed;
+
+    @media (min-width: 768px) {
+        background-image: url($url-desktop);
+    }
+
+    &::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: rgba(0, 0, 0, 0.2);
+        z-index: 1;
+    }
+
+    >.container {
+        position: relative;
+        z-index: 2;
+    }
+}
+
+// Page Header
+.page-header {
+    position: relative;
+    padding: 6rem 0;
+    background: linear-gradient(135deg, $lth-black, $lth-dark-gray);
+    overflow: hidden;
+
+    &__background {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-image: url("https://useast2prodbrandsites.blob.core.windows.net/lth-sfassets-prod/images/librariesprovider2/default-album/hero-image.png?sfvrsn=e19e72ed_0");
+        background-size: cover;
+        background-position: center;
+        opacity: 0.3;
+    }
+
+    &__title {
+        font-size: 3.5rem;
+        font-weight: 700;
+        text-align: center;
+        animation: fadeInUp 0.8s ease-out;
+    }
+}
+
+// Background Sections
+.background-section {
+    &--one {
+        @include bg-section("https://useast2qabrandsites.blob.core.windows.net/lth-sfassets-qa/images/default-source/nueva-bateria/backgrounds/auxiliar/desktop/bg_img_01_aux.png", "https://useast2qabrandsites.blob.core.windows.net/lth-sfassets-qa/images/default-source/nueva-bateria/backgrounds/auxiliar/mobile/mbg_img_01_aux.png");
+    }
+
+    &--two {
+        @include bg-section("https://useast2qabrandsites.blob.core.windows.net/lth-sfassets-qa/images/default-source/nueva-bateria/backgrounds/auxiliar/desktop/bg_img_02_aux.png", "https://useast2qabrandsites.blob.core.windows.net/lth-sfassets-qa/images/default-source/nueva-bateria/backgrounds/auxiliar/mobile/mbg_img_02_aux.png");
+    }
+
+    &--white {
+        background-color: $lth-white;
+        color: $lth-black;
+    }
+
+    &--four {
+        @include bg-section("https://useast2qabrandsites.blob.core.windows.net/lth-sfassets-qa/images/default-source/nueva-bateria/backgrounds/auxiliar/desktop/bg_img_04_aux.png", "https://useast2qabrandsites.blob.core.windows.net/lth-sfassets-qa/images/default-source/nueva-bateria/backgrounds/auxiliar/mobile/mbg_img_05_aux.png");
+    }
+
+    &--five {
+        @include bg-section("https://useast2qabrandsites.blob.core.windows.net/lth-sfassets-qa/images/default-source/nueva-bateria/backgrounds/auxiliar/desktop/bg_img_05_aux.png", "https://useast2qabrandsites.blob.core.windows.net/lth-sfassets-qa/images/default-source/nueva-bateria/backgrounds/auxiliar/mobile/mbg_img_06_aux.png");
+    }
+
+    &--seven {
+        @include bg-section("https://useast2qabrandsites.blob.core.windows.net/lth-sfassets-qa/images/default-source/nueva-bateria/backgrounds/auxiliar/desktop/bg_img_05_aux.png", "https://useast2qabrandsites.blob.core.windows.net/lth-sfassets-qa/images/default-source/nueva-bateria/backgrounds/auxiliar/mobile/mbg_img_08_aux.jpg");
+    }
+}
+
+// Hero Section
+.hero-section {
+    padding: 6rem 0;
+
+    .hero-content {
+        opacity: 0;
+
+        &.in-view {
+            animation: slideInLeft 0.8s forwards;
+        }
+
+        .hero-title {
+            font-size: 3.5rem;
+            font-weight: 700;
+            line-height: 1.1;
+            margin-bottom: 2rem;
+        }
+
+        .hero-subtitle-text {
+            font-family: "Eurostile", sans-serif;
+            font-weight: 400;
+            font-size: 0.7em;
+            letter-spacing: 1px;
+            display: block;
+            margin-bottom: 0.5rem;
+            opacity: 0.9;
+        }
+    }
+
+    .hero-image img {
+        filter: drop-shadow(0 8px 25px rgba(0, 0, 0, 0.3));
+        animation: pulse 4s ease-in-out infinite;
+    }
+
+    .logo-evolution {
+        max-width: 350px;
+        animation: float 6s ease-in-out infinite;
+    }
+
+    .hero-description {
+        font-size: 2rem;
+        line-height: 1.2;
+        font-weight: 600;
+
+        .regular {
+            font-weight: 400;
+            font-family: "Eurostile", sans-serif;
+        }
+
+        .bold {
+            font-weight: 700;
+            font-family: "Eurostile", sans-serif;
+        }
+    }
+
+    .agm-info {
+        opacity: 0;
+
+        &.in-view {
+            animation: fadeInUp 0.8s 0.3s forwards;
+        }
+
+        .agm-badge img {
+            max-width: 180px;
+            animation: glow 3s ease-in-out infinite alternate;
+        }
+
+        .agm-description p {
+            font-size: 1.1rem;
+            line-height: 1.7;
+            margin-bottom: 1rem;
+        }
+    }
+}
+
+// Start-Stop Section
+.start-stop-section {
+    padding: 6rem 0;
+
+    .start-stop-content.in-view {
+        animation: fadeInUp 0.8s forwards;
+    }
+
+    .start-stop-title,
+    .emergency-title {
+        font-size: 2.5rem;
+        font-weight: 700;
+        line-height: 1.2;
+        margin-bottom: 2rem;
+    }
+}
+
+// Support Section
+.support-section {
+    padding: 6rem 0;
+
+    .support-card {
+        height: 300px;
+        border-radius: 12px;
+        overflow: hidden;
+        position: relative;
+        cursor: pointer;
+        opacity: 0; // For stagger animation
+
+        &.in-view {
+            animation: fadeInUp 0.8s forwards;
+        }
+
+        .card-image {
+            height: 100%;
+
+            img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+                transition: transform 0.5s ease-out;
+            }
+        }
+
+        .card-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(transparent 0%, rgba(0, 0, 0, 0.3) 30%, rgba(0, 0, 0, 0.95) 100%);
+            padding: 3rem 1.5rem 1.5rem;
+            transition: background 0.3s ease;
+
+            .card-title {
+                font-size: 1.25rem;
+                font-weight: 700;
+                margin: 0;
+                text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+            }
+        }
+
+        &:hover {
+            .card-image img {
+                transform: scale(1.08);
+            }
+
+            .card-overlay {
+                background: linear-gradient(transparent 0%, rgba($lth-primary, 0.2) 30%, rgba($lth-primary, 0.9) 100%);
+            }
+        }
+    }
+}
+
+// Dual Battery Section
+.dual-battery-section {
+    padding: 6rem 0;
+
+    .dual-battery-title {
+        font-size: 2.5rem;
+        font-weight: 700;
+        line-height: 1.2;
+        margin-bottom: 1rem;
+    }
+
+    .benefits-title {
+        font-size: 2rem;
+        font-weight: 700;
+        margin-bottom: 1rem;
+    }
+}
+
+// Equipment Section
+.equipment-section {
+    padding: 6rem 0;
+
+    .equipment-title {
+        font-size: 3rem;
+        font-weight: 700;
+        margin-bottom: 3rem;
+
+        .regular {
+            font-weight: 400;
+        }
+    }
+
+    .equipment-card {
+        background: linear-gradient(135deg, rgba(52, 58, 64, 0.9), rgba(52, 58, 64, 0.7));
+        border-radius: 12px;
+        padding: 2rem 1rem;
+        text-align: center;
+        border: 2px solid transparent;
+        backdrop-filter: blur(10px);
+        transition: all 0.3s ease;
+        opacity: 0;
+
+        &.animate-up {
+            animation: fadeInUp 0.6s forwards;
+        }
+
+        .card-icon img {
+            width: 56px;
+            height: 56px;
+            transition: transform 0.3s ease;
+        }
+
+        .card-title {
+            font-size: 0.95rem;
+            font-weight: 600;
+            margin: 0;
+            display: block;
+            margin-top: 1rem;
+        }
+
+        &:hover {
+            background: linear-gradient(135deg, rgba($lth-primary, 0.2), rgba($lth-primary, 0.1));
+            border-color: rgba($lth-primary, 0.5);
+            transform: translateY(-8px) scale(1.02);
+            box-shadow: 0 12px 30px rgba($lth-primary, 0.3);
+
+            .card-icon img {
+                transform: scale(1.1) rotate(5deg);
+            }
+        }
+    }
+}
+
+// Warranty Section
+.warranty-section {
+    padding: 6rem 0;
+
+    .warranty-title {
+        display: flex;
+        align-items: baseline;
+        gap: 1.5rem;
+
+        .warranty-number {
+            font-size: 8rem;
+            font-weight: 900;
+            color: $lth-primary;
+            line-height: 1;
+        }
+
+        .warranty-text {
+            font-size: 2.5rem;
+            font-weight: 400;
+            line-height: 1.2;
+            font-family: "Eurostile", sans-serif;
+        }
+    }
+}
+
+// Product Details (Slider)
+.product-details-section {
+    padding: 6rem 0;
+
+    .product-slider {
+        position: relative;
+        max-width: 700px;
+        margin: 0 auto;
+        border-radius: 16px;
+        overflow: hidden;
+        box-shadow: 0 12px 40px rgba(0, 0, 0, 0.3);
+
+        .slider-track {
+            display: flex;
+            transition: transform 0.6s ease;
+        }
+
+        // Smooth transition handled by TS transform
+        .slide {
+            min-width: 100%;
+            flex-shrink: 0;
+
+            img {
+                width: 100%;
+                height: auto;
+                display: block;
+            }
+        }
+
+        .slider-btn {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 50px;
+            height: 50px;
+            background: rgba(255, 255, 255, 0.9);
+            border: none;
+            border-radius: 50%;
+            cursor: pointer;
+            z-index: 10;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            color: $lth-black;
+            transition: all 0.3s;
+
+            &:hover {
+                background: #fff;
+                transform: translateY(-50%) scale(1.1);
+            }
+
+            &--prev {
+                left: 15px;
+            }
+
+            &--next {
+                right: 15px;
+            }
+        }
+
+        .slider-dots {
+            display: flex;
+            justify-content: center;
+            gap: 0.5rem;
+
+            .dot {
+                width: 12px;
+                height: 12px;
+                background-color: #ccc;
+                border-radius: 50%;
+                cursor: pointer;
+                transition: background-color 0.3s;
+
+                &.active {
+                    background-color: $lth-primary;
+                }
+            }
+        }
+    }
+}
+
+// Buttons
+.btn-auxiliar,
+.btn-auxiliar-solid {
+    background-color: $lth-primary;
+    color: $lth-white;
+    border: 2px solid $lth-primary;
+    padding: 12px 32px;
+    border-radius: 30px;
+    font-weight: 700;
+    text-transform: uppercase;
+    text-decoration: none;
+    display: inline-block;
+    cursor: pointer;
+    transition: all 0.3s ease;
+
+    &:hover {
+        background-color: darken($lth-primary, 5%);
+        border-color: darken($lth-primary, 5%);
+        transform: translateY(-3px);
+        box-shadow: 0 8px 25px rgba($lth-primary, 0.4);
+    }
+
+    &:active {
+        transform: translateY(-1px);
+    }
+}
+
+.text-auxiliar,
+.text-primary {
+    color: $lth-primary !important;
+}
+
+.regular {
+    font-weight: 400 !important;
+}

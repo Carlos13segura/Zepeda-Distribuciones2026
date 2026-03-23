@@ -1,0 +1,139 @@
+<!-- Banner Hero -->
+<section class="banner-lth">
+    <div class="banner-container">
+        <div class="banner-content">
+            <h1 class="banner-title">Baterías</h1>
+            <p class="banner-text">
+                Todas las baterías LTH® se distinguen por tener una excelente calidad, gran desempeño,
+                un respaldo garantizado y por su tecnología líder; como por ejemplo la tecnología patentada
+                PoweFrame® en sus rejillas, la cual ayuda a resistir hasta 66% más la corrosión que otros
+                tipos de rejillas.
+            </p>
+        </div>
+    </div>
+</section>
+
+<!-- Baterías Automotrices -->
+<section class="container py-5">
+    <h2>Baterías Automotrices</h2>
+    <div class="row">
+        <div class="col-md-6 col-lg-4 mb-4" *ngFor="let product of productsData.automotive" #animateItem>
+            <div class="card product-card shadow-sm h-100">
+                <img [src]="product.image" [alt]="'Batería ' + product.name" class="card-img-top product-img"
+                    loading="lazy">
+                <div class="card-body text-center d-flex flex-column">
+                    <h5 class="card-title product-title">{{ product.name }}</h5>
+                    <p class="card-text product-text flex-grow-1">{{ product.description }}</p>
+                    <div class="mb-3">
+                        <span class="feature-badge" *ngFor="let feature of product.features">{{ feature }}</span>
+                    </div>
+                    <div class="d-flex justify-content-center gap-2 mt-auto">
+                        <a [routerLink]="[product.link]" class="btn btn-primary d-flex align-items-center">
+                            <!-- Using simple text or icon if available, avoiding iconify-icon dependency if not setup globally, assuming it is from context -->
+                            Comprar Ahora
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Baterías Servicio Pesado -->
+<section class="container py-5">
+    <h2>Baterías Servicio Pesado</h2>
+    <div class="row">
+        <div class="col-md-6 col-lg-4 mb-4" *ngFor="let product of productsData.heavyDuty" #animateItem>
+            <div class="card product-card shadow-sm h-100">
+                <img [src]="product.image" [alt]="'Batería ' + product.name" class="card-img-top product-img"
+                    loading="lazy">
+                <div class="card-body text-center d-flex flex-column">
+                    <h5 class="card-title product-title">{{ product.name }}</h5>
+                    <p class="card-text product-text flex-grow-1">{{ product.description }}</p>
+                    <div class="mb-3">
+                        <span class="feature-badge" *ngFor="let feature of product.features">{{ feature }}</span>
+                    </div>
+                    <div class="d-flex justify-content-center gap-2 mt-auto">
+                        <a [routerLink]="[product.link]" class="btn btn-primary d-flex align-items-center">
+                            Comprar Ahora
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Baterías Especiales -->
+<section class="container py-5">
+    <h2>Baterías Especiales</h2>
+    <div class="row">
+        <div class="col-md-6 col-lg-4 mb-4" *ngFor="let product of productsData.special" #animateItem>
+            <div class="card product-card shadow-sm h-100">
+                <img [src]="product.image" [alt]="'Batería ' + product.name" class="card-img-top product-img"
+                    loading="lazy">
+                <div class="card-body text-center d-flex flex-column">
+                    <h5 class="card-title product-title">{{ product.name }}</h5>
+                    <p class="card-text product-text flex-grow-1">{{ product.description }}</p>
+                    <div class="mb-3">
+                        <span class="feature-badge" *ngFor="let feature of product.features">{{ feature }}</span>
+                    </div>
+                    <div class="d-flex justify-content-center gap-2 mt-auto">
+                        <a [routerLink]="[product.link]" class="btn btn-primary d-flex align-items-center">
+                            Comprar Ahora
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Sección de Servicios -->
+<section class="container my-5 service-section">
+    <div class="row g-4">
+        <!-- Tarjeta Garantía LTH -->
+        <div class="col-md-6" #animateItem>
+            <div class="card h-100 border-0 shadow-lg rounded-4 service-card">
+                <div class="ratio ratio-16x9">
+                    <img src="https://www.lth.com.mx/sfsites/c/cms/delivery/media/MCNXHGSRGZUFFXVHXMCBQIK4TF2I?version=1.1&channelId=0apQO0000000Ch7"
+                        class="card-img-top rounded-top-4 object-fit-cover" alt="Imagen del folleto de Garantía LTH"
+                        loading="lazy">
+                </div>
+                <div class="card-body text-center d-flex flex-column p-4">
+                    <div class="d-flex align-items-center justify-content-center gap-2 mb-3">
+                        <!-- Icon place holder -->
+                        <h5 class="card-title text-danger fw-bold fs-4 mb-0">Garantía LTH</h5>
+                    </div>
+                    <p class="card-text text-muted mb-4">Explora todos los beneficios y respaldo que te ofrece nuestra
+                        garantía en baterías.</p>
+                    <button class="btn btn-outline-primary mt-auto fw-semibold service-btn">
+                        Ver Detalles
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Tarjeta LTH a Domicilio -->
+        <div class="col-md-6" #animateItem>
+            <div class="card h-100 border-0 shadow-lg rounded-4 service-card">
+                <div class="ratio ratio-16x9">
+                    <img src="https://www.lth.com.mx/sfsites/c/cms/delivery/media/MCW4QY2RTCBJCO5KA3GW6NXHZREM?version=1.1&channelId=0apQO0000000Ch7"
+                        class="card-img-top rounded-top-4 object-fit-cover"
+                        alt="Imagen de entrega de batería LTH a domicilio" loading="lazy">
+                </div>
+                <div class="card-body text-center d-flex flex-column p-4">
+                    <div class="d-flex align-items-center justify-content-center gap-2 mb-3">
+                        <!-- Icon place holder -->
+                        <h5 class="card-title text-danger fw-bold fs-4 mb-0">LTH a Domicilio</h5>
+                    </div>
+                    <p class="card-text text-muted mb-4">Solicita tu batería con entrega directa a tu ubicación en
+                        ciudades participantes.</p>
+                    <button class="btn btn-outline-primary mt-auto fw-semibold service-btn">
+                        Ver Detalles
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

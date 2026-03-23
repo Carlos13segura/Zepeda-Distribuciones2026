@@ -1,0 +1,206 @@
+/* _battery-solar.scss */
+/* Tema Solar / Ciclado Profundo - Energético y Renovable */
+
+// Paleta de Colores Solar
+$solar-blue-dark: #002d62; // Azul profundo LTH
+$solar-blue-light: #0056b3;
+$solar-green: #2ecc71; // Verde energía renovable
+$solar-yellow: #f1c40f; // Amarillo sol
+$solar-gradient: linear-gradient(135deg, $solar-blue-dark 0%, $solar-blue-light 50%, $solar-green 100%);
+$card-bg: #ffffff;
+$text-main: #34495e;
+$gray-light: #f8f9fa;
+
+.producto-detalle {
+    font-family: 'Inter', sans-serif;
+    color: $text-main;
+
+    // Badge Premium
+    .badge-premium {
+        background: linear-gradient(90deg, $solar-yellow, $solar-green);
+        color: #fff;
+        padding: 0.5rem 1.5rem;
+        border-radius: 50px;
+        font-weight: 800;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        box-shadow: 0 4px 15px rgba(46, 204, 113, 0.4);
+        display: inline-flex;
+        align-items: center;
+        gap: 0.5rem;
+        margin-bottom: 1rem;
+
+        i {
+            font-size: 1.2rem;
+        }
+    }
+
+    // Títulos
+    h1 {
+        color: $solar-blue-dark;
+        text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+
+    .text-primary {
+        color: $solar-blue-light !important;
+    }
+
+    // Botón de Compra
+    .btn-danger {
+        background: linear-gradient(45deg, $solar-blue-dark, $solar-blue-light);
+        border: none;
+        border-radius: 50px;
+        font-weight: 700;
+        text-transform: uppercase;
+        transition: all 0.3s ease;
+
+        &:hover {
+            background: linear-gradient(45deg, $solar-blue-light, $solar-green);
+            transform: translateY(-2px);
+            box-shadow: 0 10px 20px rgba(0, 86, 179, 0.3);
+        }
+    }
+
+    // Tarjetas
+    .card {
+        border: none;
+        border-radius: 16px;
+        overflow: hidden;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+        &.shadow {
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05) !important;
+        }
+
+        &:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1) !important;
+        }
+    }
+
+    // Carrusel
+    .carousel-item img {
+        filter: drop-shadow(0 10px 15px rgba(0, 0, 0, 0.15));
+        transition: transform 0.5s ease;
+
+        &:hover {
+            transform: scale(1.02);
+        }
+    }
+
+    // Características (Iconos)
+    .feature-icon {
+        width: 60px;
+        height: 60px;
+        background: lighten($solar-green, 45%);
+        color: $solar-green;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 1.8rem;
+        margin: 0 auto 1rem;
+        transition: all 0.3s ease;
+        position: relative;
+        overflow: hidden;
+
+        &::after {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            border: 2px solid $solar-green;
+            opacity: 0;
+            transform: scale(1.2);
+            transition: all 0.3s ease;
+        }
+    }
+
+    .col-4:hover .feature-icon {
+        background: $solar-green;
+        color: white;
+        transform: rotateY(180deg);
+
+        &::after {
+            opacity: 1;
+            transform: scale(1);
+        }
+
+        i {
+            transform: rotateY(180deg); // Keep icon facing forward
+        }
+    }
+
+    // Beneficios
+    .list-unstyled li {
+        padding: 0.5rem 0;
+        border-bottom: 1px dashed rgba(0, 0, 0, 0.05);
+
+        &:last-child {
+            border-bottom: none;
+        }
+
+        .iconify {
+            color: $solar-green !important; // Override danger color
+        }
+    }
+
+    h5.text-danger {
+        color: $solar-blue-dark !important;
+    }
+
+    // Botones Secundarios
+    .btn-outline-primary {
+        color: $solar-blue-dark;
+        border-color: $solar-blue-dark;
+        border-radius: 50px;
+        font-weight: 600;
+
+        &:hover {
+            background-color: $solar-blue-dark;
+            color: white;
+        }
+    }
+
+    // Card de Especificaciones
+    .especificaciones-card {
+        background: #fff;
+        border-top: 4px solid $solar-green;
+
+        .especificaciones-header {
+            color: $solar-blue-dark;
+            letter-spacing: 1px;
+            margin-bottom: 1.5rem;
+            position: relative;
+            display: inline-block;
+
+            &::after {
+                content: '';
+                display: block;
+                width: 50px;
+                height: 3px;
+                background: $solar-green;
+                margin-top: 0.5rem;
+            }
+        }
+
+        .table {
+            th {
+                color: $solar-blue-light;
+                font-weight: 600;
+                width: 40%;
+            }
+
+            td {
+                font-family: 'Roboto Mono', monospace;
+                color: #555;
+                font-weight: 700;
+            }
+
+            tr:hover {
+                background-color: lighten($solar-green, 50%);
+            }
+        }
+    }
+}

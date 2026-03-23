@@ -1,0 +1,18 @@
+<section class="banner" [style.--bg-image]="'url(' + backgroundImage + ')'">
+    <div class="banner-overlay"></div>
+
+    <div class="banner-container">
+        <h1 class="banner-title animate-slide-down">
+            {{ title }}
+        </h1>
+
+        <p class="banner-subtitle animate-fade-in">
+            {{ subtitle }}
+        </p>
+
+        <a class="banner-button" (click)="navigateOrScroll($event)">
+            {{ buttonText }}
+            <span class="ripple-container"></span>
+        </a>
+    </div>
+</section>

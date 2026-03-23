@@ -1,0 +1,321 @@
+/* _lth-battery-golf.scss */
+/* Tema Golf Cart - Deporte y Rendimiento */
+
+// Paleta de Colores Golf
+$golf-green-dark: #1e6b36; // Verde césped oscuro
+$golf-green-light: #2ecc71; // Verde vibrante
+$golf-blue-light: #3498db; // Azul claro para enlaces
+$golf-sand: #f4d03f; // Tono arena/dorado suave
+$golf-white: #ffffff;
+$golf-text-main: #2c3e50;
+$golf-gray-bg: #f8f9fa;
+
+.lth-product-container {
+    font-family: 'Inter', sans-serif;
+    color: $golf-text-main;
+
+    // Header Section
+    .lth-header-section {
+        position: relative;
+        padding-bottom: 2rem;
+
+        &::after {
+            content: '';
+            display: block;
+            width: 60px;
+            height: 4px;
+            background: $golf-green-light;
+            margin: 2rem auto 0;
+            border-radius: 2px;
+        }
+    }
+
+    // Premium Badge
+    .lth-badge-premium {
+        background: linear-gradient(135deg, $golf-green-dark, $golf-green-light);
+        color: white;
+        padding: 0.6rem 2rem;
+        border-radius: 50px;
+        font-weight: 700;
+        text-transform: uppercase;
+        font-size: 0.9rem;
+        letter-spacing: 1px;
+        box-shadow: 0 4px 15px rgba(30, 107, 54, 0.3);
+        display: inline-flex;
+        align-items: center;
+        gap: 0.5rem;
+        margin-bottom: 1.5rem;
+    }
+
+    // Product Title
+    .lth-product-title {
+        color: $golf-text-main;
+        font-size: 3.5rem;
+        margin-bottom: 1rem;
+        text-shadow: 2px 2px 0 rgba(0, 0, 0, 0.05);
+    }
+
+    // Price Section
+    .lth-price {
+        color: $golf-green-dark;
+        font-weight: 800;
+
+        .lth-currency {
+            font-size: 1.5rem;
+            color: #7f8c8d;
+            vertical-align: super;
+        }
+    }
+
+    .lth-precio-nota {
+        font-size: 0.9rem;
+        color: #7f8c8d;
+    }
+
+    // Main Buy Button
+    .lth-btn-comprar-main {
+        background: linear-gradient(to right, $golf-green-dark, $golf-green-light);
+        border: none;
+        border-radius: 50px;
+        color: white;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+        transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        margin-top: 1.5rem;
+
+        &:hover {
+            transform: translateY(-3px) scale(1.02);
+            box-shadow: 0 10px 25px rgba(46, 204, 113, 0.4) !important;
+        }
+
+        &:active {
+            transform: translateY(1px);
+        }
+    }
+
+    // Action Buttons Section
+    .lth-acciones-container {
+        background: white;
+        border-radius: 20px;
+        padding: 2rem;
+        box-shadow: 0 5px 20px rgba(0, 0, 0, 0.03);
+        border: 1px solid rgba($golf-green-light, 0.1);
+    }
+
+    .lth-acciones-title {
+        color: $golf-green-dark;
+    }
+
+    .lth-accion-btn {
+        border: 2px solid #e0e0e0;
+        border-radius: 12px;
+        color: $golf-text-main;
+        font-weight: 600;
+        transition: all 0.2s ease;
+        background: white;
+
+        &:hover {
+            border-color: $golf-green-light;
+            color: $golf-green-dark;
+            background: rgba($golf-green-light, 0.05);
+            transform: translateY(-2px);
+        }
+
+        i {
+            font-size: 1.2rem;
+            color: $golf-green-light;
+        }
+    }
+
+    // Product Image
+    .lth-product-image-container {
+        position: relative;
+        padding: 2rem;
+        background: radial-gradient(circle at center, rgba($golf-green-light, 0.05) 0%, transparent 70%);
+        border-radius: 30px;
+
+        .lth-product-image {
+            width: 100%;
+            height: auto;
+            filter: drop-shadow(0 20px 30px rgba(0, 0, 0, 0.15));
+            transition: transform 0.4s ease;
+
+            &:hover {
+                transform: scale(1.03) rotate(-1deg);
+            }
+        }
+
+        .lth-availability-badge {
+            background: rgba(255, 255, 255, 0.95);
+            padding: 0.5rem 1rem;
+            border-radius: 50px;
+            color: $golf-green-dark;
+            font-weight: 700;
+            font-size: 0.85rem;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+            backdrop-filter: blur(5px);
+
+            i {
+                color: $golf-green-light;
+            }
+        }
+    }
+
+    // Features Cards
+    .lth-feature-icon {
+        text-align: center;
+        padding: 1.5rem;
+        background: white;
+        border-radius: 16px;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.03);
+        border: 1px solid #f0f0f0;
+        transition: all 0.3s ease;
+        height: 100%;
+
+        &:hover {
+            border-color: $golf-green-light;
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+
+            .lth-feature-icon-symbol {
+                color: $golf-green-light;
+                transform: scale(1.1);
+            }
+        }
+
+        .lth-feature-icon-symbol {
+            font-size: 2.5rem;
+            color: #bdc3c7;
+            transition: all 0.3s ease;
+        }
+    }
+
+    // Description & Benefits
+    .lth-section-title {
+        font-weight: 800;
+        color: $golf-text-main;
+        position: relative;
+        display: inline-block;
+    }
+
+    .lth-description-text {
+        color: #555;
+        line-height: 1.7;
+    }
+
+    .lth-brand-highlight {
+        color: $golf-green-dark;
+    }
+
+    .lth-benefits-list {
+        list-style: none;
+        padding: 0;
+
+        .lth-benefit-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 1rem;
+            padding: 0.8rem;
+            background: $golf-gray-bg;
+            border-radius: 10px;
+            transition: transform 0.2s;
+
+            &:hover {
+                transform: translateX(5px);
+                background: white;
+                box-shadow: 0 2px 10px rgba(0, 0, 0, 0.03);
+            }
+
+            .lth-benefit-icon {
+                font-size: 1.5rem;
+                color: $golf-green-light;
+                margin-right: 1rem;
+            }
+
+            .lth-link {
+                text-decoration: none;
+                color: #3498db;
+                font-weight: 600;
+                font-size: 0.85rem;
+
+                &:hover {
+                    text-decoration: underline;
+                }
+            }
+        }
+    }
+
+    // Specs Card
+    .lth-especificaciones-card {
+        border: none;
+        border-top: 5px solid $golf-green-dark;
+        border-radius: 16px 16px 20px 20px;
+
+        .lth-especificaciones-icon {
+            font-size: 2rem;
+            color: $golf-green-dark;
+        }
+
+        .lth-spec-subtitle {
+            color: $golf-green-light;
+            text-transform: uppercase;
+            font-size: 0.85rem;
+            letter-spacing: 1px;
+        }
+
+        .lth-spec-table {
+            th {
+                color: #7f8c8d;
+                font-weight: 500;
+                width: 45%;
+                padding: 0.8rem;
+            }
+
+            td {
+                color: $golf-text-main;
+                font-weight: 600;
+                padding: 0.8rem;
+            }
+
+            .lth-highlight-value {
+                color: $golf-green-dark;
+                font-weight: 800;
+            }
+
+            tr {
+                border-bottom: 1px solid #f0f0f0;
+
+                &:last-child {
+                    border-bottom: none;
+                }
+            }
+        }
+    }
+
+    // Animation Utilities
+    .lth-animate-in {
+        animation: fadeUp 0.8s cubic-bezier(0.165, 0.84, 0.44, 1) forwards;
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    .lth-animate-delay-1 {
+        animation-delay: 0.1s;
+    }
+
+    .lth-animate-delay-2 {
+        animation-delay: 0.2s;
+    }
+
+    .lth-animate-delay-3 {
+        animation-delay: 0.3s;
+    }
+
+    @keyframes fadeUp {
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+}

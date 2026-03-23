@@ -1,0 +1,123 @@
+// Variables
+$lth-red: #d32f2f;
+$lth-dark: #b71c1c;
+$text-dark: #2c3e50;
+$white: #ffffff;
+$shadow-lg: 0 10px 30px rgba(0, 0, 0, 0.25);
+$radius: 16px;
+
+.modal-backdrop {
+    z-index: 10050;
+    backdrop-filter: blur(5px);
+    background-color: rgba(0, 0, 0, 0.6) !important; // Override Bootstrap opacity
+    opacity: 1 !important;
+}
+
+.modal {
+    z-index: 10055;
+}
+
+.modal-dialog {
+    display: flex;
+    align-items: center;
+    min-height: calc(100% - 1rem);
+
+    .modal-content {
+        border: none;
+        border-radius: $radius;
+        box-shadow: $shadow-lg;
+        overflow: hidden;
+        animation: modalPopIn 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        background: $white;
+
+        .modal-header {
+            background: linear-gradient(135deg, $lth-red, $lth-dark);
+            color: $white;
+            border-bottom: none;
+            padding: 1.5rem;
+            justify-content: center;
+            position: relative;
+
+            .modal-title {
+                font-weight: 700;
+                font-size: 1.25rem;
+                letter-spacing: 0.5px;
+            }
+
+            .btn-close {
+                position: absolute;
+                right: 1rem;
+                top: 1rem;
+                opacity: 0.8;
+                transition: opacity 0.2s;
+
+                &:hover {
+                    opacity: 1;
+                }
+            }
+        }
+
+        .modal-body {
+            padding: 2.5rem 2rem;
+            text-align: center;
+            color: $text-dark;
+
+            .lead {
+                font-weight: 500;
+                font-size: 1.2rem;
+            }
+        }
+
+        .modal-footer {
+            border-top: none;
+            padding: 0 2rem 2rem;
+            gap: 1rem;
+
+            .btn {
+                border-radius: 50px;
+                padding: 0.6rem 2rem;
+                font-weight: 600;
+                transition: all 0.2s ease;
+                text-transform: uppercase;
+                letter-spacing: 0.5px;
+                font-size: 0.9rem;
+
+                &.btn-secondary {
+                    background-color: #f1f3f5;
+                    color: $text-dark;
+                    border: none;
+
+                    &:hover {
+                        background-color: #e9ecef;
+                        transform: translateY(-2px);
+                    }
+                }
+
+                &.btn-success {
+                    background: linear-gradient(90deg, $lth-red, $lth-dark);
+                    border: none;
+                    box-shadow: 0 4px 15px rgba($lth-red, 0.3);
+
+                    &:hover {
+                        transform: translateY(-2px);
+                        box-shadow: 0 6px 20px rgba($lth-red, 0.4);
+                        filter: brightness(1.1);
+                    }
+                }
+            }
+        }
+    }
+}
+
+// Animations
+@keyframes modalPopIn {
+    0% {
+        opacity: 0;
+        transform: scale(0.8);
+    }
+
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+}

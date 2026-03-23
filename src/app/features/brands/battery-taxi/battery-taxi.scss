@@ -1,0 +1,609 @@
+/* LTH TAXI Premium Styles */
+.lth-taxi-content {
+    /* Color Palette - Orange/Yellow Theme */
+    --taxi-primary: #ff6b35;
+    --taxi-secondary: #f7931e;
+    --taxi-accent: #ffd700;
+    --taxi-dark: #d63031;
+    --taxi-light: #fdcb6e;
+    --taxi-gradient: linear-gradient(135deg, #ff6b35 0%, #f7931e 50%, #ffd700 100%);
+    --taxi-glow: rgba(255, 107, 53, 0.4);
+
+    font-family: 'Outfit', sans-serif;
+    background-color: #fff8f5;
+    overflow-x: hidden;
+
+    iconify-icon {
+        display: inline-block;
+        vertical-align: middle;
+    }
+
+    /* Hero Section */
+    .taxi-hero-section {
+        background: var(--taxi-gradient);
+        color: white;
+        padding: 140px 0 100px;
+        position: relative;
+        overflow: hidden;
+        min-height: 100vh;
+
+        &::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background:
+                radial-gradient(circle at 25% 25%, var(--taxi-glow) 0%, transparent 50%),
+                radial-gradient(circle at 75% 75%, rgba(253, 203, 110, 0.2) 0%, transparent 50%);
+            z-index: 1;
+        }
+
+        .taxi-floating-elements {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            pointer-events: none;
+            z-index: 1;
+
+            .taxi-floating-icon {
+                position: absolute;
+                font-size: 4rem;
+                color: rgba(255, 215, 0, 0.15);
+                animation: taxiFloat 12s ease-in-out infinite;
+
+                &:nth-child(1) { top: 15%; left: 8%; animation-delay: 0s; }
+                &:nth-child(2) { top: 70%; right: 12%; animation-delay: 3s; }
+                &:nth-child(3) { bottom: 25%; left: 15%; animation-delay: 6s; }
+                &:nth-child(4) { top: 40%; right: 8%; animation-delay: 2s; }
+                &:nth-child(5) { top: 50%; left: 50%; animation-delay: 5s; }
+            }
+        }
+
+        .taxi-hero-content {
+            position: relative;
+            z-index: 2;
+        }
+
+        .taxi-hero-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 12px;
+            padding: 14px 35px;
+            background: rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(10px);
+            color: white;
+            border-radius: 50px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 30px;
+            border: 2px solid rgba(255, 255, 255, 0.3);
+            box-shadow: 0 10px 30px var(--taxi-glow);
+            animation: pulse 3s infinite;
+
+            iconify-icon {
+                font-size: 1.3rem;
+            }
+        }
+
+        .taxi-hero-title {
+            font-size: 6rem;
+            font-weight: 900;
+            margin-bottom: 25px;
+            text-transform: uppercase;
+            letter-spacing: 6px;
+
+            .highlight {
+                display: block;
+                font-size: 7rem;
+                background: linear-gradient(45deg, #ffffff, var(--taxi-accent), var(--taxi-light));
+                -webkit-background-clip: text;
+                -webkit-text-fill-color: transparent;
+                background-clip: text;
+                text-shadow: 0 0 60px rgba(255, 215, 0, 0.5);
+            }
+        }
+
+        .taxi-hero-subtitle {
+            font-size: 1.8rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 15px;
+            margin-bottom: 30px;
+            flex-wrap: wrap;
+
+            iconify-icon {
+                color: var(--taxi-accent);
+                font-size: 2.2rem;
+            }
+        }
+
+        .taxi-hero-description {
+            font-size: 1.4rem;
+            max-width: 900px;
+            margin: 0 auto 60px;
+            opacity: 0.95;
+            line-height: 1.7;
+        }
+
+        .taxi-stats-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 25px;
+            margin-bottom: 60px;
+            max-width: 1000px;
+            margin-left: auto;
+            margin-right: auto;
+
+            .taxi-stat-item {
+                background: rgba(255, 255, 255, 0.1);
+                padding: 30px;
+                border-radius: 20px;
+                backdrop-filter: blur(5px);
+                border: 1px solid rgba(255, 255, 255, 0.2);
+                transition: transform 0.3s ease;
+
+                &:hover {
+                    transform: translateY(-5px);
+                    background: rgba(255, 255, 255, 0.15);
+                    border-color: rgba(255, 255, 255, 0.4);
+                }
+
+                .taxi-stat-number {
+                    display: block;
+                    font-size: 3rem;
+                    font-weight: 800;
+                    margin-bottom: 8px;
+                    color: white;
+                    text-shadow: 0 0 20px var(--taxi-glow);
+                }
+
+                .taxi-stat-label {
+                    font-size: 0.9rem;
+                    text-transform: uppercase;
+                    opacity: 0.9;
+                }
+            }
+        }
+
+        .taxi-features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            margin-bottom: 60px;
+        }
+
+        .taxi-feature-card {
+            background: rgba(255, 255, 255, 0.08);
+            padding: 40px 30px;
+            border-radius: 25px;
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            transition: all 0.4s ease;
+
+            &:hover {
+                transform: translateY(-10px);
+                background: rgba(255, 255, 255, 0.12);
+                border-color: rgba(255, 255, 255, 0.3);
+
+                .taxi-feature-icon {
+                    transform: scale(1.2);
+                    color: var(--taxi-accent);
+                }
+            }
+
+            .taxi-feature-icon {
+                font-size: 3.5rem;
+                color: white;
+                margin-bottom: 20px;
+                transition: all 0.3s ease;
+            }
+
+            .taxi-feature-title {
+                font-weight: 700;
+                margin-bottom: 12px;
+            }
+
+            .taxi-feature-description {
+                opacity: 0.85;
+                font-size: 1rem;
+            }
+        }
+
+        .taxi-hero-image-container {
+            margin-bottom: 50px;
+
+            .taxi-bateria-img {
+                max-width: 100%;
+                max-height: 500px;
+                filter: drop-shadow(0 30px 60px rgba(0, 0, 0, 0.4));
+                animation: float 6s ease-in-out infinite;
+            }
+        }
+
+        .taxi-cta-section {
+            .taxi-btn-hero-primary {
+                background: rgba(255, 255, 255, 0.2);
+                backdrop-filter: blur(10px);
+                color: white;
+                padding: 20px 45px;
+                border-radius: 50px;
+                font-weight: 700;
+                font-size: 1.2rem;
+                display: inline-flex;
+                align-items: center;
+                gap: 12px;
+                transition: all 0.3s ease;
+                border: 2px solid rgba(255, 255, 255, 0.3);
+
+                &:hover {
+                    transform: scale(1.05);
+                    background: rgba(255, 255, 255, 0.3);
+                    box-shadow: 0 15px 40px var(--taxi-glow);
+                }
+            }
+        }
+    }
+
+    /* Benefits Section */
+    .taxi-benefits-section {
+        background: white;
+        padding: 100px 0;
+
+        .taxi-section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            font-weight: 800;
+            margin-bottom: 15px;
+            color: var(--taxi-primary);
+
+            iconify-icon {
+                color: var(--taxi-accent);
+            }
+        }
+
+        .taxi-section-subtitle {
+            text-align: center;
+            font-size: 1.2rem;
+            color: #666;
+            margin-bottom: 60px;
+        }
+
+        .taxi-benefits-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+        }
+
+        .taxi-benefit-item {
+            text-align: center;
+            padding: 40px 30px;
+            background: #fff8f5;
+            border-radius: 20px;
+            border: 1px solid rgba(255, 107, 53, 0.1);
+            transition: all 0.3s ease;
+
+            &:hover {
+                transform: translateY(-10px);
+                box-shadow: 0 20px 40px rgba(255, 107, 53, 0.15);
+                border-color: rgba(255, 107, 53, 0.3);
+
+                .taxi-benefit-icon-container {
+                    transform: scale(1.1);
+                }
+            }
+
+            .taxi-benefit-icon-container {
+                width: 80px;
+                height: 80px;
+                margin: 0 auto 25px;
+                background: var(--taxi-gradient);
+                border-radius: 50%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                transition: transform 0.3s ease;
+
+                .taxi-benefit-icon {
+                    font-size: 2.5rem;
+                    color: white;
+                }
+            }
+
+            .taxi-benefit-title {
+                font-size: 1.3rem;
+                font-weight: 700;
+                color: var(--taxi-primary);
+                margin-bottom: 15px;
+            }
+
+            .taxi-benefit-description {
+                color: #666;
+                line-height: 1.6;
+            }
+        }
+    }
+
+    /* Products Section */
+    .taxi-product-section {
+        background: #f5f7fa;
+        padding: 100px 0;
+
+        .taxi-section-title {
+            text-align: center;
+            font-size: 3rem;
+            font-weight: 900;
+            margin-bottom: 80px;
+            color: var(--taxi-primary);
+
+            iconify-icon {
+                color: var(--taxi-accent);
+            }
+        }
+
+        .taxi-product-card {
+            background: white;
+            border-radius: 30px;
+            padding: 40px;
+            margin-bottom: 40px;
+            box-shadow: 0 20px 50px rgba(255, 107, 53, 0.08);
+            border: 1px solid rgba(255, 107, 53, 0.1);
+            transition: all 0.4s ease;
+
+            &:hover {
+                box-shadow: 0 30px 60px rgba(255, 107, 53, 0.15);
+                transform: translateY(-5px);
+                border-color: rgba(255, 107, 53, 0.3);
+            }
+
+            .carousel {
+                border-radius: 20px;
+                overflow: hidden;
+                background: #f8f9fc;
+
+                .carousel-inner {
+                    border-radius: 20px;
+                }
+
+                .product-img {
+                    padding: 30px;
+                    background: #f8f9fc;
+                }
+
+                .carousel-control-prev,
+                .carousel-control-next {
+                    width: 40px;
+                    height: 40px;
+                    background: var(--taxi-primary);
+                    border-radius: 50%;
+                    top: 50%;
+                    transform: translateY(-50%);
+                    opacity: 0;
+                    transition: opacity 0.3s;
+                    margin: 0 10px;
+
+                    iconify-icon {
+                        font-size: 1.5rem;
+                        color: white;
+                    }
+                }
+
+                &:hover {
+                    .carousel-control-prev,
+                    .carousel-control-next {
+                        opacity: 1;
+                    }
+                }
+            }
+
+            .product-info {
+                padding-left: 30px;
+            }
+
+            .product-title {
+                font-size: 2.2rem;
+                font-weight: 800;
+                color: var(--taxi-primary);
+                margin-bottom: 15px;
+                display: flex;
+                align-items: center;
+                gap: 15px;
+
+                iconify-icon {
+                    color: var(--taxi-accent);
+                }
+            }
+
+            .badges {
+                display: flex;
+                gap: 10px;
+                margin-bottom: 25px;
+                flex-wrap: wrap;
+
+                .badge {
+                    padding: 8px 14px;
+                    border-radius: 8px;
+                    font-size: 0.8rem;
+                    text-transform: uppercase;
+                    letter-spacing: 1px;
+                }
+
+                .badge-professional {
+                    background: var(--taxi-gradient);
+                    color: white;
+                }
+
+                .badge-taxi {
+                    background: linear-gradient(135deg, #ffd700, #f7931e);
+                    color: white;
+                }
+
+                .badge-stock {
+                    background: #2ed573;
+                    color: white;
+                }
+            }
+
+            .specs-list {
+                margin-bottom: 25px;
+            }
+
+            .spec-row {
+                display: flex;
+                align-items: center;
+                gap: 20px;
+                padding: 12px 0;
+                border-bottom: 1px solid #eee;
+
+                &.price-row {
+                    border-bottom: none;
+                    border-top: 1px solid #eee;
+                    margin-top: 10px;
+                    padding-top: 20px;
+                }
+
+                .spec-icon {
+                    font-size: 1.6rem;
+                    color: var(--taxi-secondary);
+                    background: rgba(247, 147, 30, 0.1);
+                    padding: 10px;
+                    border-radius: 12px;
+
+                    &.danger {
+                        color: #ff4757;
+                        background: rgba(255, 71, 87, 0.1);
+                    }
+                }
+
+                .spec-detail {
+                    display: flex;
+                    flex-direction: column;
+
+                    small {
+                        color: #888;
+                        text-transform: uppercase;
+                        font-size: 0.75rem;
+                    }
+
+                    strong {
+                        font-size: 1.1rem;
+                        color: #333;
+                    }
+
+                    .price {
+                        font-size: 1.8rem;
+                        color: var(--taxi-primary);
+                        font-weight: 800;
+                    }
+                }
+            }
+
+            .btn-buy {
+                width: 100%;
+                padding: 18px;
+                border-radius: 15px;
+                background: var(--taxi-gradient);
+                color: white;
+                font-weight: 800;
+                border: none;
+                text-transform: uppercase;
+                letter-spacing: 1px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                gap: 10px;
+                transition: all 0.3s ease;
+
+                &:hover {
+                    box-shadow: 0 10px 25px var(--taxi-glow);
+                    transform: translateY(-3px);
+                }
+            }
+        }
+    }
+}
+
+/* Animations */
+@keyframes float {
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-20px);
+    }
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.05);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+
+@keyframes taxiFloat {
+    0%,
+    100% {
+        transform: translateY(0) rotate(0deg);
+        opacity: 0.15;
+    }
+
+    50% {
+        transform: translateY(-25px) rotate(180deg);
+        opacity: 0.08;
+    }
+}
+
+/* Responsive */
+@media (max-width: 991px) {
+    .lth-taxi-content {
+        .taxi-hero-section {
+            padding-top: 100px;
+
+            .taxi-hero-title {
+                font-size: 3.5rem;
+
+                .highlight {
+                    font-size: 4rem;
+                }
+            }
+
+            .taxi-stats-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
+        .taxi-product-section {
+            .taxi-product-card {
+                padding: 25px;
+
+                .product-info {
+                    padding-left: 0;
+                    margin-top: 30px;
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 576px) {
+    .lth-taxi-content {
+        .taxi-hero-section {
+            .taxi-stats-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    }
+}

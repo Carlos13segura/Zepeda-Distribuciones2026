@@ -1,0 +1,107 @@
+/* WhatsApp Button - Versión Mejorada */
+.whatsapp-float {
+    position: fixed;
+    width: 60px;
+    height: 60px;
+    bottom: 20px;
+    right: 20px;
+    background-color: #25D366;
+    color: #FFF;
+    border-radius: 50%;
+    text-align: center;
+    font-size: 30px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    z-index: 9999;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: all 0.3s ease;
+    overflow: hidden;
+    animation: bounceIn 0.8s ease-out;
+    text-decoration: none;
+
+    /* Efectos Hover */
+    &:hover {
+        background-color: #128C7E;
+        transform: scale(1.1);
+        box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+
+        .whatsapp-icon {
+            transform: rotate(10deg);
+        }
+
+        .whatsapp-tooltip {
+            opacity: 1;
+        }
+    }
+
+    &.pulse {
+        animation: pulse 2s infinite;
+    }
+}
+
+.whatsapp-icon {
+    color: white;
+    transition: transform 0.3s ease;
+}
+
+.whatsapp-tooltip {
+    position: absolute;
+    right: 70px;
+    width: max-content;
+    background: rgba(0, 0, 0, 0.8);
+    color: white;
+    padding: 8px 12px;
+    border-radius: 4px;
+    font-size: 14px;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+}
+
+/* Animaciones */
+@keyframes bounceIn {
+    0% {
+        transform: scale(0);
+        opacity: 0;
+    }
+
+    60% {
+        transform: scale(1.2);
+        opacity: 1;
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+
+/* Efecto de pulsación intermitente */
+@keyframes pulse {
+    0% {
+        box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7);
+    }
+
+    70% {
+        box-shadow: 0 0 0 15px rgba(37, 211, 102, 0);
+    }
+
+    100% {
+        box-shadow: 0 0 0 0 rgba(37, 211, 102, 0);
+    }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .whatsapp-float {
+        width: 50px;
+        height: 50px;
+        bottom: 15px;
+        right: 15px;
+        font-size: 25px;
+    }
+
+    .whatsapp-tooltip {
+        /* Tooltip visible en moviles */
+    }
+}

@@ -1,0 +1,141 @@
+<!-- 1. Determine "Dark Blue" Design (Hero) -->
+<section class="lth-domicilio-section">
+    <div class="container">
+        <div class="content-wrapper">
+            <h1 class="main-title">LTH A DOMICILIO</h1>
+
+            <div class="image-container">
+                <img src="https://www.lth.com.mx/sfsites/c/cms/delivery/media/MCW4QY2RTCBJCO5KA3GW6NXHZREM?version=1.1&channelId=0apQO0000000Ch7"
+                    alt="LTH a Domicilio Van and App" class="domicilio-image">
+            </div>
+
+            <div class="action-buttons">
+                <button (click)="scrollToForm()" class="btn btn-primary custom-btn">Ordena aquí tu batería a
+                    domicilio</button>
+                <a href="tel:8008358400" class="btn btn-outline-light custom-btn">Llamar al 800 8358 400</a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- 2. Integrated "New" Form Section (Placed below hero for accessibility) -->
+<section id="form-section" class="form-container-section py-5 bg-light">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-lg-8">
+                <div class="form-section-card">
+                    <h3 class="form-title text-center mb-4">Encuentra tu batería ideal</h3>
+                    <form id="vehicleForm">
+                        <div class="row g-3 mb-3">
+                            <div class="col-md-4">
+                                <label class="form-label">Año*</label>
+                                <select class="form-select" id="year" required>
+                                    <option value="">Seleccionar</option>
+                                    <option value="2024">2024</option>
+                                    <option value="2023">2023</option>
+                                </select>
+                            </div>
+                            <div class="col-md-4">
+                                <label class="form-label">Marca*</label>
+                                <select class="form-select" id="brand" required>
+                                    <option value="">Seleccionar</option>
+                                    <option value="nissan">Nissan</option>
+                                    <option value="volkswagen">Volkswagen</option>
+                                    <option value="chevrolet">Chevrolet</option>
+                                </select>
+                            </div>
+                            <div class="col-md-4">
+                                <label class="form-label">Modelo*</label>
+                                <select class="form-select" id="model" required>
+                                    <option value="">Seleccionar</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="row g-3 mb-4">
+                            <div class="col-md-6">
+                                <label class="form-label">Teléfono*</label>
+                                <input type="tel" class="form-input form-control" id="phone"
+                                    placeholder="Ingresa tu número" required>
+                            </div>
+                            <div class="col-md-6">
+                                <label class="form-label">Código Postal*</label>
+                                <input type="text" class="form-input form-control" id="zipcode" placeholder="Ej: 01000"
+                                    required>
+                            </div>
+                        </div>
+
+                        <div class="text-center">
+                            <button type="submit" class="btn btn-primary px-5 py-2">
+                                Continuar
+                            </button>
+                        </div>
+
+                        <div class="form-note mt-3 text-center text-muted small">
+                            Esta información se puede encontrar en la tarjeta de circulación de tu vehículo.
+                            <br>
+                            <small>*Aplica en la compra de la batería.</small>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- 3. Integrated "New" Info Strip -->
+<section class="info-strip text-center py-5">
+    <div class="container">
+        <h2 class="section-title">Es cómodo, seguro y sencillo.</h2>
+        <p class="lead">Disponible para ti los 365 días del año de 7:00 am a 10:00 pm. y GRATUITO en la compra de tu
+            batería.</p>
+        <p class="description max-width-800 mx-auto">
+            Te llevamos la batería que necesitas a donde te encuentres a través de nuestro servicio a domicilio en línea
+            en donde podrás monitorear el estatus de tu servicio y recibir atención de un técnico especializado.
+        </p>
+    </div>
+</section>
+
+<!-- 4. Integrated "New" Main Benefits Grid -->
+<section class="main-benefits-section bg-light py-5">
+    <div class="container">
+        <h3 class="mb-5 text-center section-header">Al pedir tu batería en LTH A DOMICILIO obtienes los siguientes
+            beneficios:</h3>
+
+        <div class="row g-4">
+            <div class="col-md-6" *ngFor="let benefit of mainBenefits">
+                <div class="d-flex align-items-start benefit-card h-100 p-3 bg-white shadow-sm rounded">
+                    <div class="icon-wrapper me-3">
+                        <i [class]="benefit.icon" style="font-size: 2.5rem; color: #00338D;"></i>
+                    </div>
+                    <div>
+                        <h4 class="h5 fw-bold text-uppercase" style="color: #00205B;">{{ benefit.title }}</h4>
+                        <p class="small text-muted mb-0">{{ benefit.text }}</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- 5. Integrated "New" Delivery Info Section -->
+<section class="delivery-info-section py-5">
+    <div class="container">
+        <h3 class="mb-5 fw-bold text-center" style="color: black;">ENTREGA A DOMICILIO</h3>
+
+        <div class="row g-5">
+            <div class="col-md-6" *ngFor="let info of deliveryInfo">
+                <div class="d-flex align-items-start info-card">
+                    <div class="rounded-circle p-3 me-3 d-flex align-items-center justify-content-center"
+                        style="width: 60px; height: 60px; background-color: #00205B; color: white;">
+                        <i [class]="info.icon" style="font-size: 1.5rem;"></i>
+                    </div>
+                    <div>
+                        <h5 class="fw-bold mb-2" style="color: #00205B;">{{ info.title }}</h5>
+                        <p class="small text-muted">{{ info.text }}</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

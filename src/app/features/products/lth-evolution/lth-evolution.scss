@@ -1,0 +1,437 @@
+// Variables - Colores Originales (Default)
+$lth-primary: #0066cc; // Original Blue
+$lth-black: #000000; // Original Black
+$lth-white: #ffffff;
+$lth-dark-gray: #343a40;
+$lth-text-muted: #6c757d;
+
+:host {
+    display: block;
+    font-family: "Red Hat Text", sans-serif;
+    color: $lth-white;
+    background-color: $lth-black;
+    overflow-x: hidden;
+}
+
+// Utility Classes
+.text-primary {
+    color: $lth-primary !important;
+}
+
+.regular {
+    font-weight: 400 !important;
+}
+
+.bold {
+    font-weight: 700 !important;
+}
+
+.d-none {
+    display: none !important;
+}
+
+.d-md-block {
+    @media (min-width: 768px) {
+        display: block !important;
+    }
+}
+
+.d-md-none {
+    @media (min-width: 768px) {
+        display: none !important;
+    }
+}
+
+// Page Header
+.page-header {
+    position: relative;
+    padding: 6rem 0;
+    background: linear-gradient(135deg, $lth-black, $lth-dark-gray);
+    overflow: hidden;
+
+    &__background {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-image: url("https://useast2prodbrandsites.blob.core.windows.net/lth-sfassets-prod/images/librariesprovider2/default-album/hero-image.png?sfvrsn=e19e72ed_0");
+        background-size: cover;
+        background-position: center;
+        opacity: 0.3;
+        transform: scale(1.1); // Initial scale for GSAP
+    }
+
+    &__title {
+        font-size: clamp(2.5rem, 5vw, 4rem);
+        font-weight: 800;
+        text-align: center;
+        position: relative;
+        z-index: 2;
+        letter-spacing: 2px;
+    }
+}
+
+// Background Sections (Shared Logic)
+@mixin bg-section($url-desktop, $url-mobile) {
+    background-image: url($url-mobile);
+    background-size: cover;
+    background-position: center;
+    position: relative;
+
+    @media (min-width: 768px) {
+        background-image: url($url-desktop);
+    }
+
+    &::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: rgba(0, 0, 0, 0.4);
+        z-index: 1;
+    }
+
+    >.container {
+        position: relative;
+        z-index: 2;
+    }
+}
+
+.background-section {
+    &--one {
+        @include bg-section("https://useast2qabrandsites.blob.core.windows.net/lth-sfassets-qa/images/default-source/nueva-bateria/backgrounds/evolution/desktop/bg_img_01_evo.png", "https://useast2qabrandsites.blob.core.windows.net/lth-sfassets-qa/images/default-source/nueva-bateria/backgrounds/evolution/mobile/mbg_img_01_evo.png");
+    }
+
+    &--two {
+        @include bg-section("https://useast2qabrandsites.blob.core.windows.net/lth-sfassets-qa/images/default-source/nueva-bateria/backgrounds/evolution/desktop/bg_img_02_evo.png", "https://useast2qabrandsites.blob.core.windows.net/lth-sfassets-qa/images/default-source/nueva-bateria/backgrounds/evolution/mobile/mbg_img_02_evo.png");
+    }
+
+    &--three {
+        @include bg-section("https://useast2qabrandsites.blob.core.windows.net/lth-sfassets-qa/images/default-source/nueva-bateria/backgrounds/evolution/desktop/bg_img_02_evo.png", "https://useast2qabrandsites.blob.core.windows.net/lth-sfassets-qa/images/default-source/nueva-bateria/backgrounds/evolution/mobile/mbg_img_05_evo.png");
+    }
+
+    &--five {
+        @include bg-section("https://useast2qabrandsites.blob.core.windows.net/lth-sfassets-qa/images/default-source/nueva-bateria/backgrounds/evolution/desktop/bg_img_04_evo.png", "https://useast2qabrandsites.blob.core.windows.net/lth-sfassets-qa/images/default-source/nueva-bateria/backgrounds/evolution/mobile/mbg_img_03_evo.png");
+    }
+
+    &--six {
+        @include bg-section("https://useast2qabrandsites.blob.core.windows.net/lth-sfassets-qa/images/default-source/nueva-bateria/backgrounds/evolution/desktop/bg_img_05_evo.png", "https://useast2qabrandsites.blob.core.windows.net/lth-sfassets-qa/images/default-source/nueva-bateria/backgrounds/evolution/mobile/mbg_img_08_evo.png");
+    }
+
+    &--white {
+        background-color: $lth-white;
+        color: $lth-black;
+    }
+}
+
+// Hero Section
+.hero-section {
+    padding: 6rem 0;
+    overflow: visible;
+
+    .hero-content {
+        .hero-title {
+            font-size: clamp(3rem, 5vw, 4rem);
+            font-weight: 800;
+            margin-bottom: 1rem;
+
+            sup {
+                font-size: 50%;
+            }
+        }
+
+        .hero-subtitle {
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .hero-highlight {
+            font-size: clamp(2rem, 4vw, 3rem);
+            font-weight: 800;
+            color: $lth-primary;
+            line-height: 1.1;
+            margin-bottom: 2rem;
+        }
+
+        .hero-innovation h3 {
+            font-size: 2rem;
+            font-weight: 600;
+        }
+    }
+
+    .hero-logo img {
+        max-width: 350px;
+        filter: drop-shadow(0 0 20px rgba(0, 102, 204, 0.3));
+    }
+
+    .agm-info {
+        .agm-badge img {
+            max-width: 180px;
+            transition: transform 0.3s;
+
+            &:hover {
+                transform: scale(1.1);
+            }
+        }
+
+        .agm-description {
+            font-size: 1.1rem;
+            line-height: 1.6;
+        }
+    }
+}
+
+// AGM Section
+.agm-section {
+    padding: 6rem 0;
+
+    .benefits-text {
+        font-size: 2rem;
+        margin: 0;
+        text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+    }
+}
+
+// Target Section
+.target-section {
+    padding: 6rem 0;
+
+    .target-content {
+        .target-title {
+            font-size: 3rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .target-subtitle {
+            font-size: 1.25rem;
+        }
+    }
+
+    .features-slider {
+        display: flex;
+        gap: 1.5rem;
+        overflow-x: auto;
+        padding: 2rem 0;
+        scrollbar-width: none;
+
+        &::-webkit-scrollbar {
+            display: none;
+        }
+
+        .slider-item {
+            flex: 0 0 auto;
+
+            img {
+                max-width: 350px;
+                border-radius: 12px;
+                box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+                transition: transform 0.3s;
+
+                &:hover {
+                    transform: translateY(-10px);
+                }
+            }
+        }
+    }
+}
+
+// Equipment Section
+.equipment-section {
+    padding: 6rem 0;
+
+    .equipment-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+        gap: 1.5rem;
+
+        .equipment-card {
+            background: rgba($lth-dark-gray, 0.7);
+            backdrop-filter: blur(10px);
+            border-radius: 16px;
+            padding: 2rem;
+            text-align: center;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+
+            // Initial GSAP state handled via TS or CSS specific utility if needed, 
+            // but usually GSAP .from() handles visual defaults.
+
+            &:hover {
+                background: rgba($lth-primary, 0.2);
+                transform: translateY(-10px) scale(1.05);
+                box-shadow: 0 15px 30px rgba(0, 0, 0, 0.4);
+                border-color: $lth-primary;
+            }
+
+            .card-icon img {
+                height: 60px;
+                width: auto;
+                margin-bottom: 1rem;
+            }
+
+            .card-title {
+                font-size: 1rem;
+                font-weight: 600;
+                margin: 0;
+            }
+        }
+    }
+}
+
+// Warranty Section
+.warranty-section {
+    padding: 6rem 0;
+
+    .warranty-title {
+        display: flex;
+        align-items: baseline;
+        gap: 1rem;
+
+        .warranty-number {
+            font-size: 8rem;
+            font-weight: 800;
+            color: $lth-primary;
+            line-height: 0.8;
+        }
+
+        .warranty-text {
+            font-size: 2.5rem;
+            font-weight: 700;
+            line-height: 1.1;
+        }
+    }
+
+    .replacement-title {
+        font-size: 2rem;
+        font-weight: 800;
+        margin-bottom: 1rem;
+    }
+}
+
+// Future & CTA Buttons
+.btn-evolution,
+.btn-evolution-solid {
+    background-color: $lth-primary;
+    color: $lth-white;
+    border: none;
+    padding: 1rem 3rem;
+    border-radius: 50px;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba($lth-primary, 0.4);
+    display: inline-block;
+    cursor: pointer;
+    text-decoration: none;
+
+    &:hover {
+        background-color: lighten($lth-primary, 5%);
+        transform: translateY(-3px);
+        box-shadow: 0 8px 25px rgba($lth-primary, 0.6);
+    }
+}
+
+// Media Queries
+@media (max-width: 991px) {
+
+    .hero-content,
+    .target-content,
+    .cta-content {
+        text-align: center;
+    }
+
+    .hero-image,
+    .warranty-image {
+        margin-top: 3rem;
+    }
+
+    .warranty-title {
+        justify-content: center;
+    }
+}
+
+// === Custom JS Integration Styles ===
+
+// Navbar Scroll Effect
+.navbar-scrolled {
+    background-color: rgba(0, 0, 0, 0.95) !important;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 2px 20px rgba(255, 215, 0, 0.3);
+    transition: all 0.3s ease;
+}
+
+// Ripple Effect
+.ripple {
+    position: absolute;
+    border-radius: 50%;
+    background: rgba(255, 215, 0, 0.3);
+    transform: scale(0);
+    animation: ripple-animation 0.6s linear;
+    pointer-events: none;
+}
+
+@keyframes ripple-animation {
+    to {
+        transform: scale(4);
+        opacity: 0;
+    }
+}
+
+// Animations
+.loading {
+    opacity: 0;
+    transition: opacity 0.5s ease;
+}
+
+.animate-in {
+    animation: slideInUp 0.6s ease-out forwards;
+}
+
+@keyframes slideInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.in-view {
+    // Used by scroll observer
+    opacity: 1 !important;
+    transform: translateY(0) !important;
+    transition: all 0.6s ease-out;
+}
+
+// Lazy Loading
+img[data-src] {
+    opacity: 0;
+    transition: opacity 0.3s;
+
+    &.lazy-loaded {
+        opacity: 1;
+    }
+}
+
+// Error state for forms
+input.error,
+textarea.error,
+select.error {
+    border-color: red !important;
+    box-shadow: 0 0 5px rgba(255, 0, 0, 0.5);
+}
+
+// Sticky Contact Bar
+.contact-bar.sticky {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+}

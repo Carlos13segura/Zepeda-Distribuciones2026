@@ -1,0 +1,328 @@
+<!-- LTH Container - Todo encapsulado aquí -->
+<div class="lth-container">
+    <!-- Hero Section -->
+    <section class="lth-hero">
+        <!-- Background Pattern -->
+        <div class="lth-hero-bg">
+            <i class="bi bi-lightning-fill lth-bg-icon lth-bg-icon-1"></i>
+            <i class="bi bi-battery-charging lth-bg-icon lth-bg-icon-2"></i>
+            <i class="bi bi-lightning-fill lth-bg-icon lth-bg-icon-3"></i>
+            <i class="bi bi-plug-fill lth-bg-icon lth-bg-icon-4"></i>
+        </div>
+
+        <div class="container text-center position-relative">
+            <div class="lth-hero-title-wrap mb-4">
+                <i class="bi bi-battery-full lth-hero-battery"></i>
+                <h1 class="lth-hero-title">LTH®</h1>
+                <i class="bi bi-battery-full lth-hero-battery"></i>
+            </div>
+
+            <div class="lth-hero-subtitle mb-4">
+                <i class="bi bi-star-fill lth-star"></i>
+                <p class="lth-hero-years">Líder desde hace más de 90 años</p>
+                <i class="bi bi-star-fill lth-star"></i>
+            </div>
+
+            <p class="lth-hero-desc mb-5">
+                Única batería convencional con tecnología PowerFrame® que brinda fortaleza desde el interior.
+                Ideal para vehículos con equipamiento estándar como A/C, calefacción, vidrios y puertas eléctricos.
+            </p>
+
+            <div class="lth-hero-features mb-5">
+                <div class="lth-feature">
+                    <i class="bi bi-shield-check lth-feature-icon text-success"></i>
+                    <span>Garantía Extendida</span>
+                </div>
+                <div class="lth-feature">
+                    <i class="bi bi-truck lth-feature-icon text-primary"></i>
+                    <span>Envío Rápido</span>
+                </div>
+                <div class="lth-feature">
+                    <i class="bi bi-recycle lth-feature-icon text-success"></i>
+                    <span>Eco-Friendly</span>
+                </div>
+            </div>
+
+            <div class="lth-hero-img">
+                <img src="https://useast2prodbrandsites.blob.core.windows.net/lth-sfassets-prod/images/default-source/default-album/categoria-lth68d80d7a3f1e467bbcd10f1a32a7577e.png?sfvrsn=58c64b7f_0"
+                    alt="Baterías LTH" class="lth-hero-image">
+            </div>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <main class="lth-main">
+        <!-- Baterías Automotrices -->
+        <section class="container py-5">
+            <div class="lth-section-header text-center mb-5">
+                <div class="lth-section-title-wrap mb-3">
+                    <i class="bi bi-car-front-fill lth-section-icon"></i>
+                    <h2 class="lth-section-title">Baterías Automotrices</h2>
+                    <i class="bi bi-car-front-fill lth-section-icon"></i>
+                </div>
+                <div class="lth-section-line"></div>
+            </div>
+
+            <div class="row g-4">
+                <!-- Baterías generadas con ngFor -->
+                <div class="col-lg-4 col-md-6" *ngFor="let product of lthProducts">
+                    <div class="lth-card">
+                        <div class="lth-card-img-wrap">
+                            <img [src]="product.image" [alt]="product.name" class="lth-card-img">
+                        </div>
+
+                        <div class="lth-card-body">
+                            <div class="lth-card-header">
+                                <h3 class="lth-card-name">{{ product.name }}</h3>
+                                <div class="lth-badges">
+                                    <span class="lth-badge" [ngClass]="badge.class"
+                                        *ngFor="let badge of product.badges">
+                                        <i [ngClass]="['bi', 'bi-' + badge.icon]"></i>
+                                        {{ badge.text }}
+                                    </span>
+                                </div>
+                            </div>
+
+                            <div class="lth-specs">
+                                <div class="lth-spec lth-spec-cca">
+                                    <i class="bi bi-lightning-fill lth-spec-icon"></i>
+                                    <div class="lth-spec-content">
+                                        <p class="lth-spec-label">Capacidad de arranque en frío</p>
+                                        <p class="lth-spec-value">{{ product.specs.cca }}</p>
+                                    </div>
+                                </div>
+
+
+
+                                <div class="lth-spec lth-spec-recycle">
+                                    <i class="bi bi-recycle lth-spec-icon"></i>
+                                    <div class="lth-spec-content">
+                                        <p class="lth-spec-label">Entrega de batería usada</p>
+                                        <p class="lth-spec-value">{{ product.specs.recycle }}</p>
+                                    </div>
+                                </div>
+
+                                <div class="lth-spec lth-spec-price">
+                                    <i class="bi bi-currency-dollar lth-spec-icon"></i>
+                                    <div class="lth-spec-content">
+                                        <p class="lth-spec-label">Precio</p>
+                                        <p class="lth-spec-value">{{ product.specs.price }}</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <button class="lth-buy-btn" type="button" [routerLink]="[product.link]">
+                                <i class="bi bi-cart-plus"></i>
+                                Comprar Ahora
+                                <i class="bi bi-arrow-right"></i>
+                            </button>
+
+                            <div class="lth-features-mini">
+                                <div class="lth-feature-mini">
+                                    <i class="bi bi-shield-check" style="color: #28a745;"></i>
+                                    <span>Garantía</span>
+                                </div>
+                                <div class="lth-feature-mini">
+                                    <i class="bi bi-truck" style="color: #007bff;"></i>
+                                    <span>Envío Rápido</span>
+                                </div>
+                                <div class="lth-feature-mini">
+                                    <i class="bi bi-tools" style="color: #fd7e14;"></i>
+                                    <span>Instalación</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Baterías Servicio Pesado 6 Volts -->
+        <section class="container py-5">
+            <div class="lth-section-header text-center mb-5">
+                <div class="lth-section-title-wrap mb-3">
+                    <i class="bi bi-truck-front-fill lth-section-icon lth-orange"></i>
+                    <h2 class="lth-section-title">Baterías Servicio Pesado 6 Volts</h2>
+                    <i class="bi bi-truck-front-fill lth-section-icon lth-orange"></i>
+                </div>
+                <div class="lth-section-line-heavy"></div>
+            </div>
+
+            <div class="row g-4">
+                <div class="col-lg-4 col-md-6" *ngFor="let product of heavyDuty6V">
+                    <div class="lth-card">
+                        <div class="lth-card-img-wrap">
+                            <div class="lth-voltage-badge" *ngIf="product.voltage">
+                                <i class="bi bi-lightning-fill"></i>
+                                {{ product.voltage }}
+                            </div>
+                            <img [src]="product.image" [alt]="product.name" class="lth-card-img">
+                        </div>
+
+                        <div class="lth-card-body">
+                            <div class="lth-card-header">
+                                <h3 class="lth-card-name">{{ product.name }}</h3>
+                                <div class="lth-badges">
+                                    <span class="lth-badge" [ngClass]="badge.class"
+                                        *ngFor="let badge of product.badges">
+                                        <i [ngClass]="['bi', 'bi-' + badge.icon]"></i>
+                                        {{ badge.text }}
+                                    </span>
+                                </div>
+                            </div>
+
+                            <div class="lth-specs">
+                                <div class="lth-spec lth-spec-cca">
+                                    <i class="bi bi-lightning-fill lth-spec-icon"></i>
+                                    <div class="lth-spec-content">
+                                        <p class="lth-spec-label">Capacidad de arranque en frío</p>
+                                        <p class="lth-spec-value">{{ product.specs.cca }}</p>
+                                    </div>
+                                </div>
+
+                                <div class="lth-spec lth-spec-vehicles">
+                                    <i class="bi bi-truck-front-fill lth-spec-icon"></i>
+                                    <div class="lth-spec-content">
+                                        <p class="lth-spec-label">Vehículos compatibles</p>
+                                        <p class="lth-spec-value">Servicio Pesado</p>
+                                    </div>
+                                </div>
+
+                                <div class="lth-spec lth-spec-recycle">
+                                    <i class="bi bi-recycle lth-spec-icon"></i>
+                                    <div class="lth-spec-content">
+                                        <p class="lth-spec-label">Entrega de batería usada</p>
+                                        <p class="lth-spec-value">{{ product.specs.recycle }}</p>
+                                    </div>
+                                </div>
+
+                                <div class="lth-spec lth-spec-price">
+                                    <i class="bi bi-currency-dollar lth-spec-icon"></i>
+                                    <div class="lth-spec-content">
+                                        <p class="lth-spec-label">Precio</p>
+                                        <p class="lth-spec-value">{{ product.specs.price }}</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <button class="lth-buy-btn" type="button" [routerLink]="[product.link]">
+                                <i class="bi bi-cart-plus"></i>
+                                Comprar Ahora
+                                <i class="bi bi-arrow-right"></i>
+                            </button>
+
+                            <div class="lth-features-mini">
+                                <div class="lth-feature-mini">
+                                    <i class="bi bi-shield-check" style="color: #28a745;"></i>
+                                    <span>Garantía</span>
+                                </div>
+                                <div class="lth-feature-mini">
+                                    <i class="bi bi-truck" style="color: #007bff;"></i>
+                                    <span>Envío Rápido</span>
+                                </div>
+                                <div class="lth-feature-mini">
+                                    <i class="bi bi-tools" style="color: #fd7e14;"></i>
+                                    <span>Instalación</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Baterías Servicio Pesado 12 Volts -->
+        <section class="container py-5">
+            <div class="lth-section-header text-center mb-5">
+                <div class="lth-section-title-wrap mb-3">
+                    <i class="bi bi-truck-front-fill lth-section-icon lth-orange"></i>
+                    <h2 class="lth-section-title">Baterías Servicio Pesado 12 Volts</h2>
+                    <i class="bi bi-truck-front-fill lth-section-icon lth-orange"></i>
+                </div>
+                <div class="lth-section-line-heavy"></div>
+            </div>
+
+            <div class="row g-4">
+                <div class="col-lg-4 col-md-6" *ngFor="let product of heavyDuty12V">
+                    <div class="lth-card">
+                        <div class="lth-card-img-wrap">
+                            <div class="lth-voltage-badge" *ngIf="product.voltage">
+                                <i class="bi bi-lightning-fill"></i>
+                                {{ product.voltage }}
+                            </div>
+                            <img [src]="product.image" [alt]="product.name" class="lth-card-img">
+                        </div>
+
+                        <div class="lth-card-body">
+                            <div class="lth-card-header">
+                                <h3 class="lth-card-name">{{ product.name }}</h3>
+                                <div class="lth-badges">
+                                    <span class="lth-badge" [ngClass]="badge.class"
+                                        *ngFor="let badge of product.badges">
+                                        <i [ngClass]="['bi', 'bi-' + badge.icon]"></i>
+                                        {{ badge.text }}
+                                    </span>
+                                </div>
+                            </div>
+
+                            <div class="lth-specs">
+                                <div class="lth-spec lth-spec-cca">
+                                    <i class="bi bi-lightning-fill lth-spec-icon"></i>
+                                    <div class="lth-spec-content">
+                                        <p class="lth-spec-label">Capacidad de arranque en frío</p>
+                                        <p class="lth-spec-value">{{ product.specs.cca }}</p>
+                                    </div>
+                                </div>
+
+                                <div class="lth-spec lth-spec-vehicles">
+                                    <i class="bi bi-truck-front-fill lth-spec-icon"></i>
+                                    <div class="lth-spec-content">
+                                        <p class="lth-spec-label">Vehículos compatibles</p>
+                                        <p class="lth-spec-value">Servicio Pesado</p>
+                                    </div>
+                                </div>
+
+                                <div class="lth-spec lth-spec-recycle">
+                                    <i class="bi bi-recycle lth-spec-icon"></i>
+                                    <div class="lth-spec-content">
+                                        <p class="lth-spec-label">Entrega de batería usada</p>
+                                        <p class="lth-spec-value">{{ product.specs.recycle }}</p>
+                                    </div>
+                                </div>
+
+                                <div class="lth-spec lth-spec-price">
+                                    <i class="bi bi-currency-dollar lth-spec-icon"></i>
+                                    <div class="lth-spec-content">
+                                        <p class="lth-spec-label">Precio</p>
+                                        <p class="lth-spec-value">{{ product.specs.price }}</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <button class="lth-buy-btn" type="button" [routerLink]="[product.link]">
+                                <i class="bi bi-cart-plus"></i>
+                                Comprar Ahora
+                                <i class="bi bi-arrow-right"></i>
+                            </button>
+
+                            <div class="lth-features-mini">
+                                <div class="lth-feature-mini">
+                                    <i class="bi bi-shield-check" style="color: #28a745;"></i>
+                                    <span>Garantía</span>
+                                </div>
+                                <div class="lth-feature-mini">
+                                    <i class="bi bi-truck" style="color: #007bff;"></i>
+                                    <span>Envío Rápido</span>
+                                </div>
+                                <div class="lth-feature-mini">
+                                    <i class="bi bi-tools" style="color: #fd7e14;"></i>
+                                    <span>Instalación</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+</div>

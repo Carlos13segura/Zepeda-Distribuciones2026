@@ -1,0 +1,365 @@
+/* Premium Clean Light Theme Variables */
+$primary-red: #d32f2f;
+$primary-blue: #0d47a1;
+$secondary-blue: #1565c0;
+$accent-orange: #ff5722;
+$text-dark: #263238;
+$text-medium: #546e7a;
+$text-light: #78909c;
+$bg-light: #ffffff;
+$bg-offset: #f5f7fa;
+$border-color: #e0e0e0;
+$gradient-top: linear-gradient(90deg, $primary-red, $primary-blue, $accent-orange);
+$shadow-card: 0 4px 20px rgba(0, 0, 0, 0.05);
+$shadow-hover: 0 8px 25px rgba(0, 0, 0, 0.1);
+$transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+
+@mixin flex-start {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+@mixin flex-center {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.footer {
+    background-color: $bg-light;
+    color: $text-dark;
+    font-family: 'Inter', system-ui, sans-serif;
+    position: relative;
+    border-top: 1px solid $border-color;
+    padding-top: 50px;
+
+    /* Top Gradient Line */
+    .gradient-border {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 4px;
+        background: $gradient-top;
+        background-size: 200% auto;
+        animation: shine 4s linear infinite;
+    }
+
+    /* Headings */
+    .footer-title {
+        color: $primary-blue;
+        font-size: 1.1rem;
+        font-weight: 700;
+        margin-bottom: 25px;
+        letter-spacing: 0.5px;
+        text-transform: uppercase;
+        position: relative;
+        padding-bottom: 12px;
+
+        &::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 40px;
+            height: 3px;
+            background-color: $primary-red;
+            border-radius: 2px;
+        }
+    }
+
+    .footer-subtitle {
+        color: $primary-blue;
+        font-size: 0.95rem;
+        font-weight: 600;
+        margin-bottom: 10px;
+    }
+
+    /* Styling for Main Logo Area */
+    .logo-container {
+        margin-bottom: 25px;
+
+        .battery-terminals {
+            display: flex;
+            gap: 12px;
+            margin-bottom: 8px;
+
+            .battery-terminal {
+                width: 20px;
+                height: 8px;
+                background-color: $primary-red;
+                border-radius: 4px;
+                box-shadow: 0 2px 4px rgba(211, 47, 47, 0.2);
+            }
+        }
+
+        .brand-name {
+            font-size: 2.2rem;
+            font-weight: 800;
+            color: $primary-blue;
+            line-height: 1;
+            margin: 0;
+            letter-spacing: -1px;
+        }
+
+        .distribution {
+            font-size: 1.1rem;
+            font-weight: 400;
+            color: $text-medium;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            margin-top: 4px;
+        }
+
+        .tagline {
+            font-style: italic;
+            color: $accent-orange;
+            font-weight: 500;
+            margin-top: 8px;
+
+            .highlight {
+                color: $primary-red;
+            }
+        }
+    }
+
+    .company-description {
+        color: $text-medium;
+        line-height: 1.6;
+        font-size: 0.95rem;
+        margin-bottom: 25px;
+    }
+
+    /* Navigation Links */
+    .footer-links {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+
+        li {
+            margin-bottom: 10px;
+        }
+
+        .footer-link {
+            color: $text-medium;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            transition: $transition;
+            font-size: 0.95rem;
+            padding: 4px 0;
+
+            .iconify,
+            iconify-icon {
+                color: $primary-red;
+                font-size: 1.1rem;
+                transition: transform 0.2s ease;
+            }
+
+            &:hover {
+                color: $primary-blue;
+                transform: translateX(4px);
+
+                .iconify,
+                iconify-icon {
+                    transform: scale(1.2);
+                }
+            }
+        }
+    }
+
+    /* Contact Wrapper - Light Card Style */
+    .contacto-wrapper {
+        background-color: $bg-offset;
+        border-radius: 12px;
+        padding: 25px;
+        margin-top: 20px;
+        border: 1px solid $border-color;
+        box-shadow: $shadow-card;
+
+        .contact-info {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+            padding: 8px;
+            border-radius: 8px;
+            transition: $transition;
+
+            &:hover {
+                background-color: $bg-light;
+                box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+            }
+
+            .contact-icon {
+                color: $primary-red;
+                font-size: 1.2rem;
+                background-color: rgba(211, 47, 47, 0.08);
+                /* faint red bg */
+                padding: 8px;
+                border-radius: 50%;
+            }
+
+            .contact-content {
+                strong {
+                    display: block;
+                    color: $primary-blue;
+                    font-size: 0.85rem;
+                    margin-bottom: 2px;
+                }
+
+                span,
+                a {
+                    color: $text-medium;
+                    font-size: 0.9rem;
+                }
+
+                a:hover {
+                    color: $accent-orange;
+                    text-decoration: underline;
+                }
+            }
+        }
+
+        /* Social Styling */
+        .social-section {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            padding-top: 15px;
+            border-top: 1px solid rgba(0, 0, 0, 0.05);
+            margin-top: 15px;
+            width: 100%;
+            justify-content: flex-end;
+
+            .social-title {
+                color: $primary-blue;
+                font-size: 0.9rem;
+                margin: 0;
+                font-weight: 600;
+            }
+
+            .social-icons {
+                display: flex;
+                gap: 10px;
+            }
+
+            .social-icon {
+                width: 38px;
+                height: 38px;
+                border-radius: 50%;
+                background-color: $bg-light;
+                border: 1px solid $border-color;
+                @include flex-center;
+                color: $primary-blue;
+                transition: $transition;
+
+                &:hover {
+                    background-color: $primary-blue;
+                    color: $bg-light;
+                    border-color: $primary-blue;
+                    transform: translateY(-3px);
+                    box-shadow: 0 4px 10px rgba(13, 71, 161, 0.3);
+                }
+            }
+        }
+    }
+
+    /* Additional Info */
+    .brands-text,
+    .certifications-text {
+        font-size: 0.85rem;
+        color: $text-light;
+        margin-top: 6px;
+    }
+}
+
+/* Copyright Section */
+.copyright {
+    background-color: $bg-offset;
+    border-top: 1px solid $border-color;
+    padding: 20px 0;
+    font-size: 0.85rem;
+    color: $text-medium;
+
+    strong {
+        color: $primary-blue;
+    }
+
+    .copyright-link {
+        color: $text-medium;
+        text-decoration: none;
+        margin: 0 5px;
+        font-weight: 500;
+        transition: color 0.2s;
+
+        &:hover {
+            color: $primary-red;
+        }
+    }
+
+    .text-danger {
+        color: $primary-red !important;
+    }
+}
+
+/* Animations */
+@keyframes shine {
+    0% {
+        background-position: 200% center;
+    }
+
+    100% {
+        background-position: 0% center;
+    }
+}
+
+/* Responsive */
+@media (max-width: 991px) {
+    .footer {
+        text-align: center;
+
+        .logo-container {
+            align-items: center;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .footer-title::after {
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        .footer-links .footer-link {
+            justify-content: center;
+        }
+
+        .contacto-wrapper {
+            .social-section {
+                justify-content: center;
+            }
+
+            .contact-info {
+                justify-content: center;
+            }
+        }
+    }
+}
+
+@media (max-width: 768px) {
+    .copyright {
+        text-align: center !important;
+
+        .col-md-4 {
+            margin-top: 10px;
+            text-align: center !important;
+        }
+    }
+}

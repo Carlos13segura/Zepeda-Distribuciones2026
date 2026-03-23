@@ -1,0 +1,117 @@
+<div class="lth-heavy-duty-content">
+    <!-- Hero Section -->
+    <section class="hero-section">
+        <div class="hero-background-elements">
+            <div class="floating-element floating-element-1"></div>
+            <div class="floating-element floating-element-2"></div>
+        </div>
+
+        <div class="container position-relative">
+            <div class="row justify-content-center text-center">
+                <div class="col-lg-10">
+                    <h1 class="hero-title">
+                        <span class="text-lth-yellow">LTH®</span> HEAVY DUTY
+                    </h1>
+                    <p class="hero-description">
+                        Es la batería con mayor rendimiento. Gracias a su poder de ciclado extremo,
+                        es ideal para unidades de operación continua que requieren de arranques constantes.
+                    </p>
+                    <div class="hero-image-container">
+                        <img src="https://useast2prodbrandsites.blob.core.windows.net/lth-sfassets-prod/images/default-source/products/product-brands/baterias/lth-heavy-duty-2019.png?sfvrsn=7e669a98_4"
+                            alt="Baterías LTH HEAVY DUTY" class="hero-battery-img">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Products Section -->
+    <section class="products-section">
+        <div class="container">
+            <div class="row">
+                <div class="col-12 text-center mb-5">
+                    <h2 class="section-title">Baterías Servicio Pesado</h2>
+                </div>
+            </div>
+
+            <div class="product-card mb-5" *ngFor="let product of heavyDutyProducts; let i = index">
+                <div class="row g-4 align-items-center">
+                    <div class="col-lg-6">
+                        <div class="product-carousel-container">
+                            <div [id]="product.carouselId" class="carousel slide product-carousel" data-bs-ride="false">
+                                <div class="carousel-inner">
+                                    <div class="carousel-item" *ngFor="let img of product.images; let first = first"
+                                        [class.active]="first">
+                                        <img [src]="img" class="d-block w-100 product-image" [alt]="product.model">
+                                    </div>
+                                </div>
+                                <button class="carousel-control-prev" type="button"
+                                    [attr.data-bs-target]="'#' + product.carouselId" data-bs-slide="prev">
+                                    <i class="bi bi-chevron-left carousel-icon"></i>
+                                </button>
+                                <button class="carousel-control-next" type="button"
+                                    [attr.data-bs-target]="'#' + product.carouselId" data-bs-slide="next">
+                                    <i class="bi bi-chevron-right carousel-icon"></i>
+                                </button>
+                                <div class="carousel-indicators">
+                                    <button *ngFor="let img of product.images; let idx = index" type="button"
+                                        [attr.data-bs-target]="'#' + product.carouselId" [attr.data-bs-slide-to]="idx"
+                                        [class.active]="idx === 0"></button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-6">
+                        <div class="product-info">
+                            <h3 class="product-title">{{ product.model }}</h3>
+                            <div class="product-badges mb-3">
+                                <span class="badge badge-lth-blue">Batería Servicio Pesado</span>
+                                <span class="badge badge-success">En Stock</span>
+                            </div>
+
+                            <div class="product-specs">
+                                <div class="spec-item">
+                                    <i class="bi bi-battery-charging spec-icon text-primary"></i>
+                                    <div class="spec-content">
+                                        <small class="spec-label">Capacidad de arranque en frío</small>
+                                        <p class="spec-value">{{ product.cca }}</p>
+                                    </div>
+                                </div>
+
+                                <div class="spec-item">
+                                    <i class="bi bi-truck spec-icon text-secondary"></i>
+                                    <div class="spec-content">
+                                        <small class="spec-label">Vehículos compatibles</small>
+                                        <p class="spec-value">Servicio Pesado</p>
+                                    </div>
+                                </div>
+
+                                <div class="spec-item">
+                                    <i class="bi bi-recycle spec-icon text-warning"></i>
+                                    <div class="spec-content">
+                                        <small class="spec-label">Entrega de batería usada</small>
+                                        <p class="spec-value">Requerida</p>
+                                    </div>
+                                </div>
+
+                                <div class="spec-item">
+                                    <i class="bi bi-currency-dollar spec-icon text-danger"></i>
+                                    <div class="spec-content">
+                                        <small class="spec-label">Precio</small>
+                                        <p class="spec-price">{{ product.price }}</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <button class="btn btn-lth-primary mt-4" [routerLink]="product.link">
+                                <i class="bi bi-cart-plus"></i>
+                                Comprar Ahora
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>
